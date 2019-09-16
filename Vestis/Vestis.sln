@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vestis.UWP", "Vestis.UWP\Vestis.UWP.csproj", "{D6D2A4D8-7C9D-463A-9336-C48771D06D64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vestis.Core", "Vestis.Core\Vestis.Core.csproj", "{00921AEA-9EC8-40F9-8BC8-5EF6E2FF883D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vestis.Core", "Vestis.Core\Vestis.Core.csproj", "{00921AEA-9EC8-40F9-8BC8-5EF6E2FF883D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vestis.Test", "Vestis.Test\Vestis.Test.csproj", "{4D4E70FC-0744-4254-8B4D-306AE1A5783D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vestis.Test", "Vestis.Test\Vestis.Test.csproj", "{4D4E70FC-0744-4254-8B4D-306AE1A5783D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,7 +23,9 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D6D2A4D8-7C9D-463A-9336-C48771D06D64}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{D6D2A4D8-7C9D-463A-9336-C48771D06D64}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{D6D2A4D8-7C9D-463A-9336-C48771D06D64}.Debug|Any CPU.Build.0 = Debug|x64
+		{D6D2A4D8-7C9D-463A-9336-C48771D06D64}.Debug|Any CPU.Deploy.0 = Debug|x64
 		{D6D2A4D8-7C9D-463A-9336-C48771D06D64}.Debug|ARM.ActiveCfg = Debug|ARM
 		{D6D2A4D8-7C9D-463A-9336-C48771D06D64}.Debug|ARM.Build.0 = Debug|ARM
 		{D6D2A4D8-7C9D-463A-9336-C48771D06D64}.Debug|ARM.Deploy.0 = Debug|ARM

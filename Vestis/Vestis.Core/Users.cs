@@ -2,6 +2,7 @@
 using OneOf;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Text;
 using Vestis.Core.Failures;
@@ -39,11 +40,16 @@ namespace Vestis.Core
 
             var config = XmlConfig.From(path);
             foreach (var garment in config.Read("Clothes").Split(' '))
-                // TODO Validate properties
+            {
                 result.Add(new Garment
                 {
-                    Name = config.Read($"{garment}:Name")
+                    Name = config.Read($"{garment}:Name"),
+                    Type = ClothingTypeUtil.Parse(config.Read($"{garment}:Type")),
+                    PurchaseDate = new PurchaseDate(config.Read($"{garment}:PurchaseDate")),
+                    ColorTags = new ReadOnlyCollection<string>(config.Read($"{garment}:ColorTags").Split(' ')),
+                    StyleTags = new ReadOnlyCollection<string>(config.Read($"{garment}:StyleTags").Split(' '))
                 });
+            }
 
             return result;
         }

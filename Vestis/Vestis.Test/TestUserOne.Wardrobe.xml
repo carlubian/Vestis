@@ -11,6 +11,7 @@ by hand unless you know what you're doing.-->
     <PurchaseDate>Spring 2018</PurchaseDate>
     <ColorTags>Indigo White</ColorTags>
     <StyleTags>Stripes ButtonCollar Elegant</StyleTags>
+    <UserTags></UserTags>
   </Garment01>
 
   <Garment02>
@@ -19,6 +20,7 @@ by hand unless you know what you're doing.-->
     <PurchaseDate>Summer 2018</PurchaseDate>
     <ColorTags>DarkGreen</ColorTags>
     <StyleTags>Plain FrontPocket Casual</StyleTags>
+    <UserTags></UserTags>
   </Garment02>
 
 </Configuration>

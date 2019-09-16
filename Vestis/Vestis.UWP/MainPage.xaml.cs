@@ -26,5 +26,20 @@ namespace Vestis.UWP
         {
             this.InitializeComponent();
         }
+
+        private void BtnNewUser_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnManageUsers_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnAbout_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

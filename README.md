@@ -1,4 +1,5 @@
-# Vestis
+![Vestis](docs/images/VestisV2.png)
+
 <em>Clothing management made easy.</em>
 
 ___

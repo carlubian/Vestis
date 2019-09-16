@@ -8,7 +8,58 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid Background="{ThemeResource SystemControlAcrylicWindowMediumHighBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="1" Margin="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Vertical" Grid.Row="0"
+                    Margin="0, 32, 0, 0">
+                <Button Name="BtnNewUser" Width="128" Click="BtnNewUser_Click">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="Assets/Icons/add.png"
+                           Width="64"/>
+                        <TextBlock Text="[NewUser]" x:Uid="MainPageBtnNewUser"
+                                   HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button Name="BtnManageUsers" Width="128" Click="BtnManageUsers_Click">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="Assets/Icons/list.png"
+                           Width="64"/>
+                        <TextBlock Text="[ManageUsers]" x:Uid="MainPageBtnManageUsers"
+                                   HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button Name="BtnAbout" Width="128" Click="BtnAbout_Click">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="Assets/Icons/settings.png"
+                           Width="64"/>
+                        <TextBlock Text="[About]" x:Uid="MainPageBtnAbout"
+                                   HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Row="1"
+                        Margin="0" Visibility="Collapsed">
+                <Button Width="128"
+                        Background="#FF0D88AA">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="Assets/Icons/menu.png"
+                           Width="64"/>
+                        <TextBlock Text="Fast Track"
+                                   HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Grid>
 
     </Grid>
 </Page>
