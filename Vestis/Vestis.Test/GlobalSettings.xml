@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Vestis global settings. Do not edit
+by hand unless you know what you're doing.-->
+<Configuration Format="CAv2">
+
+  <UserProfiles>
+    <TestUserOne>Local</TestUserOne>
+    <TestUserTwo>Local</TestUserTwo>
+  </UserProfiles>
+
+</Configuration>
