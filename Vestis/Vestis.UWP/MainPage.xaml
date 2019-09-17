@@ -14,6 +14,37 @@
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
 
+        <RelativePanel Grid.Column="0"
+                       Margin="8"
+                       VerticalAlignment="Center">
+            <TextBlock FontSize="30"
+                       RelativePanel.AlignTopWithPanel="True"
+                       RelativePanel.AlignHorizontalCenterWithPanel="True"
+                       Name="UserSelectionHeader"
+                       x:Uid="MainPageTblUserSelectionHeader"
+                       Text="[UserSelectionHeader]"/>
+            <ScrollViewer RelativePanel.Below="UserSelectionHeader">
+                <ListView x:Name="UserPanel"
+                          ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                          ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                          ScrollViewer.HorizontalScrollMode="Auto"
+                          ScrollViewer.VerticalScrollMode="Disabled">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Button Width="256" Command="{Binding UserClickCommand}" CommandParameter="{Binding Username}">
+                                <StackPanel Orientation="Vertical">
+                                    <Image Source="Assets/Icons/user.png"
+                                           Width="128"/>
+                                    <TextBlock Text="{Binding Username}"
+                                               HorizontalAlignment="Center"/>
+                                </StackPanel>
+                            </Button>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollViewer>
+        </RelativePanel>
+
         <Grid Grid.Column="1" Margin="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -24,7 +55,7 @@
                     Margin="0, 32, 0, 0">
                 <Button Name="BtnNewUser" Width="128" Click="BtnNewUser_Click">
                     <StackPanel Orientation="Vertical">
-                        <Image Source="Assets/Icons/add.png"
+                        <Image Source="Assets/Icons/plus-symbol.png"
                            Width="64"/>
                         <TextBlock Text="[NewUser]" x:Uid="MainPageBtnNewUser"
                                    HorizontalAlignment="Center"/>
@@ -32,7 +63,7 @@
                 </Button>
                 <Button Name="BtnManageUsers" Width="128" Click="BtnManageUsers_Click">
                     <StackPanel Orientation="Vertical">
-                        <Image Source="Assets/Icons/list.png"
+                        <Image Source="Assets/Icons/users.png"
                            Width="64"/>
                         <TextBlock Text="[ManageUsers]" x:Uid="MainPageBtnManageUsers"
                                    HorizontalAlignment="Center"/>
@@ -40,7 +71,7 @@
                 </Button>
                 <Button Name="BtnAbout" Width="128" Click="BtnAbout_Click">
                     <StackPanel Orientation="Vertical">
-                        <Image Source="Assets/Icons/settings.png"
+                        <Image Source="Assets/Icons/info.png"
                            Width="64"/>
                         <TextBlock Text="[About]" x:Uid="MainPageBtnAbout"
                                    HorizontalAlignment="Center"/>

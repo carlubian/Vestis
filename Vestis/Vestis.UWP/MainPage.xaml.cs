@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Windows.Input;
+using Vestis.Core;
+using Vestis.UWP.Commands;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -22,9 +25,18 @@ namespace Vestis.UWP
     /// </summary>
     public sealed partial class MainPage : Page
     {
+
         public MainPage()
         {
             this.InitializeComponent();
+
+            // Bind users to list
+            var users = DressingRoom.ListAvailable();
+            UserPanel.ItemsSource = users.Select(u => new
+            {
+                Username = u,
+                UserClickCommand = UserClickCommand.Instance
+            });
         }
 
         private void BtnNewUser_Click(object sender, RoutedEventArgs e)
@@ -39,7 +51,7 @@ namespace Vestis.UWP
 
         private void BtnAbout_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(AboutPage));
         }
     }
 }

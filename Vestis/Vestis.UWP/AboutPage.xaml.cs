@@ -1,0 +1,61 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Foundation;
+using Windows.Foundation.Collections;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
+using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Input;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Navigation;
+
+// La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
+
+namespace Vestis.UWP
+{
+    /// <summary>
+    /// Una página vacía que se puede usar de forma independiente o a la que se puede navegar dentro de un objeto Frame.
+    /// </summary>
+    public sealed partial class AboutPage : Page
+    {
+        public AboutPage()
+        {
+            this.InitializeComponent();
+
+            var versionElements = new List<KeyValuePair<string, string>>()
+            {
+                new KeyValuePair<string, string>("Vestis UWP App", "1.0.0"),
+                new KeyValuePair<string, string>("Vestis Core Backend", "1.0.0"),
+                new KeyValuePair<string, string>("ConfigAdapter", "2.2.2"),
+                new KeyValuePair<string, string>("ConfigAdapter.Xml", "2.3.3")
+            };
+            VersionList.ItemsSource = versionElements;
+
+            var thirdPartyElements = new List<KeyValuePair<string, string>>()
+            {
+                new KeyValuePair<string, string>(".NET Standard", "Copyright (c) .NET Foundation and Contributors. Licensed under MIT license."),
+                new KeyValuePair<string, string>("OneOf library", "Copyright (c) 2016 Harry McIntyre. Licensed under MIT license."),
+                new KeyValuePair<string, string>("FluentAssertions library", "Copyright (c) Dennis Doomen, Jonas Nyrup. Licensed under Apache 2.0 license."),
+                new KeyValuePair<string, string>("Cloth hanger icon", "Nikita Golubev from www.flaticon.com"),
+                new KeyValuePair<string, string>("Artificial Intelligence icon", "photo3idea_studio from www.flaticon.com"),
+                new KeyValuePair<string, string>("Left arrow icon", "Lucy G from www.flaticon.com"),
+                new KeyValuePair<string, string>("Right arrow icon", "Lucy G from www.flaticon.com"),
+                new KeyValuePair<string, string>("Information icon", "Smashicons from www.flaticon.com"),
+                new KeyValuePair<string, string>("Settings icon", "Smashicons from www.flaticon.com"),
+                new KeyValuePair<string, string>("User icon", "Smashicons from www.flaticon.com"),
+                new KeyValuePair<string, string>("Users icon", "Smashicons from www.flaticon.com"),
+                new KeyValuePair<string, string>("Plus sign icon", "Lyolya from www.flaticon.com")
+            };
+            ThirdPartyList.ItemsSource = thirdPartyElements;
+        }
+
+        private void BtnGoBack_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.GoBack();
+        }
+    }
+}
