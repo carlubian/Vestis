@@ -12,9 +12,9 @@ namespace Vestis.Core
     /// </summary>
     public static class DressingRoom
     {
-        private static string _directory;
+        internal static string AppDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
-        public static IEnumerable<string> ListAvailable() => Users.AllUsers(_directory);
+        public static IEnumerable<string> ListAvailable() => Users.AllUsers();
 
         public static OneOf<Wardrobe, IFailure> ForUser(string user)
         {
@@ -24,9 +24,16 @@ namespace Vestis.Core
             return Wardrobe.CreateForUser(user);
         }
 
+        /// <summary>
+        /// Modify the root directory used to hold app and
+        /// user settings. When using this library from a
+        /// universal app, call this method and pass the path
+        /// to a legal storage directory.
+        /// </summary>
+        /// <param name="directory"></param>
         public static void SetAppDirectory(string directory)
         {
-            _directory = directory;
+            AppDirectory = directory;
         }
     }
 }

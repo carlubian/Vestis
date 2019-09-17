@@ -1,0 +1,77 @@
+﻿<Page
+    x:Class="Vestis.UWP.WelcomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Vestis.UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid  Background="#283038">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <RelativePanel Grid.Column="0"
+                       Margin="8"
+                       VerticalAlignment="Center">
+            <TextBlock Name="WelcomeHeader"
+                       RelativePanel.AlignHorizontalCenterWithPanel="True"
+                       FontSize="42">
+                <Run x:Uid="WelcomePageTblHeaderPrefix"
+                     Text="[WelcomePrefix]"/>
+                <Run x:Uid="WelcomePageTblHeaderContent"
+                     Text="[WelcomeContent]"
+                     Foreground="#205CB2"/>
+                <Run x:Uid="WelcomePageTblHeaderSuffix"
+                     Text="[WelcomeSuffix]"/>
+            </TextBlock>
+            <TextBlock RelativePanel.Below="WelcomeHeader"
+                       RelativePanel.AlignHorizontalCenterWithPanel="True"
+                       FontSize="30" TextWrapping="WrapWholeWords"
+                       x:Uid="WelcomePageTblBody"
+                       Text="[WelcomeBody]"/>
+        </RelativePanel>
+
+        <Grid Grid.Column="1" Margin="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Vertical" Grid.Row="0"
+                    Margin="0, 32, 0, 0">
+                <Button Name="BtnNewUser" Width="128" Click="BtnNewUser_Click">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="Assets/Icons/plus-symbol.png"
+                           Width="64"/>
+                        <TextBlock Text="[Continue]" x:Uid="WelcomePageBtnNewUser"
+                                   HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button Name="BtnImport" Width="128" Click="BtnImport_Click">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="Assets/Icons/import.png"
+                           Width="64"/>
+                        <TextBlock Text="[Import]" x:Uid="WelcomePageBtnImport"
+                                   HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Row="1"
+                        Margin="0" Visibility="Collapsed">
+                <Button Width="128"
+                        Background="#FF0D88AA">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="Assets/Icons/menu.png"
+                           Width="64"/>
+                        <TextBlock Text="Fast Track"
+                                   HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

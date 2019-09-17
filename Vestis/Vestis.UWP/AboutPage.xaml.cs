@@ -48,7 +48,12 @@ namespace Vestis.UWP
                 new KeyValuePair<string, string>("Settings icon", "Smashicons from www.flaticon.com"),
                 new KeyValuePair<string, string>("User icon", "Smashicons from www.flaticon.com"),
                 new KeyValuePair<string, string>("Users icon", "Smashicons from www.flaticon.com"),
-                new KeyValuePair<string, string>("Plus sign icon", "Lyolya from www.flaticon.com")
+                new KeyValuePair<string, string>("Plus sign icon", "Lyolya from www.flaticon.com"),
+                new KeyValuePair<string, string>("Import icon", "Anatoly from www.flaticon.com"),
+                new KeyValuePair<string, string>("Export icon", "Anatoly from www.flaticon.com"),
+                new KeyValuePair<string, string>("Man icon", "Iconnice from www.flaticon.com"),
+                new KeyValuePair<string, string>("Woman icon", "Iconnice from www.flaticon.com"),
+                new KeyValuePair<string, string>("Baby girl icon", "Iconnice from www.flaticon.com")
             };
             ThirdPartyList.ItemsSource = thirdPartyElements;
         }

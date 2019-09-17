@@ -41,7 +41,7 @@ namespace Vestis.UWP
 
         private void BtnNewUser_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(AddUserPage));
         }
 
         private void BtnManageUsers_Click(object sender, RoutedEventArgs e)

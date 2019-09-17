@@ -126,6 +126,27 @@
   <data name="AboutPageTblVersionInformation.Text" xml:space="preserve">
     <value>Versiones instaladas:</value>
   </data>
+  <data name="AddUserPageBtnGoBack.Text" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="AddUserPageBtnSaveUser.Text" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="AddUserPageTblColorHeader.Text" xml:space="preserve">
+    <value>Color de perfil:</value>
+  </data>
+  <data name="AddUserPageTblHeader.Text" xml:space="preserve">
+    <value>Añadir un usuario nuevo</value>
+  </data>
+  <data name="AddUserPageTblIconHeader.Text" xml:space="preserve">
+    <value>Icono de perfil:</value>
+  </data>
+  <data name="AddUserPageTblNameHeader.Text" xml:space="preserve">
+    <value>Nombre de usuario:</value>
+  </data>
+  <data name="AddUserPageTblNameInfo.Text" xml:space="preserve">
+    <value>Puede contener entre 1 y 24 letras, sin números o espacios.</value>
+  </data>
   <data name="AppDescription" xml:space="preserve">
     <value>Gestión de vestuario, prendas de ropa y atuendos.</value>
   </data>
@@ -139,9 +160,29 @@
     <value>Gestionar</value>
   </data>
   <data name="MainPageBtnNewUser.Text" xml:space="preserve">
-    <value>Nuevo</value>
+    <value>Añadir</value>
   </data>
   <data name="MainPageTblUserSelectionHeader.Text" xml:space="preserve">
     <value>Selecciona tu usuario para empezar:</value>
+  </data>
+  <data name="WelcomePageBtnImport.Text" xml:space="preserve">
+    <value>Importar</value>
+  </data>
+  <data name="WelcomePageBtnNewUser.Text" xml:space="preserve">
+    <value>Añadir</value>
+  </data>
+  <data name="WelcomePageTblBody.Text" xml:space="preserve">
+    <value>Parece que es la primera vez que usas esta aplicación. Si es así, puedes empezar por añadir un usuario.
+
+Si tienes un archivo de copia de seguridad que quieras restaurar, también puedes hacerlo desde aquí.</value>
+  </data>
+  <data name="WelcomePageTblHeaderContent.Text" xml:space="preserve">
+    <value>Vestis</value>
+  </data>
+  <data name="WelcomePageTblHeaderPrefix.Text" xml:space="preserve">
+    <value>Bienvenido a</value>
+  </data>
+  <data name="WelcomePageTblHeaderSuffix.Text" xml:space="preserve">
+    <value>!</value>
   </data>
 </root>

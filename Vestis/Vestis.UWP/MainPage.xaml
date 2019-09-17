@@ -8,7 +8,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid Background="{ThemeResource SystemControlAcrylicWindowMediumHighBrush}">
+    <Grid Background="#283038">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="Auto"/>
@@ -17,7 +17,7 @@
         <RelativePanel Grid.Column="0"
                        Margin="8"
                        VerticalAlignment="Center">
-            <TextBlock FontSize="30"
+            <TextBlock FontSize="42"
                        RelativePanel.AlignTopWithPanel="True"
                        RelativePanel.AlignHorizontalCenterWithPanel="True"
                        Name="UserSelectionHeader"
@@ -31,12 +31,13 @@
                           ScrollViewer.VerticalScrollMode="Disabled">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <Button Width="256" Command="{Binding UserClickCommand}" CommandParameter="{Binding Username}">
+                            <Button MinWidth="256" Command="{Binding UserClickCommand}" CommandParameter="{Binding Username}">
                                 <StackPanel Orientation="Vertical">
                                     <Image Source="Assets/Icons/user.png"
                                            Width="128"/>
                                     <TextBlock Text="{Binding Username}"
-                                               HorizontalAlignment="Center"/>
+                                               HorizontalAlignment="Center"
+                                               FontSize="30"/>
                                 </StackPanel>
                             </Button>
                         </DataTemplate>

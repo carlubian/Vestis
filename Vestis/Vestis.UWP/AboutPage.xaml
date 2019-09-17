@@ -8,7 +8,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid Background="{ThemeResource SystemControlAcrylicWindowMediumHighBrush}">
+    <Grid Background="#283038">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="Auto"/>
@@ -27,13 +27,13 @@
             <Rectangle Grid.Row="0" Grid.Column="0"
                        Height="{Binding ActualWidth, ElementName=leftCol, Mode=OneWay}"
                        Width="{Binding ActualWidth, ElementName=leftCol, Mode=OneWay}"
-                       Fill="#003C92">
+                       Fill="#404850">
             </Rectangle>
             <TextBlock Grid.Row="0" Grid.Column="0" Text="VST"
-                       Foreground="#205CB2"
+                       Foreground="#687078"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Center"
-                       FontSize="50"/>
+                       FontSize="64" FontWeight="Bold"/>
 
             <RelativePanel Grid.Row="0" Grid.Column="1">
                 <TextBlock FontSize="30" Text="[VersionInformation]"
@@ -62,7 +62,8 @@
                 </ScrollViewer>
             </RelativePanel>
 
-            <RelativePanel Grid.Row="1" Grid.Column="1">
+            <RelativePanel Grid.Row="1" Grid.Column="0"
+                           Grid.ColumnSpan="2">
                 <TextBlock FontSize="30" Text="[ThirdPartyInformation]"
                            x:Uid="AboutPageTblThirdPartyInformation"
                            Margin="8" Name="ThirdPartyInformation"

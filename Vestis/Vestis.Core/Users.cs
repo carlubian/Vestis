@@ -15,11 +15,10 @@ namespace Vestis.Core
     /// </summary>
     internal static class Users
     {
-        internal static IEnumerable<string> AllUsers(string directory)
+        internal static IEnumerable<string> AllUsers()
         {
-            //var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            //path = Path.Combine(path, "Vestis");
-            var path = Path.Combine(directory, "GlobalSettings.xml");
+            var path = Path.Combine(DressingRoom.AppDirectory, "Vestis");
+            path = Path.Combine(path, "GlobalSettings.xml");
 
             var config = XmlConfig.From(path);
             foreach (var profile in config.SettingsIn("UserProfiles"))
@@ -28,8 +27,7 @@ namespace Vestis.Core
 
         internal static bool UserExists(string user)
         {
-            var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            path = Path.Combine(path, "Vestis");
+            var path = Path.Combine(DressingRoom.AppDirectory, "Vestis");
             path = Path.Combine(path, "GlobalSettings.xml");
 
             var config = XmlConfig.From(path);
@@ -44,8 +42,7 @@ namespace Vestis.Core
         {
             var result = new List<Garment>();
 
-            var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            path = Path.Combine(path, "Vestis");
+            var path = Path.Combine(DressingRoom.AppDirectory, "Vestis");
             path = Path.Combine(path, "Profiles");
             path = Path.Combine(path, $"{user}.Wardrobe.xml");
 

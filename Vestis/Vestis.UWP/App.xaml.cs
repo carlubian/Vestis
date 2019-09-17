@@ -69,10 +69,8 @@ namespace Vestis.UWP
             {
                 if (rootFrame.Content == null)
                 {
-                    // Cuando no se restaura la pila de navegación, navegar a la primera página,
-                    // configurando la nueva página pasándole la información requerida como
-                    //parámetro de navegación
-                    rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                    // TODO Comprobar si se debe mostrar la página de bienvenida
+                    rootFrame.Navigate(typeof(WelcomePage), e.Arguments);
                 }
                 // Asegurarse de que la ventana actual está activa.
                 Window.Current.Activate();

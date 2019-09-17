@@ -1,0 +1,144 @@
+﻿<Page
+    x:Class="Vestis.UWP.AddUserPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Vestis.UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:c="using:Vestis.UWP.Converters"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <c:StringToBrushConverter x:Key="StringToBrush"/>
+    </Page.Resources>
+
+    <Grid Background="#283038">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <RelativePanel Grid.Column="0"
+                       Margin="8">
+            <TextBlock FontSize="42"
+                       RelativePanel.AlignTopWithPanel="True"
+                       RelativePanel.AlignHorizontalCenterWithPanel="True"
+                       Name="Header"
+                       x:Uid="AddUserPageTblHeader"
+                       Text="[AddUserHeader]"/>
+
+            <RelativePanel RelativePanel.AlignVerticalCenterWithPanel="True"
+                           RelativePanel.AlignHorizontalCenterWithPanel="True">
+                <StackPanel Orientation="Horizontal"
+                            Name="UsernameArea">
+                    <TextBlock Text="[UserNameHeader]"
+                               x:Uid="AddUserPageTblNameHeader"
+                               Margin="4"/>
+                    <TextBox Width="192"
+                             x:Name="UserNameTextBox"
+                             Margin="4"/>
+                </StackPanel>
+                <TextBlock Foreground="#788088"
+                           x:Uid="AddUserPageTblNameInfo"
+                           Name="UsernameInfo"
+                           Text="[UserNameInfo]"
+                           Margin="8"
+                           TextWrapping="WrapWholeWords"
+                           RelativePanel.Below="UsernameArea"/>
+                
+                <StackPanel Orientation="Horizontal"
+                            Name="ColorPanel"
+                            RelativePanel.Below="UsernameInfo">
+                    <TextBlock Text="[UserColorHeader]"
+                               x:Uid="AddUserPageTblColorHeader"
+                               Margin="4"/>
+                    <GridView Margin="4"
+                              SelectionMode="Single"
+                              x:Name="UserColorGrid">
+                        <GridView.ItemTemplate>
+                            <DataTemplate>
+                                <Rectangle Height="96"
+                                           Width="96"
+                                           Fill="{Binding Color, Converter={StaticResource StringToBrush}}" />
+                            </DataTemplate>
+                        </GridView.ItemTemplate>
+                        <GridView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <ItemsWrapGrid MaximumRowsOrColumns="3"
+                                               Orientation="Horizontal">
+                                    
+                                </ItemsWrapGrid>
+                            </ItemsPanelTemplate>
+                        </GridView.ItemsPanel>
+                    </GridView>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal"
+                            Name="IconPanel"
+                            RelativePanel.Below="ColorPanel">
+                    <TextBlock Text="[UserIconHeader]"
+                               x:Uid="AddUserPageTblIconHeader"
+                               Margin="4"/>
+                    <GridView Margin="4"
+                              SelectionMode="Single"
+                              x:Name="UserIconGrid">
+                        <GridView.ItemTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding Icon}"
+                                       Width="96"/>
+                            </DataTemplate>
+                        </GridView.ItemTemplate>
+                        <GridView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <ItemsWrapGrid MaximumRowsOrColumns="3"
+                                               Orientation="Horizontal">
+
+                                </ItemsWrapGrid>
+                            </ItemsPanelTemplate>
+                        </GridView.ItemsPanel>
+                    </GridView>
+                </StackPanel>
+            </RelativePanel>
+
+        </RelativePanel>
+
+        <Grid Grid.Column="1" Margin="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Vertical" Grid.Row="0"
+                    Margin="0, 32, 0, 0">
+                <Button Name="BtnGoBack" Width="128" Click="BtnGoBack_Click">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="Assets/Icons/left-arrow.png"
+                           Width="64"/>
+                        <TextBlock Text="[GoBack]" x:Uid="AddUserPageBtnGoBack"
+                                   HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button Name="BtnSaveUser" Width="128" Click="BtnSaveUser_Click">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="Assets/Icons/right-arrow.png"
+                           Width="64"/>
+                        <TextBlock Text="[SaveUser]" x:Uid="AddUserPageBtnSaveUser"
+                                   HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Row="1"
+                        Margin="0" Visibility="Collapsed">
+                <Button Width="128"
+                        Background="#FF0D88AA">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="Assets/Icons/menu.png"
+                           Width="64"/>
+                        <TextBlock Text="Fast Track"
+                                   HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>
