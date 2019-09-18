@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AppCenter.Analytics;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -95,6 +96,10 @@ namespace Vestis.UWP
             var icon = (UserIconGrid.SelectedItem as IconWrapper).Icon;
 
             DressingRoom.CreateNew(username, color, icon);
+            Analytics.TrackEvent("User profile created", new Dictionary<string, string> {
+                { "Color", color },
+                { "Icon", icon }
+            });
 
             Frame.Navigate(typeof(MainPage));
         }
