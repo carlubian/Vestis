@@ -70,7 +70,10 @@ namespace Vestis.UWP
                 if (rootFrame.Content == null)
                 {
                     // TODO Comprobar si se debe mostrar la página de bienvenida
-                    rootFrame.Navigate(typeof(WelcomePage), e.Arguments);
+                    if (DressingRoom.WelcomePageSeen())
+                        rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                    else
+                        rootFrame.Navigate(typeof(WelcomePage), e.Arguments);
                 }
                 // Asegurarse de que la ventana actual está activa.
                 Window.Current.Activate();

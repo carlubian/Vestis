@@ -38,7 +38,7 @@ namespace Vestis.Core
             return false;
         }
 
-        internal static OneOf<IEnumerable<Garment>, IFailure> GarmentsOf(string user)
+        internal static OneOf<IEnumerable<Garment>, IFailure> GarmentsFor(string user)
         {
             var result = new List<Garment>();
 
@@ -50,6 +50,8 @@ namespace Vestis.Core
                 return new UserHasNoWardrobeFailure(user);
 
             var config = XmlConfig.From(path);
+            if (config.Read("Clothes") is null)
+                return result;
             foreach (var garment in config.Read("Clothes").Split(' '))
             {
                 result.Add(new Garment
@@ -65,6 +67,45 @@ namespace Vestis.Core
             }
 
             return result;
+        }
+
+        internal static string ColorFor(string user)
+        {
+            var path = Path.Combine(DressingRoom.AppDirectory, "Vestis");
+            path = Path.Combine(path, "Profiles");
+            path = Path.Combine(path, $"{user}.Wardrobe.xml");
+            var config = XmlConfig.From(path);
+
+            return config.Read("ProfileColor");
+        }
+
+        internal static string IconFor(string user)
+        {
+            var path = Path.Combine(DressingRoom.AppDirectory, "Vestis");
+            path = Path.Combine(path, "Profiles");
+            path = Path.Combine(path, $"{user}.Wardrobe.xml");
+            var config = XmlConfig.From(path);
+
+            return config.Read("ProfileIcon");
+        }
+
+        internal static void AddUser(string name, string color, string icon)
+        {
+            // All validation criteria are presumed to be successful.
+            var path = Path.Combine(DressingRoom.AppDirectory, "Vestis");
+            var config = XmlConfig.From(Path.Combine(path, "GlobalSettings.xml"));
+
+            config.Write($"UserProfiles:{name}", "Local");
+
+            if (!Directory.Exists(Path.Combine(path, "Profiles")))
+                Directory.CreateDirectory(Path.Combine(path, "Profiles"));
+
+            path = Path.Combine(path, "Profiles");
+            config = XmlConfig.From(Path.Combine(path, $"{name}.Wardrobe.xml"));
+
+            config.Write("UserProfile", name);
+            config.Write("ProfileColor", color);
+            config.Write("ProfileIcon", icon);
         }
     }
 }

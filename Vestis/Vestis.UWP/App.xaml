@@ -32,6 +32,12 @@
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="Foreground" Value="#FFF0F5FA"/>
         </Style>
+        <Style TargetType="TextBlock" x:Name="GlobalTextBlock">
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="FontFamily" Value="Assets/Fonts/selawksl.ttf#Selawik"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Foreground" Value="#FFF0F5FA"/>
+        </Style>
         <Style TargetType="TextBox">
             <Setter Property="Margin" Value="4"/>
             <Setter Property="FontFamily" Value="Assets/Fonts/selawksl.ttf#Selawik"/>

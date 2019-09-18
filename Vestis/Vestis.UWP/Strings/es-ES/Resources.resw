@@ -165,6 +165,85 @@
   <data name="MainPageTblUserSelectionHeader.Text" xml:space="preserve">
     <value>Selecciona tu usuario para empezar:</value>
   </data>
+  <data name="ManageUsersPageBtnExport.Text" xml:space="preserve">
+    <value>Exportar</value>
+  </data>
+  <data name="ManageUsersPageBtnGoBack.Text" xml:space="preserve">
+    <value>Volver</value>
+  </data>
+  <data name="ManageUsersPageBtnImport.Text" xml:space="preserve">
+    <value>Importar</value>
+  </data>
+  <data name="ManageUsersPageBtnRestore.Text" xml:space="preserve">
+    <value>Restaurar</value>
+  </data>
+  <data name="MissingProfileDataDglTblHeader.Text" xml:space="preserve">
+    <value>Faltan datos del perfil</value>
+  </data>
+  <data name="MissingProfileDataDlgBtnOk.Content" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="MissingProfileDataDlgTblBody.Text" xml:space="preserve">
+    <value>Debes elegir tanto un color de perfil como un icono de perfil.
+Puedes hacerlo pulsando sobre la opción que prefieras en cada caso.</value>
+  </data>
+  <data name="RestoreDlgBtnNo.Content" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="RestoreDlgBtnYes.Content" xml:space="preserve">
+    <value>Continuar</value>
+  </data>
+  <data name="RestoreDlgTblBody.Text" xml:space="preserve">
+    <value>Esta acción eliminará todos los datos y dejará la aplicación lista para empezar desde cero. 
+Si no has hecho una copia de seguridad, los datos se perderán de forma permanente.
+
+Además, la aplicación se reiniciará para aplicar los cambios.</value>
+  </data>
+  <data name="RestoreDlgTblHeader.Text" xml:space="preserve">
+    <value>¿Estás seguro?</value>
+  </data>
+  <data name="UserNameExistingDglTblHeader.Text" xml:space="preserve">
+    <value>Nombre de usuario ya existente</value>
+  </data>
+  <data name="UserNameExistingDlgBtnOk.Content" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="UserNameExistingDlgTblBody.Text" xml:space="preserve">
+    <value>Debes elegir un nombre de usuario que no esté repetido.
+Si quieres modificar un usuario existente, puedes hacerlo desde la página
+de gestión de usuarios.</value>
+  </data>
+  <data name="UserNameFormatDglTblHeader.Text" xml:space="preserve">
+    <value>Nombre de usuario incorrecto</value>
+  </data>
+  <data name="UserNameFormatDlgBtnOk.Content" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="UserNameFormatDlgTblBody.Text" xml:space="preserve">
+    <value>Los nombres de usuario deben tener entre 1 y 24 caracteres.
+Además, solo pueden contener letras y guiones.</value>
+  </data>
+  <data name="UserPageBtnCombine.Text" xml:space="preserve">
+    <value>Combinar</value>
+  </data>
+  <data name="UserPageBtnGoBack.Text" xml:space="preserve">
+    <value>Volver</value>
+  </data>
+  <data name="UserPageBtnManageClothes.Text" xml:space="preserve">
+    <value>Gestionar</value>
+  </data>
+  <data name="UserPageStatTotalClothesPrefix" xml:space="preserve">
+    <value>En este momento tienes</value>
+  </data>
+  <data name="UserPageStatTotalClothesSuffix" xml:space="preserve">
+    <value>prendas registradas.</value>
+  </data>
+  <data name="UserPageTblHeaderPrefix.Text" xml:space="preserve">
+    <value>¡Hola de nuevo,</value>
+  </data>
+  <data name="UserPageTblHeaderSuffix.Text" xml:space="preserve">
+    <value>!</value>
+  </data>
   <data name="WelcomePageBtnImport.Text" xml:space="preserve">
     <value>Importar</value>
   </data>

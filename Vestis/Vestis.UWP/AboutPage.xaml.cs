@@ -40,6 +40,7 @@ namespace Vestis.UWP
                 new KeyValuePair<string, string>(".NET Standard", "Copyright (c) .NET Foundation and Contributors. Licensed under MIT license."),
                 new KeyValuePair<string, string>("OneOf library", "Copyright (c) 2016 Harry McIntyre. Licensed under MIT license."),
                 new KeyValuePair<string, string>("FluentAssertions library", "Copyright (c) Dennis Doomen, Jonas Nyrup. Licensed under Apache 2.0 license."),
+                new KeyValuePair<string, string>("DotNetZip library", "Copyright (c) Dino Chiesa and Microsoft Corporation. Licensed under Microsoft Public License."),
                 new KeyValuePair<string, string>("Cloth hanger icon", "Nikita Golubev from www.flaticon.com"),
                 new KeyValuePair<string, string>("Artificial Intelligence icon", "photo3idea_studio from www.flaticon.com"),
                 new KeyValuePair<string, string>("Left arrow icon", "Lucy G from www.flaticon.com"),

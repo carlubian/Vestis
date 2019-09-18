@@ -13,21 +13,42 @@ namespace Vestis.Core
     /// </summary>
     public class Wardrobe
     {
-        private IEnumerable<Garment> Garments { get; }
+        public IEnumerable<Garment> Garments { get; }
+
+        public string Username { get; }
+
+        public string ProfileColor { get; }
+
+        public string ProfileIcon { get; }
 
         internal static OneOf<Wardrobe, IFailure> CreateForUser(string user)
         {
+            IEnumerable<Garment> grm = null;
+            string clr = null;
+            string icn = null;
+
             // Parse clothes for user
-            var garments = Users.GarmentsOf(user);
+            var garments = Users.GarmentsFor(user);
             if (garments.IsT0)
-                return new Wardrobe(garments.AsT0);
+                grm = garments.AsT0;
             else
                 return OneOf<Wardrobe, IFailure>.FromT1(garments.AsT1);
+
+            // Parse profile color
+            clr = Users.ColorFor(user);
+
+            // Parse profile icon
+            icn = Users.IconFor(user);
+
+            return new Wardrobe(grm, user, clr, icn);
         }
 
-        private Wardrobe(IEnumerable<Garment> garments)
+        private Wardrobe(IEnumerable<Garment> garments, string user, string color, string icon)
         {
             Garments = garments;
+            Username = user;
+            ProfileColor = color;
+            ProfileIcon = icon;
         }
     }
 }

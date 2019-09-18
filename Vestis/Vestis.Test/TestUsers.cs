@@ -39,7 +39,7 @@ namespace Vestis.Test
         {
             OneOf<IEnumerable<Garment>, IFailure> result = new UninitializedVariable();
 
-            Action act = () => result = Users.GarmentsOf("TestUserOne");
+            Action act = () => result = Users.GarmentsFor("TestUserOne");
             act.Should().NotThrow();
 
             var garments = result.AsT0;
@@ -48,7 +48,7 @@ namespace Vestis.Test
             garments.Select(g => g.ID).Should().ContainInOrder("Garment01", "Garment02");
             garments.Select(g => g.Name).Should().ContainInOrder("Blue and white polo", "Plain green t-shirt");
 
-            act = () => result = Users.GarmentsOf("TestUserTwo");
+            act = () => result = Users.GarmentsFor("TestUserTwo");
             act.Should().NotThrow();
             var failure = result.AsT1;
             failure.Should().NotBeNull();

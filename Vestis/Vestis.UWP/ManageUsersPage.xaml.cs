@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Vestis.Core;
+using Vestis.UWP.Dialogs;
 using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -24,17 +25,16 @@ namespace Vestis.UWP
     /// <summary>
     /// Una página vacía que se puede usar de forma independiente o a la que se puede navegar dentro de un objeto Frame.
     /// </summary>
-    public sealed partial class WelcomePage : Page
+    public sealed partial class ManageUsersPage : Page
     {
-        public WelcomePage()
+        public ManageUsersPage()
         {
             this.InitializeComponent();
         }
 
-        private void BtnNewUser_Click(object sender, RoutedEventArgs e)
+        private void BtnGoBack_Click(object sender, RoutedEventArgs e)
         {
-            DressingRoom.SeeWelcomePage();
-            Frame.Navigate(typeof(AddUserPage));
+            Frame.GoBack();
         }
 
         private async void BtnImport_Click(object sender, RoutedEventArgs e)
@@ -59,6 +59,36 @@ namespace Vestis.UWP
             }
 
             await CoreApplication.RequestRestartAsync("");
+        }
+
+        private async void BtnExport_Click(object sender, RoutedEventArgs e)
+        {
+            var savePicker = new FileSavePicker
+            {
+                SuggestedStartLocation = PickerLocationId.DocumentsLibrary,
+                SuggestedFileName = DateTime.Now.ToString("yyyy-MM-dd-HH-mm"),
+                //CommitButtonText = "Exportar"
+            };
+            savePicker.FileTypeChoices.Add(".VESTIS", new List<string>() { ".vestis" });
+
+            var file = await savePicker.PickSaveFileAsync();
+
+            var export = DressingRoom.MakeExportPackage();
+
+            await FileIO.WriteBufferAsync(file, await FileIO.ReadBufferAsync(await StorageFile.GetFileFromPathAsync(export)));
+            File.Delete(export);
+        }
+
+        private async void BtnRestore_Click(object sender, RoutedEventArgs e)
+        {
+            var confirm = new ConfirmRestore();
+            await confirm.ShowAsync();
+
+            if (confirm.Result is true)
+            {
+                DressingRoom.RestoreSettings();
+                await CoreApplication.RequestRestartAsync("");
+            }
         }
     }
 }

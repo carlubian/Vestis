@@ -5,8 +5,12 @@
     xmlns:local="using:Vestis.UWP"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:c="using:Vestis.UWP.Converters"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <c:StringToBrushConverter x:Key="StringToBrush"/>
+    </Page.Resources>
 
     <Grid Background="#283038">
         <Grid.ColumnDefinitions>
@@ -31,9 +35,11 @@
                           ScrollViewer.VerticalScrollMode="Disabled">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <Button MinWidth="256" Command="{Binding UserClickCommand}" CommandParameter="{Binding Username}">
+                            <Button MinWidth="256" Command="{Binding UserClickCommand}" 
+                                    CommandParameter="{Binding Username}"
+                                    Background="{Binding ProfileColor, Converter={StaticResource StringToBrush}}">
                                 <StackPanel Orientation="Vertical">
-                                    <Image Source="Assets/Icons/user.png"
+                                    <Image Source="{Binding ProfileIcon}"
                                            Width="128"/>
                                     <TextBlock Text="{Binding Username}"
                                                HorizontalAlignment="Center"
@@ -42,6 +48,12 @@
                             </Button>
                         </DataTemplate>
                     </ListView.ItemTemplate>
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <ItemsWrapGrid Orientation="Horizontal">
+                            </ItemsWrapGrid>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
                 </ListView>
             </ScrollViewer>
         </RelativePanel>

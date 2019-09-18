@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 
 namespace Vestis.UWP.Commands
 {
@@ -16,8 +18,7 @@ namespace Vestis.UWP.Commands
         public bool CanExecute(object parameter) => true;
         public void Execute(object parameter)
         {
-            //TODO temporary implementation
-            Console.WriteLine($"User {parameter} clicked");
+            (Window.Current.Content as Frame).Navigate(typeof(UserPage), parameter);
         }
 
         public static UserClickCommand Instance {

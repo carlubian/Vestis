@@ -3,6 +3,8 @@
 by hand unless you know what you're doing.-->
 <Configuration Format="CAv2">
   <UserProfile>TestUserOne</UserProfile>
+  <ProfileColor>0:60:146</ProfileColor>
+  <ProfileIcon>Assets/Icons/man.png</ProfileIcon>
   <Clothes>Garment01 Garment02</Clothes>
 
   <Garment01>

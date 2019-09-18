@@ -35,6 +35,8 @@ namespace Vestis.UWP
             UserPanel.ItemsSource = users.Select(u => new
             {
                 Username = u,
+                ProfileColor = DressingRoom.ColorFor(u),
+                ProfileIcon = DressingRoom.IconFor(u),
                 UserClickCommand = UserClickCommand.Instance
             });
         }
@@ -46,7 +48,7 @@ namespace Vestis.UWP
 
         private void BtnManageUsers_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(ManageUsersPage));
         }
 
         private void BtnAbout_Click(object sender, RoutedEventArgs e)
