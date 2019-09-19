@@ -33,6 +33,11 @@ namespace Vestis.Core
 
         public static void CreateNew(string user, string color, string icon) => Users.AddUser(user, color, icon);
 
+        public static void DisposeOf(string user) => Users.DeleteUser(user);
+
+        public static void Update(string oldName, string newName, string color, string icon) =>
+            Users.EditUser(oldName, newName, color, icon);
+
         public static bool WelcomePageSeen()
         {
             var path = Path.Combine(AppDirectory, "Vestis");

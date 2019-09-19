@@ -31,7 +31,8 @@ namespace Vestis.UWP
                 new KeyValuePair<string, string>("Vestis UWP App", "1.0.0"),
                 new KeyValuePair<string, string>("Vestis Core Backend", "1.0.0"),
                 new KeyValuePair<string, string>("ConfigAdapter", "2.2.2"),
-                new KeyValuePair<string, string>("ConfigAdapter.Xml", "2.3.3")
+                new KeyValuePair<string, string>("ConfigAdapter.Xml", "2.3.3"),
+                new KeyValuePair<string, string>("DotNet.Misc.Extensions", "1.2.0")
             };
             VersionList.ItemsSource = versionElements;
 
@@ -49,12 +50,21 @@ namespace Vestis.UWP
                 new KeyValuePair<string, string>("Settings icon", "Smashicons from www.flaticon.com"),
                 new KeyValuePair<string, string>("User icon", "Smashicons from www.flaticon.com"),
                 new KeyValuePair<string, string>("Users icon", "Smashicons from www.flaticon.com"),
+                new KeyValuePair<string, string>("Merge icon", "Smashicons from www.flaticon.com"),
                 new KeyValuePair<string, string>("Plus sign icon", "Lyolya from www.flaticon.com"),
                 new KeyValuePair<string, string>("Import icon", "Anatoly from www.flaticon.com"),
                 new KeyValuePair<string, string>("Export icon", "Anatoly from www.flaticon.com"),
                 new KeyValuePair<string, string>("Man icon", "Iconnice from www.flaticon.com"),
                 new KeyValuePair<string, string>("Woman icon", "Iconnice from www.flaticon.com"),
-                new KeyValuePair<string, string>("Baby girl icon", "Iconnice from www.flaticon.com")
+                new KeyValuePair<string, string>("Baby girl icon", "Iconnice from www.flaticon.com"),
+                new KeyValuePair<string, string>("Remove icon", "itim2101 from www.flaticon.com"),
+                new KeyValuePair<string, string>("Long blouse icon", "itim2101 from www.flaticon.com"),
+                new KeyValuePair<string, string>("Wardrobe icon", "xnimrodx from www.flaticon.com"),
+                new KeyValuePair<string, string>("Short t-shirt icon", "Good-Ware from www.flaticon.com"),
+                new KeyValuePair<string, string>("Short blouse icon", "Freepik from www.flaticon.com"),
+                new KeyValuePair<string, string>("Short polo icon", "Freepik from www.flaticon.com"),
+                new KeyValuePair<string, string>("Sport sweater icon", "Freepik from www.flaticon.com"),
+                new KeyValuePair<string, string>("Cozy sweater icon", "Freepik from www.flaticon.com")
             };
             ThirdPartyList.ItemsSource = thirdPartyElements;
         }

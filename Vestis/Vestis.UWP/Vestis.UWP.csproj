@@ -125,8 +125,13 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Commands\UserDeleteCommand.cs" />
+    <Compile Include="Commands\UserEditCommand.cs" />
     <Compile Include="Commands\UserClickCommand.cs" />
     <Compile Include="Converters\StringToBrushConverter.cs" />
+    <Compile Include="Dialogs\ConfirmDeleteUser.xaml.cs">
+      <DependentUpon>ConfirmDeleteUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\ConfirmRestore.xaml.cs">
       <DependentUpon>ConfirmRestore.xaml</DependentUpon>
     </Compile>
@@ -139,6 +144,9 @@
     <Compile Include="Dialogs\UserNameFormatError.xaml.cs">
       <DependentUpon>UserNameFormatError.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EditUserPage.xaml.cs">
+      <DependentUpon>EditUserPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -148,6 +156,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserPage.xaml.cs">
       <DependentUpon>UserPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WardrobePage.xaml.cs">
+      <DependentUpon>WardrobePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="WelcomePage.xaml.cs">
       <DependentUpon>WelcomePage.xaml</DependentUpon>
@@ -160,16 +171,26 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Icons\baby-girl.png" />
+    <Content Include="Assets\Icons\ClothingTypeCozySweater.png" />
+    <Content Include="Assets\Icons\ClothingTypeLongBlouse.png" />
+    <Content Include="Assets\Icons\ClothingTypeShortBlouse.png" />
+    <Content Include="Assets\Icons\ClothingTypeShortPolo.png" />
+    <Content Include="Assets\Icons\ClothingTypeShortTShirt.png" />
+    <Content Include="Assets\Icons\ClothingTypeSportSweater.png" />
     <Content Include="Assets\Icons\export.png" />
     <Content Include="Assets\Icons\import.png" />
+    <Content Include="Assets\Icons\ClothingTypeUnknown.png" />
     <Content Include="Assets\Icons\info.png" />
     <Content Include="Assets\Icons\left-arrow.png" />
     <Content Include="Assets\Icons\man.png" />
+    <Content Include="Assets\Icons\merge.png" />
     <Content Include="Assets\Icons\plus-symbol.png" />
+    <Content Include="Assets\Icons\remove.png" />
     <Content Include="Assets\Icons\right-arrow.png" />
     <Content Include="Assets\Icons\settings.png" />
     <Content Include="Assets\Icons\user.png" />
     <Content Include="Assets\Icons\users.png" />
+    <Content Include="Assets\Icons\wardrobe.png" />
     <Content Include="Assets\Icons\woman.png" />
     <Content Include="Assets\Store\BadgeLogo.scale-100.png" />
     <Content Include="Assets\Store\BadgeLogo.scale-125.png" />
@@ -241,6 +262,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Dialogs\ConfirmDeleteUser.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Dialogs\ConfirmRestore.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -257,6 +282,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="EditUserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -266,6 +295,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WardrobePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -73,7 +73,8 @@
                               x:Name="NotificationList">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <Grid Background="#404850">
+                                <Grid BorderBrush="#586068"
+                                      BorderThickness="2">
                                     <StackPanel Orientation="Vertical">
                                         <TextBlock Foreground="{Binding ProfileColor, Converter={StaticResource StringToBrush}}"
                                                    Text="{Binding Title}"
@@ -111,7 +112,7 @@
                 </Button>
                 <Button Name="BtnManageClothes" Width="128" Click="BtnManageClothes_Click">
                     <StackPanel Orientation="Vertical">
-                        <Image Source="Assets/Icons/settings.png"
+                        <Image Source="Assets/Icons/wardrobe.png"
                            Width="64"/>
                         <TextBlock Text="[ManageClothes]" x:Uid="UserPageBtnManageClothes"
                                    HorizontalAlignment="Center"/>
@@ -119,7 +120,7 @@
                 </Button>
                 <Button Name="BtnCombine" Width="128" Click="BtnCombine_Click">
                     <StackPanel Orientation="Vertical">
-                        <Image Source="Assets/Icons/plus-symbol.png"
+                        <Image Source="Assets/Icons/merge.png"
                            Width="64"/>
                         <TextBlock Text="[Combine]" x:Uid="UserPageBtnCombine"
                                    HorizontalAlignment="Center"/>

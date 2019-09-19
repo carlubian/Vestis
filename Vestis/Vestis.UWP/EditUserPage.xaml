@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="Vestis.UWP.AddUserPage"
+    x:Class="Vestis.UWP.EditUserPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Vestis.UWP"
@@ -24,33 +24,33 @@
                        RelativePanel.AlignTopWithPanel="True"
                        RelativePanel.AlignHorizontalCenterWithPanel="True"
                        Name="Header"
-                       x:Uid="AddUserPageTblHeader"
-                       Text="[AddUserHeader]"/>
+                       x:Uid="EditUserPageTblHeader"
+                       Text="[EditUserHeader]"/>
 
             <RelativePanel RelativePanel.AlignVerticalCenterWithPanel="True"
                            RelativePanel.AlignHorizontalCenterWithPanel="True">
                 <StackPanel Orientation="Horizontal"
                             Name="UsernameArea">
                     <TextBlock Text="[UserNameHeader]"
-                               x:Uid="AddUserPageTblNameHeader"
+                               x:Uid="EditUserPageTblNameHeader"
                                Margin="4"/>
                     <TextBox Width="192"
                              x:Name="UserNameTextBox"
                              Margin="4"/>
                 </StackPanel>
                 <TextBlock Foreground="#788088"
-                           x:Uid="AddUserPageTblNameInfo"
+                           x:Uid="EditUserPageTblNameInfo"
                            Name="UsernameInfo"
                            Text="[UserNameInfo]"
                            Margin="8"
                            TextWrapping="WrapWholeWords"
                            RelativePanel.Below="UsernameArea"/>
-                
+
                 <StackPanel Orientation="Horizontal"
                             Name="ColorPanel"
                             RelativePanel.Below="UsernameInfo">
                     <TextBlock Text="[UserColorHeader]"
-                               x:Uid="AddUserPageTblColorHeader"
+                               x:Uid="EditUserPageTblColorHeader"
                                Margin="4"/>
                     <GridView Margin="4"
                               SelectionMode="Single"
@@ -66,7 +66,7 @@
                             <ItemsPanelTemplate>
                                 <ItemsWrapGrid MaximumRowsOrColumns="3"
                                                Orientation="Horizontal">
-                                    
+
                                 </ItemsWrapGrid>
                             </ItemsPanelTemplate>
                         </GridView.ItemsPanel>
@@ -81,7 +81,7 @@
                             Name="IconPanel"
                             RelativePanel.Below="ColorPanel">
                     <TextBlock Text="[UserIconHeader]"
-                               x:Uid="AddUserPageTblIconHeader"
+                               x:Uid="EditUserPageTblIconHeader"
                                Margin="4"/>
                     <GridView Margin="4"
                               SelectionMode="Single"
@@ -122,15 +122,15 @@
                     <StackPanel Orientation="Vertical">
                         <Image Source="Assets/Icons/left-arrow.png"
                            Width="64"/>
-                        <TextBlock Text="[GoBack]" x:Uid="AddUserPageBtnGoBack"
+                        <TextBlock Text="[GoBack]" x:Uid="EditUserPageBtnGoBack"
                                    HorizontalAlignment="Center"/>
                     </StackPanel>
                 </Button>
-                <Button Name="BtnSaveUser" Width="128" Click="BtnSaveUser_Click">
+                <Button Name="BtnSave" Width="128" Click="BtnSave_Click">
                     <StackPanel Orientation="Vertical">
                         <Image Source="Assets/Icons/right-arrow.png"
                            Width="64"/>
-                        <TextBlock Text="[SaveUser]" x:Uid="AddUserPageBtnSaveUser"
+                        <TextBlock Text="[Save]" x:Uid="EditUserPageBtnSave"
                                    HorizontalAlignment="Center"/>
                     </StackPanel>
                 </Button>

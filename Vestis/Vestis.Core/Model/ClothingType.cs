@@ -24,6 +24,8 @@ namespace Vestis.Core.Model
         ShortSkirt,
         LongSkirt,
         YogaPants,
+        ShortDress,
+        LongDress,
         Sandals,
         Trainers,
         Shoes,
@@ -71,6 +73,10 @@ namespace Vestis.Core.Model
                     return ClothingType.LongSkirt;
                 case "yogapants":
                     return ClothingType.YogaPants;
+                case "shortdress":
+                    return ClothingType.ShortDress;
+                case "longdress":
+                    return ClothingType.LongDress;
                 case "sandals":
                     return ClothingType.Sandals;
                 case "trainers":

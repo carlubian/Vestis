@@ -24,30 +24,55 @@ namespace Vestis.UWP
     /// <summary>
     /// Una página vacía que se puede usar de forma independiente o a la que se puede navegar dentro de un objeto Frame.
     /// </summary>
-    public sealed partial class AddUserPage : Page
+    public sealed partial class EditUserPage : Page
     {
-        public AddUserPage()
+        private string OldUsername;
+
+        public EditUserPage()
         {
             this.InitializeComponent();
+        }
 
-            var colors = new string[] { "218:47:47", "233:127:13", "220:163:0",
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+            // Username
+            OldUsername = e.Parameter as string;
+            UserNameTextBox.Text = OldUsername;
+
+            // Profile colors
+            var colors = new List<string> { "218:47:47", "233:127:13", "220:163:0",
                                       "101:163:3", "32:128:32", "13:136:170",
                                        "48:108:194", "145:86:178", "120:128:136" };
+            var userColor = DressingRoom.ColorFor(OldUsername);
+            if (!colors.Contains(userColor))
+                colors.Add(userColor);
             UserColorGrid.ItemsSource = colors.Select(c => new ColorWrapper
             {
                 Color = c
             });
+            var color = (UserColorGrid.ItemsSource as IEnumerable<ColorWrapper>)
+                .First(c => c.Color.Equals(userColor));
+            UserColorGrid.SelectedIndex = colors.IndexOf(color.Color);
 
-            var icons = new string[]
+            // Profile icons
+            var icons = new List<string>
             {
                 "Assets/Icons/man.png",
                 "Assets/Icons/woman.png",
                 "Assets/Icons/baby-girl.png"
             };
+            var userIcon = DressingRoom.IconFor(OldUsername);
+            if (!icons.Contains(userIcon))
+                icons.Add(userIcon);
             UserIconGrid.ItemsSource = icons.Select(i => new IconWrapper
             {
                 Icon = i
             });
+            var icon = (UserIconGrid.ItemsSource as IEnumerable<IconWrapper>)
+                .First(i => i.Icon.Equals(userIcon));
+            UserIconGrid.SelectedIndex = icons.IndexOf(icon.Icon);
         }
 
         private void BtnGoBack_Click(object sender, RoutedEventArgs e)
@@ -55,7 +80,7 @@ namespace Vestis.UWP
             Frame.GoBack();
         }
 
-        private async void BtnSaveUser_Click(object sender, RoutedEventArgs e)
+        private async void BtnSave_Click(object sender, RoutedEventArgs e)
         {
             var username = UserNameTextBox.Text;
 
@@ -72,8 +97,8 @@ namespace Vestis.UWP
                 await new UserNameFormatError().ShowAsync();
                 return;
             }
-            // Validation: User name must not exist already
-            if (DressingRoom.ListAvailable().Contains(username))
+            // Validation: User name must not exist already (except for maintaining it)
+            if (DressingRoom.ListAvailable().Contains(username) && !username.Equals(OldUsername))
             {
                 await new UserNameExistingError().ShowAsync();
                 return;
@@ -91,12 +116,12 @@ namespace Vestis.UWP
                 return;
             }
 
-            // Register new user
+            // Edit user data
             var color = (UserColorGrid.SelectedItem as ColorWrapper).Color;
             var icon = (UserIconGrid.SelectedItem as IconWrapper).Icon;
 
-            DressingRoom.CreateNew(username, color, icon);
-            Analytics.TrackEvent("User profile created", new Dictionary<string, string> {
+            DressingRoom.Update(OldUsername, username, color, icon);
+            Analytics.TrackEvent("User profile updated", new Dictionary<string, string> {
                 { "Color", color },
                 { "Icon", icon }
             });

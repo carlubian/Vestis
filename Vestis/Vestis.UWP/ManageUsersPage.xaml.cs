@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Vestis.Core;
+using Vestis.UWP.Commands;
 using Vestis.UWP.Dialogs;
 using Windows.ApplicationModel.Core;
 using Windows.Foundation;
@@ -30,6 +31,17 @@ namespace Vestis.UWP
         public ManageUsersPage()
         {
             this.InitializeComponent();
+
+            // Bind users to list
+            var users = DressingRoom.ListAvailable();
+            UserPanel.ItemsSource = users.Select(u => new
+            {
+                Username = u,
+                ProfileColor = DressingRoom.ColorFor(u),
+                ProfileIcon = DressingRoom.IconFor(u),
+                UserEditCommand = UserEditCommand.Instance,
+                UserDeleteCommand = UserDeleteCommand.Instance
+            });
         }
 
         private void BtnGoBack_Click(object sender, RoutedEventArgs e)

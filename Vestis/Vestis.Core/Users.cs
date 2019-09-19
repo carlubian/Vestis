@@ -107,5 +107,57 @@ namespace Vestis.Core
             config.Write("ProfileColor", color);
             config.Write("ProfileIcon", icon);
         }
+
+        internal static void DeleteUser(string name)
+        {
+            var path = Path.Combine(DressingRoom.AppDirectory, "Vestis");
+            var config = XmlConfig.From(Path.Combine(path, "GlobalSettings.xml"));
+
+            config.DeleteKey($"UserProfiles:{name}");
+
+            if (Directory.Exists(Path.Combine(path, "Profiles")))
+            {
+                path = Path.Combine(path, "Profiles");
+                if (File.Exists(Path.Combine(path, $"{name}.Wardrobe.xml")))
+                    File.Delete(Path.Combine(path, $"{name}.Wardrobe.xml"));
+            }
+        }
+
+        internal static void EditUser(string oldName, string newName, string color, string icon)
+        {
+            var path = Path.Combine(DressingRoom.AppDirectory, "Vestis");
+
+            if (!oldName.Equals(newName))
+            {
+                // Change profile name
+                var config = XmlConfig.From(Path.Combine(path, "GlobalSettings.xml"));
+                config.DeleteKey($"UserProfiles:{oldName}");
+                config.Write($"UserProfiles:{newName}", "Local");
+
+                if (Directory.Exists(Path.Combine(path, "Profiles")))
+                {
+                    path = Path.Combine(path, "Profiles");
+                    if (File.Exists(Path.Combine(path, $"{oldName}.Wardrobe.xml")))
+                    {
+                        File.Move(Path.Combine(path, $"{oldName}.Wardrobe.xml"), Path.Combine(path, $"{newName}.Wardrobe.xml"));
+                        config = XmlConfig.From(Path.Combine(path, $"{newName}.Wardrobe.xml"));
+                        config.Write("UserProfile", newName);
+                    }
+                }
+            }
+
+            path = Path.Combine(DressingRoom.AppDirectory, "Vestis");
+            // Update profile preferences
+            if (Directory.Exists(Path.Combine(path, "Profiles")))
+            {
+                path = Path.Combine(path, "Profiles");
+                if (File.Exists(Path.Combine(path, $"{newName}.Wardrobe.xml")))
+                {
+                    var config = XmlConfig.From(Path.Combine(path, $"{newName}.Wardrobe.xml"));
+                    config.Write("ProfileColor", color);
+                    config.Write("ProfileIcon", icon);
+                }
+            }
+        }
     }
 }

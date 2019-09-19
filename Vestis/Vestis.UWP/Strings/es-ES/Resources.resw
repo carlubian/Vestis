@@ -153,6 +153,117 @@
   <data name="AppDisplayName" xml:space="preserve">
     <value>Vestis</value>
   </data>
+  <data name="ClothingTypeBlazer" xml:space="preserve">
+    <value>Chaleco</value>
+  </data>
+  <data name="ClothingTypeBoots" xml:space="preserve">
+    <value>Botas</value>
+  </data>
+  <data name="ClothingTypeCoats" xml:space="preserve">
+    <value>Abrigo</value>
+  </data>
+  <data name="ClothingTypeCozySweater" xml:space="preserve">
+    <value>Jersey</value>
+  </data>
+  <data name="ClothingTypeJackets" xml:space="preserve">
+    <value>Chaqueta</value>
+  </data>
+  <data name="ClothingTypeLongBlouse" xml:space="preserve">
+    <value>Blusa larga</value>
+  </data>
+  <data name="ClothingTypeLongDress" xml:space="preserve">
+    <value>Vestido largo</value>
+  </data>
+  <data name="ClothingTypeLongPolo" xml:space="preserve">
+    <value>Polo largo</value>
+  </data>
+  <data name="ClothingTypeLongShirt" xml:space="preserve">
+    <value>Camisa larga</value>
+  </data>
+  <data name="ClothingTypeLongSkirt" xml:space="preserve">
+    <value>Falda larga</value>
+  </data>
+  <data name="ClothingTypeLongTrouser" xml:space="preserve">
+    <value>Pantalón largo</value>
+  </data>
+  <data name="ClothingTypeLongTShirt" xml:space="preserve">
+    <value>Camiseta larga</value>
+  </data>
+  <data name="ClothingTypeSandals" xml:space="preserve">
+    <value>Sandalias</value>
+  </data>
+  <data name="ClothingTypeShoes" xml:space="preserve">
+    <value>Zapatos</value>
+  </data>
+  <data name="ClothingTypeShortBlouse" xml:space="preserve">
+    <value>Blusa corta</value>
+  </data>
+  <data name="ClothingTypeShortDress" xml:space="preserve">
+    <value>Vestido corto</value>
+  </data>
+  <data name="ClothingTypeShortPolo" xml:space="preserve">
+    <value>Polo corto</value>
+  </data>
+  <data name="ClothingTypeShortShirt" xml:space="preserve">
+    <value>Camisa corta</value>
+  </data>
+  <data name="ClothingTypeShortSkirt" xml:space="preserve">
+    <value>Falda corta</value>
+  </data>
+  <data name="ClothingTypeShortTrouser" xml:space="preserve">
+    <value>Pantalón corto</value>
+  </data>
+  <data name="ClothingTypeShortTShirt" xml:space="preserve">
+    <value>Camiseta corta</value>
+  </data>
+  <data name="ClothingTypeSportSweater" xml:space="preserve">
+    <value>Sudadera</value>
+  </data>
+  <data name="ClothingTypeTrainers" xml:space="preserve">
+    <value>Playeros</value>
+  </data>
+  <data name="ClothingTypeUnknown" xml:space="preserve">
+    <value>Desconocido</value>
+  </data>
+  <data name="ClothingTypeYogaPants" xml:space="preserve">
+    <value>Pantalones elásticos</value>
+  </data>
+  <data name="DeleteUserDlgBtnNo.Content" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="DeleteUserDlgBtnYes.Content" xml:space="preserve">
+    <value>Continuar</value>
+  </data>
+  <data name="DeleteUserDlgTblBody.Text" xml:space="preserve">
+    <value>Esta acción eliminará al usuario y todas sus prendas almacenadas.
+Si no has hecho una copia de seguridad, los datos se perderán de forma permanente.
+
+¿Quieres continuar?</value>
+  </data>
+  <data name="DeleteUserDlgTblHeader.Text" xml:space="preserve">
+    <value>Eliminar usuario</value>
+  </data>
+  <data name="EditUserPageBtnGoBack.Text" xml:space="preserve">
+    <value>Volver</value>
+  </data>
+  <data name="EditUserPageBtnSave.Text" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="EditUserPageTblColorHeader.Text" xml:space="preserve">
+    <value>Color de perfil:</value>
+  </data>
+  <data name="EditUserPageTblHeader.Text" xml:space="preserve">
+    <value>Editar un usuario</value>
+  </data>
+  <data name="EditUserPageTblIconHeader.Text" xml:space="preserve">
+    <value>Icono de perfil:</value>
+  </data>
+  <data name="EditUserPageTblNameHeader.Text" xml:space="preserve">
+    <value>Nombre de usuario:</value>
+  </data>
+  <data name="EditUserPageTblNameInfo.Text" xml:space="preserve">
+    <value>Puede contener entre 1 y 24 letras, sin números o espacios.</value>
+  </data>
   <data name="MainPageBtnAbout.Text" xml:space="preserve">
     <value>Acerca de</value>
   </data>
@@ -165,6 +276,12 @@
   <data name="MainPageTblUserSelectionHeader.Text" xml:space="preserve">
     <value>Selecciona tu usuario para empezar:</value>
   </data>
+  <data name="ManageUsersPageBtnDelete.Content" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="ManageUsersPageBtnEdit.Content" xml:space="preserve">
+    <value>Modificar</value>
+  </data>
   <data name="ManageUsersPageBtnExport.Text" xml:space="preserve">
     <value>Exportar</value>
   </data>
@@ -176,6 +293,9 @@
   </data>
   <data name="ManageUsersPageBtnRestore.Text" xml:space="preserve">
     <value>Restaurar</value>
+  </data>
+  <data name="ManageUsersPageTblHeader.Text" xml:space="preserve">
+    <value>Gestión de usuarios</value>
   </data>
   <data name="MissingProfileDataDglTblHeader.Text" xml:space="preserve">
     <value>Faltan datos del perfil</value>
@@ -197,10 +317,12 @@ Puedes hacerlo pulsando sobre la opción que prefieras en cada caso.</value>
     <value>Esta acción eliminará todos los datos y dejará la aplicación lista para empezar desde cero. 
 Si no has hecho una copia de seguridad, los datos se perderán de forma permanente.
 
-Además, la aplicación se reiniciará para aplicar los cambios.</value>
+Además, la aplicación se reiniciará para aplicar los cambios.
+
+¿Quieres continuar?</value>
   </data>
   <data name="RestoreDlgTblHeader.Text" xml:space="preserve">
-    <value>¿Estás seguro?</value>
+    <value>Restaurar aplicación</value>
   </data>
   <data name="UserNameExistingDglTblHeader.Text" xml:space="preserve">
     <value>Nombre de usuario ya existente</value>
@@ -243,6 +365,21 @@ Además, solo pueden contener letras y guiones.</value>
   </data>
   <data name="UserPageTblHeaderSuffix.Text" xml:space="preserve">
     <value>!</value>
+  </data>
+  <data name="WardrobePageBtnAddClothes.Text" xml:space="preserve">
+    <value>Añadir</value>
+  </data>
+  <data name="WardrobePageBtnDelete.Content" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="WardrobePageBtnEdit.Content" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="WardrobePageBtnGoBack.Text" xml:space="preserve">
+    <value>Volver</value>
+  </data>
+  <data name="WardrobePageTblHeader.Text" xml:space="preserve">
+    <value>Gestión del armario</value>
   </data>
   <data name="WelcomePageBtnImport.Text" xml:space="preserve">
     <value>Importar</value>

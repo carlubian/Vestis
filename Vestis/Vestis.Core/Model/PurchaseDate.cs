@@ -26,7 +26,7 @@ namespace Vestis.Core.Model
             }
         }
 
-        internal PurchaseDate(string text)
+        public PurchaseDate(string text)
         {
             var parts = text.Split(' ');
             Year = int.Parse(parts[1]);
