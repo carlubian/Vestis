@@ -324,6 +324,36 @@ Además, la aplicación se reiniciará para aplicar los cambios.
   <data name="RestoreDlgTblHeader.Text" xml:space="preserve">
     <value>Restaurar aplicación</value>
   </data>
+  <data name="TagStripeSquares" xml:space="preserve">
+    <value>Cuadros</value>
+  </data>
+  <data name="TagStyleAbstract" xml:space="preserve">
+    <value>Abstracto</value>
+  </data>
+  <data name="TagStyleButtons" xml:space="preserve">
+    <value>Botones</value>
+  </data>
+  <data name="TagStyleDots" xml:space="preserve">
+    <value>Teselado</value>
+  </data>
+  <data name="TagStyleLaceTie" xml:space="preserve">
+    <value>Anudado</value>
+  </data>
+  <data name="TagStyleLogo" xml:space="preserve">
+    <value>Emblema</value>
+  </data>
+  <data name="TagStylePlain" xml:space="preserve">
+    <value>Liso</value>
+  </data>
+  <data name="TagStyleStripes" xml:space="preserve">
+    <value>Rayas</value>
+  </data>
+  <data name="TagStyleVelcro" xml:space="preserve">
+    <value>Velcro</value>
+  </data>
+  <data name="TagStyleZipTie" xml:space="preserve">
+    <value>Cremallera</value>
+  </data>
   <data name="UserNameExistingDglTblHeader.Text" xml:space="preserve">
     <value>Nombre de usuario ya existente</value>
   </data>

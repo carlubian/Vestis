@@ -43,7 +43,7 @@ namespace Vestis.UWP
 
             // Profile colors
             var colors = new List<string> { "218:47:47", "233:127:13", "220:163:0",
-                                      "101:163:3", "32:128:32", "13:136:170",
+                                      "101:163:3", "32:128:32", "13:152:186",
                                        "48:108:194", "145:86:178", "120:128:136" };
             var userColor = DressingRoom.ColorFor(OldUsername);
             if (!colors.Contains(userColor))

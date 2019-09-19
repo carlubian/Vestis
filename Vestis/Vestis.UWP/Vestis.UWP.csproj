@@ -129,6 +129,7 @@
     <Compile Include="Commands\UserEditCommand.cs" />
     <Compile Include="Commands\UserClickCommand.cs" />
     <Compile Include="Converters\StringToBrushConverter.cs" />
+    <Compile Include="Converters\TagToLocalizedStringConverter.cs" />
     <Compile Include="Dialogs\ConfirmDeleteUser.xaml.cs">
       <DependentUpon>ConfirmDeleteUser.xaml</DependentUpon>
     </Compile>

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Vestis.Core;
 using Vestis.Core.Model;
+using Vestis.UWP.Converters;
 using Windows.ApplicationModel.Resources;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -75,7 +76,7 @@ namespace Vestis.UWP
                         },
                         StyleTags = new List<string>
                         {
-                            "plain", "deep-pockets", "button-buckle"
+                            "plain", "deep-pockets", "buttons"
                         }
                     },
                     Wardrobe = wardrobe
@@ -130,7 +131,8 @@ namespace Vestis.UWP
             {
                 get
                 {
-                    return Garment.ColorTags.Stringify(n => n, " ");
+                    var Converter = new TagToLocalizedStringConverter();
+                    return Garment.ColorTags.Select(Converter.Convert).Stringify(n => n, "; ");
                 }
             }
 
@@ -138,7 +140,8 @@ namespace Vestis.UWP
             {
                 get
                 {
-                    return Garment.StyleTags.Stringify(n => n, " ");
+                    var Converter = new TagToLocalizedStringConverter();
+                    return Garment.StyleTags.Select(Converter.Convert).Stringify(n => n, "; ");
                 }
             }
 
