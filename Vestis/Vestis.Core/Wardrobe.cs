@@ -1,6 +1,7 @@
 ﻿using OneOf;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Vestis.Core.Failures;
 using Vestis.Core.Model;
@@ -55,6 +56,12 @@ namespace Vestis.Core
         {
             Users.AddGarment(Username, garment);
             (Garments as IList<Garment>).Add(garment);
+        }
+
+        public void RemoveGarment(string garment)
+        {
+            Users.RemoveGarment(Username, garment);
+            (Garments as IList<Garment>).Remove(Garments.First(g => g.ID.Equals(garment)));
         }
     }
 }

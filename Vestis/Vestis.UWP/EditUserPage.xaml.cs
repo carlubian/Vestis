@@ -77,7 +77,7 @@ namespace Vestis.UWP
 
         private void BtnGoBack_Click(object sender, RoutedEventArgs e)
         {
-            Frame.GoBack();
+            Frame.Navigate(typeof(UserPage), OldUsername);
         }
 
         private async void BtnSave_Click(object sender, RoutedEventArgs e)

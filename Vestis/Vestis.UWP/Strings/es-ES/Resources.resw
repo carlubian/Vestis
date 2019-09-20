@@ -267,6 +267,20 @@
   <data name="ClothingTypeYogaPants" xml:space="preserve">
     <value>Pantalones elásticos</value>
   </data>
+  <data name="DeleteGarmentDlgBtnNo.Content" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="DeleteGarmentDlgBtnYes.Content" xml:space="preserve">
+    <value>Continuar</value>
+  </data>
+  <data name="DeleteGarmentDlgTblBody.Text" xml:space="preserve">
+    <value>Esta acción eliminará la prenda de forma permanente.
+
+¿Deseas continuar?</value>
+  </data>
+  <data name="DeleteGarmentDlgTblHeader.Text" xml:space="preserve">
+    <value>Eliminar prenda</value>
+  </data>
   <data name="DeleteUserDlgBtnNo.Content" xml:space="preserve">
     <value>Cancelar</value>
   </data>

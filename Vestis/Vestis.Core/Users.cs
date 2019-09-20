@@ -191,5 +191,19 @@ namespace Vestis.Core
             config.Write($"{id}:StyleTags", garment.StyleTags.Stringify(n => n, " "));
             config.Write($"{id}:UserTags", " "); //TODO
         }
+
+        internal static void RemoveGarment(string user, string garment)
+        {
+            var path = Path.Combine(DressingRoom.AppDirectory, "Vestis");
+            path = Path.Combine(path, "Profiles");
+            var config = XmlConfig.From(Path.Combine(path, $"{user}.Wardrobe.xml"));
+
+            var clothes = config.Read("Clothes");
+            var each = clothes.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries)
+                .Except(garment.Enumerate());
+            config.Write("Clothes", each.Stringify(n => n, " "));
+
+            config.DeleteSection(garment);
+        }
     }
 }

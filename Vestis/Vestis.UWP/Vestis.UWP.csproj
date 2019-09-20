@@ -128,11 +128,15 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Commands\GarmentDeleteCommand.cs" />
     <Compile Include="Commands\UserDeleteCommand.cs" />
     <Compile Include="Commands\UserEditCommand.cs" />
     <Compile Include="Commands\UserClickCommand.cs" />
     <Compile Include="Converters\StringToBrushConverter.cs" />
     <Compile Include="Converters\TagToLocalizedStringConverter.cs" />
+    <Compile Include="Dialogs\ConfirmDeleteGarment.xaml.cs">
+      <DependentUpon>ConfirmDeleteGarment.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\ConfirmDeleteUser.xaml.cs">
       <DependentUpon>ConfirmDeleteUser.xaml</DependentUpon>
     </Compile>
@@ -284,6 +288,10 @@
     <Page Include="AddUserPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\ConfirmDeleteGarment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Dialogs\ConfirmDeleteUser.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -82,7 +82,7 @@ namespace Vestis.UWP
 
         private void BtnGoBack_Click(object sender, RoutedEventArgs e)
         {
-            Frame.GoBack();
+            Frame.Navigate(typeof(MainPage));
         }
 
         private void BtnManageClothes_Click(object sender, RoutedEventArgs e)

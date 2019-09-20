@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Windows.Input;
 using Vestis.Core;
 using Vestis.Core.Model;
+using Vestis.UWP.Commands;
 using Vestis.UWP.Converters;
 using Windows.ApplicationModel.Resources;
 using Windows.Foundation;
@@ -43,16 +45,14 @@ namespace Vestis.UWP
             ClothesList.ItemsSource = wardrobe.Garments.Select(g => new GarmentWrapper
             {
                 Garment = g,
-                Wardrobe = wardrobe
+                Wardrobe = wardrobe,
+                GarmentDeleteCommand = GarmentDeleteCommand.Instance
             });
         }
 
         private void BtnGoBack_Click(object sender, RoutedEventArgs e)
         {
-            if (Frame.CanGoBack)
-                Frame.GoBack();
-            else
-                Frame.Navigate(typeof(UserPage), wardrobe.Username);
+            Frame.Navigate(typeof(UserPage), wardrobe.Username);
         }
 
         private void BtnAddClothes_Click(object sender, RoutedEventArgs e)
@@ -66,6 +66,7 @@ namespace Vestis.UWP
 
             public Garment Garment { get; set; }
             public Wardrobe Wardrobe { get; set; }
+            public ICommand GarmentDeleteCommand { get; set;  }
 
             public string ClothIcon
             {
@@ -115,7 +116,7 @@ namespace Vestis.UWP
             {
                 get
                 {
-                    return $"{Garment.Name}:{Wardrobe.Username}";
+                    return $"{Wardrobe.Username}:{Garment.ID}";
                 }
             }
         }
