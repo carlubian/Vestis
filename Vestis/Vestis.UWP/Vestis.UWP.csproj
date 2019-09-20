@@ -119,6 +119,9 @@
     <Compile Include="AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddClothesPage.xaml.cs">
+      <DependentUpon>AddClothesPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddUserPage.xaml.cs">
       <DependentUpon>AddUserPage.xaml</DependentUpon>
     </Compile>
@@ -136,11 +139,26 @@
     <Compile Include="Dialogs\ConfirmRestore.xaml.cs">
       <DependentUpon>ConfirmRestore.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\GarmentYearFormatError.xaml.cs">
+      <DependentUpon>GarmentYearFormatError.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\MissingGarmentTagsError.xaml.cs">
+      <DependentUpon>MissingGarmentTagsError.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\MissingGarmentDataError.xaml.cs">
+      <DependentUpon>MissingGarmentDataError.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\MissingProfileDataError.xaml.cs">
       <DependentUpon>MissingProfileDataError.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\GarmentNameExistingError.xaml.cs">
+      <DependentUpon>GarmentNameExistingError.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\UserNameExistingError.xaml.cs">
       <DependentUpon>UserNameExistingError.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\GarmentNameFormatError.xaml.cs">
+      <DependentUpon>GarmentNameFormatError.xaml</DependentUpon>
     </Compile>
     <Compile Include="Dialogs\UserNameFormatError.xaml.cs">
       <DependentUpon>UserNameFormatError.xaml</DependentUpon>
@@ -259,6 +277,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AddClothesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AddUserPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -271,11 +293,31 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Dialogs\GarmentYearFormatError.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\MissingGarmentTagsError.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\MissingGarmentDataError.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Dialogs\MissingProfileDataError.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Dialogs\GarmentNameExistingError.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Dialogs\UserNameExistingError.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\GarmentNameFormatError.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

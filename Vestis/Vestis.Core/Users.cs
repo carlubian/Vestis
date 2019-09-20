@@ -1,9 +1,11 @@
 ﻿using ConfigAdapter.Xml;
+using DotNet.Misc.Extensions.Linq;
 using OneOf;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Linq;
 using System.Text;
 using Vestis.Core.Failures;
 using Vestis.Core.Model;
@@ -52,7 +54,7 @@ namespace Vestis.Core
             var config = XmlConfig.From(path);
             if (config.Read("Clothes") is null)
                 return result;
-            foreach (var garment in config.Read("Clothes").Split(' '))
+            foreach (var garment in config.Read("Clothes").Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries))
             {
                 result.Add(new Garment
                 {
@@ -158,6 +160,36 @@ namespace Vestis.Core
                     config.Write("ProfileIcon", icon);
                 }
             }
+        }
+
+        internal static void AddGarment(string user, Garment garment)
+        {
+            var path = Path.Combine(DressingRoom.AppDirectory, "Vestis");
+            path = Path.Combine(path, "Profiles");
+            var config = XmlConfig.From(Path.Combine(path, $"{user}.Wardrobe.xml"));
+
+            // Create garment ID
+            var clothes = config.Read("Clothes");
+            var id = "";
+
+            if (clothes is "" || clothes is null)
+                id = "Garment_01";
+            else
+            {
+                var each = clothes.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+                var lastID = each.Reverse().First().Split('_')[1];
+                id = $"Garment_{int.Parse(lastID) + 1}";
+            }
+
+            config.Write("Clothes", $"{clothes} {id}");
+
+            // Add garment section
+            config.Write($"{id}:Name", garment.Name);
+            config.Write($"{id}:Type", garment.Type.ToString());
+            config.Write($"{id}:PurchaseDate", garment.PurchaseDate.ToString());
+            config.Write($"{id}:ColorTags", garment.ColorTags.Stringify(n => n, " "));
+            config.Write($"{id}:StyleTags", garment.StyleTags.Stringify(n => n, " "));
+            config.Write($"{id}:UserTags", " "); //TODO
         }
     }
 }

@@ -62,15 +62,29 @@
                                                RelativePanel.AlignTopWithPanel="True"
                                                Name="ClothName"
                                                Margin="4"/>
-                                    <TextBlock Text="{Binding ColorTags}"
-                                               Foreground="#788088"
-                                               RelativePanel.Below="ClothName"
-                                               FontSize="18"
-                                               Name="ClothColorTags"
-                                               Margin="4"/>
+                                    <GridView x:Name="ClothColorGrid"
+                                              RelativePanel.Below="ClothName"
+                                              ItemsSource="{Binding ColorTags}"
+                                              SelectionMode="None">
+                                        <GridView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Rectangle Fill="{Binding Color, Converter={StaticResource StringToBrush}}"
+                                                           Width="24" Height="24"
+                                                           Margin="2"/>
+                                            </DataTemplate>
+                                        </GridView.ItemTemplate>
+                                        <GridView.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <ItemsWrapGrid MaximumRowsOrColumns="6"
+                                                               Orientation="Horizontal">
+
+                                                </ItemsWrapGrid>
+                                            </ItemsPanelTemplate>
+                                        </GridView.ItemsPanel>
+                                    </GridView>
                                     <TextBlock Text="{Binding StyleTags}"
                                                Foreground="#788088"
-                                               RelativePanel.Below="ClothColorTags"
+                                               RelativePanel.Below="ClothColorGrid"
                                                FontSize="18"
                                                Margin="4"/>
                                 </RelativePanel>

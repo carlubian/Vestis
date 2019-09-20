@@ -126,6 +126,45 @@
   <data name="AboutPageTblVersionInformation.Text" xml:space="preserve">
     <value>Versiones instaladas:</value>
   </data>
+  <data name="AddClothesPageBtnContinue.Text" xml:space="preserve">
+    <value>Continuar</value>
+  </data>
+  <data name="AddClothesPageBtnGoBack.Text" xml:space="preserve">
+    <value>Volver</value>
+  </data>
+  <data name="AddClothesPageTblDateHeader.Text" xml:space="preserve">
+    <value>Fecha de compra:</value>
+  </data>
+  <data name="AddClothesPageTbldateInfo.Text" xml:space="preserve">
+    <value>La fecha de compra se usa para sugerirte renovar la prenda cuando tenga bastante tiempo.</value>
+  </data>
+  <data name="AddClothesPageTblHeader.Text" xml:space="preserve">
+    <value>Añadir una prenda nueva</value>
+  </data>
+  <data name="AddClothesPageTblNameHeader.Text" xml:space="preserve">
+    <value>Nombre de la prenda:</value>
+  </data>
+  <data name="AddClothesPageTblNameInfo.Text" xml:space="preserve">
+    <value>Este nombre se usará para que puedas identificar la prenda que estás añadiendo.</value>
+  </data>
+  <data name="AddClothesPageTblStep1.Text" xml:space="preserve">
+    <value>Datos básicos</value>
+  </data>
+  <data name="AddClothesPageTblStep2.Text" xml:space="preserve">
+    <value>Clasificación</value>
+  </data>
+  <data name="AddClothesPageTblTypeHeader.Text" xml:space="preserve">
+    <value>Tipo de la prenda:</value>
+  </data>
+  <data name="AddClothesPageTblTypeInfo.Text" xml:space="preserve">
+    <value>El tipo de prenda determina con qué otras prendas es compatible, además de sus posibles estilos.</value>
+  </data>
+  <data name="AddClothesTblColorHeader.Text" xml:space="preserve">
+    <value>Colores de la prenda:</value>
+  </data>
+  <data name="AddClothesTblStyleHeader.Text" xml:space="preserve">
+    <value>Estilos de la prenda:</value>
+  </data>
   <data name="AddUserPageBtnGoBack.Text" xml:space="preserve">
     <value>Cancelar</value>
   </data>
@@ -264,6 +303,36 @@ Si no has hecho una copia de seguridad, los datos se perderán de forma permanen
   <data name="EditUserPageTblNameInfo.Text" xml:space="preserve">
     <value>Puede contener entre 1 y 24 letras, sin números o espacios.</value>
   </data>
+  <data name="GarmentNameExistingDglTblHeader.Text" xml:space="preserve">
+    <value>Nombre de prenda ya existente</value>
+  </data>
+  <data name="GarmentNameExistingDlgBtnOk.Content" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="GarmentNameExistingDlgTblBody.Text" xml:space="preserve">
+    <value>Debes elegir un nombre de prenda que no esté repetido.
+Si quieres modificar una prenda existente, puedes hacerlo desde la página
+de gestión de prendas.</value>
+  </data>
+  <data name="GarmentNameFormatDglTblHeader.Text" xml:space="preserve">
+    <value>Nombre de prenda incorrecto</value>
+  </data>
+  <data name="GarmentNameFormatDlgBtnOk.Content" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="GarmentNameFormatDlgTblBody.Text" xml:space="preserve">
+    <value>Los nombres de prenda deben contener entre 1 y 64 caracteres.
+Además, solo pueden contener letras, números, espacios y guiones.</value>
+  </data>
+  <data name="GarmentYearFormatDglTblHeader.Text" xml:space="preserve">
+    <value>Año de compra incorrecto</value>
+  </data>
+  <data name="GarmentYearFormatDlgBtnOk.Content" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="GarmentYearFormatDlgTblBody.Text" xml:space="preserve">
+    <value>El año de compra debe ser un número entre 1900 y el año actual.</value>
+  </data>
   <data name="MainPageBtnAbout.Text" xml:space="preserve">
     <value>Acerca de</value>
   </data>
@@ -297,6 +366,25 @@ Si no has hecho una copia de seguridad, los datos se perderán de forma permanen
   <data name="ManageUsersPageTblHeader.Text" xml:space="preserve">
     <value>Gestión de usuarios</value>
   </data>
+  <data name="MissingGarmentDataDglTblHeader.Text" xml:space="preserve">
+    <value>Faltan datos de la prenda</value>
+  </data>
+  <data name="MissingGarmentDataDlgBtnOk.Content" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="MissingGarmentDataDlgTblBody.Text" xml:space="preserve">
+    <value>Debes elegir tanto un tipo de prenda como una fecha de compra.
+Puedes hacerlo desde los campos habilitados para ello.</value>
+  </data>
+  <data name="MissingGarmentTagsDglTblHeader.Text" xml:space="preserve">
+    <value>Faltan atributos de la prenda</value>
+  </data>
+  <data name="MissingGarmentTagsDlgBtnOk.Content" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="MissingGarmentTagsDlgTblBody.Text" xml:space="preserve">
+    <value>Debes elegir al menos un color y un estilo para cada prenda.</value>
+  </data>
   <data name="MissingProfileDataDglTblHeader.Text" xml:space="preserve">
     <value>Faltan datos del perfil</value>
   </data>
@@ -324,34 +412,61 @@ Además, la aplicación se reiniciará para aplicar los cambios.
   <data name="RestoreDlgTblHeader.Text" xml:space="preserve">
     <value>Restaurar aplicación</value>
   </data>
-  <data name="TagStripeSquares" xml:space="preserve">
-    <value>Cuadros</value>
+  <data name="SeasonAutumn" xml:space="preserve">
+    <value>Otoño</value>
   </data>
-  <data name="TagStyleAbstract" xml:space="preserve">
+  <data name="SeasonSpring" xml:space="preserve">
+    <value>Primavera</value>
+  </data>
+  <data name="SeasonSummer" xml:space="preserve">
+    <value>Verano</value>
+  </data>
+  <data name="SeasonWinter" xml:space="preserve">
+    <value>Invierno</value>
+  </data>
+  <data name="TagAbstract" xml:space="preserve">
     <value>Abstracto</value>
   </data>
-  <data name="TagStyleButtons" xml:space="preserve">
+  <data name="TagBelt" xml:space="preserve">
+    <value>Cinturón</value>
+  </data>
+  <data name="TagButtons" xml:space="preserve">
     <value>Botones</value>
   </data>
-  <data name="TagStyleDots" xml:space="preserve">
+  <data name="TagDeepPockets" xml:space="preserve">
+    <value>Bolsillos grandes</value>
+  </data>
+  <data name="TagDots" xml:space="preserve">
     <value>Teselado</value>
   </data>
-  <data name="TagStyleLaceTie" xml:space="preserve">
-    <value>Anudado</value>
+  <data name="TagElastic" xml:space="preserve">
+    <value>Elástico</value>
   </data>
-  <data name="TagStyleLogo" xml:space="preserve">
+  <data name="TagFakePockets" xml:space="preserve">
+    <value>Bolsillos falsos</value>
+  </data>
+  <data name="TagLogo" xml:space="preserve">
     <value>Emblema</value>
   </data>
-  <data name="TagStylePlain" xml:space="preserve">
+  <data name="TagPlain" xml:space="preserve">
     <value>Liso</value>
   </data>
-  <data name="TagStyleStripes" xml:space="preserve">
+  <data name="TagShallowPockets" xml:space="preserve">
+    <value>Bolsillos pequeños</value>
+  </data>
+  <data name="TagSquares" xml:space="preserve">
+    <value>Cuadros</value>
+  </data>
+  <data name="TagStripes" xml:space="preserve">
     <value>Rayas</value>
   </data>
-  <data name="TagStyleVelcro" xml:space="preserve">
+  <data name="TagTie" xml:space="preserve">
+    <value>Anudado</value>
+  </data>
+  <data name="TagVelcro" xml:space="preserve">
     <value>Velcro</value>
   </data>
-  <data name="TagStyleZipTie" xml:space="preserve">
+  <data name="TagZip" xml:space="preserve">
     <value>Cremallera</value>
   </data>
   <data name="UserNameExistingDglTblHeader.Text" xml:space="preserve">

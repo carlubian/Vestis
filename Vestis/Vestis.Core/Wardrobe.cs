@@ -50,5 +50,11 @@ namespace Vestis.Core
             ProfileColor = color;
             ProfileIcon = icon;
         }
+
+        public void AddGarment(Garment garment)
+        {
+            Users.AddGarment(Username, garment);
+            (Garments as IList<Garment>).Add(garment);
+        }
     }
 }

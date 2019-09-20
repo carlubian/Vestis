@@ -40,60 +40,24 @@ namespace Vestis.UWP
 
             wardrobe = e.Parameter as Wardrobe;
 
-            // TODO Temporary layout preview
-            var clothes = new List<GarmentWrapper>
+            ClothesList.ItemsSource = wardrobe.Garments.Select(g => new GarmentWrapper
             {
-                new GarmentWrapper
-                {
-                    Garment = new Garment
-                    {
-                        ID = "DebugGarment01",
-                        Name = "Camiseta de Pruebas",
-                        Type = ClothingType.ShortTShirt,
-                        PurchaseDate = new PurchaseDate("Spring 2019"),
-                        ColorTags = new List<string>
-                        {
-                            "blue", "white"
-                        },
-                        StyleTags = new List<string>
-                        {
-                            "stripes", "low-cut"
-                        }
-                    },
-                    Wardrobe = wardrobe
-                },
-                new GarmentWrapper
-                {
-                    Garment = new Garment
-                    {
-                        ID = "DebugGarment02",
-                        Name = "Pantalón de Pruebas",
-                        Type = ClothingType.LongTrouser,
-                        PurchaseDate = new PurchaseDate("Winter 2018"),
-                        ColorTags = new List<string>
-                        {
-                            "grey"
-                        },
-                        StyleTags = new List<string>
-                        {
-                            "plain", "deep-pockets", "buttons"
-                        }
-                    },
-                    Wardrobe = wardrobe
-                }
-            };
-
-            ClothesList.ItemsSource = clothes;
+                Garment = g,
+                Wardrobe = wardrobe
+            });
         }
 
         private void BtnGoBack_Click(object sender, RoutedEventArgs e)
         {
-            Frame.GoBack();
+            if (Frame.CanGoBack)
+                Frame.GoBack();
+            else
+                Frame.Navigate(typeof(UserPage), wardrobe.Username);
         }
 
         private void BtnAddClothes_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(AddClothesPage), wardrobe);
         }
 
         class GarmentWrapper
@@ -127,12 +91,14 @@ namespace Vestis.UWP
                 }
             }
 
-            public string ColorTags
+            public IEnumerable<ColorWrapper> ColorTags
             {
                 get
                 {
-                    var Converter = new TagToLocalizedStringConverter();
-                    return Garment.ColorTags.Select(Converter.Convert).Stringify(n => n, "; ");
+                    return Garment.ColorTags.Select(c => new ColorWrapper
+                    {
+                        Color = c
+                    });
                 }
             }
 
@@ -152,6 +118,11 @@ namespace Vestis.UWP
                     return $"{Garment.Name}:{Wardrobe.Username}";
                 }
             }
+        }
+
+        class ColorWrapper
+        {
+            public string Color { get; set; }
         }
     }
 }

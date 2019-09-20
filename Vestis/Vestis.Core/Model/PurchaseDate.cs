@@ -32,6 +32,8 @@ namespace Vestis.Core.Model
             Year = int.Parse(parts[1]);
             Season = SeasonsUtil.Parse(parts[0]);
         }
+
+        public override string ToString() => $"{Season.ToString()} {Year}";
     }
 
     public enum Seasons
