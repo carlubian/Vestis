@@ -1,0 +1,56 @@
+﻿<Page
+    x:Class="Vestis.UWP.EditClothesPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Vestis.UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="#283038">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="1" Margin="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Vertical" Grid.Row="0"
+                    Margin="0, 32, 0, 0">
+                <Button Name="BtnGoBack" Width="128" Click="BtnGoBack_Click">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="Assets/Icons/left-arrow.png"
+                           Width="64"/>
+                        <TextBlock Text="[GoBack]" x:Uid="EditClothesPageBtnGoBack"
+                                   HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button Name="BtnContinue" Width="128" Click="BtnContinue_Click">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="Assets/Icons/right-arrow.png"
+                           Width="64"/>
+                        <TextBlock Text="[Continue]" x:Uid="EditClothesPageBtnContinue"
+                                   HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Row="1"
+                        Margin="0" Visibility="Collapsed">
+                <Button Width="128"
+                        Background="#FF0D88AA">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="Assets/Icons/menu.png"
+                           Width="64"/>
+                        <TextBlock Text="Fast Track"
+                                   HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

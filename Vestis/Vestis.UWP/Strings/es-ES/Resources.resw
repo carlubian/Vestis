@@ -511,7 +511,7 @@ Además, solo pueden contener letras y guiones.</value>
     <value>Volver</value>
   </data>
   <data name="UserPageBtnManageClothes.Text" xml:space="preserve">
-    <value>Gestionar</value>
+    <value>Armario</value>
   </data>
   <data name="UserPageStatTotalClothesPrefix" xml:space="preserve">
     <value>En este momento tienes</value>

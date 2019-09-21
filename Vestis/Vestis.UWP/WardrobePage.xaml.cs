@@ -46,7 +46,8 @@ namespace Vestis.UWP
             {
                 Garment = g,
                 Wardrobe = wardrobe,
-                GarmentDeleteCommand = GarmentDeleteCommand.Instance
+                GarmentDeleteCommand = GarmentDeleteCommand.Instance,
+                GarmentEditCommand = GarmentEditCommand.Instance
             });
         }
 
@@ -67,6 +68,7 @@ namespace Vestis.UWP
             public Garment Garment { get; set; }
             public Wardrobe Wardrobe { get; set; }
             public ICommand GarmentDeleteCommand { get; set;  }
+            public ICommand GarmentEditCommand { get; set; }
 
             public string ClothIcon
             {
