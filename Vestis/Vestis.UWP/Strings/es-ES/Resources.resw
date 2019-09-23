@@ -296,6 +296,39 @@ Si no has hecho una copia de seguridad, los datos se perderán de forma permanen
   <data name="DeleteUserDlgTblHeader.Text" xml:space="preserve">
     <value>Eliminar usuario</value>
   </data>
+  <data name="EditClothesPageTblDateHeader.Text" xml:space="preserve">
+    <value>Fecha de compra:</value>
+  </data>
+  <data name="EditClothesPageTbldateInfo.Text" xml:space="preserve">
+    <value>La fecha de compra se usa para sugerirte renovar la prenda cuando tenga bastante tiempo.</value>
+  </data>
+  <data name="EditClothesPageTblHeader.Text" xml:space="preserve">
+    <value>Editar una prenda</value>
+  </data>
+  <data name="EditClothesPageTblNameHeader.Text" xml:space="preserve">
+    <value>Nombre de la prenda:</value>
+  </data>
+  <data name="EditClothesPageTblNameInfo.Text" xml:space="preserve">
+    <value>Este nombre se usará para que puedas identificar la prenda que estás modificando.</value>
+  </data>
+  <data name="EditClothesPageTblStep1.Text" xml:space="preserve">
+    <value>Datos básicos</value>
+  </data>
+  <data name="EditClothesPageTblStep2.Text" xml:space="preserve">
+    <value>Clasificación</value>
+  </data>
+  <data name="EditClothesPageTblTypeHeader.Text" xml:space="preserve">
+    <value>Tipo de la prenda:</value>
+  </data>
+  <data name="EditClothesPageTblTypeInfo.Text" xml:space="preserve">
+    <value>El tipo de prenda determina con qué otras prendas es compatible, además de sus posibles estilos.</value>
+  </data>
+  <data name="EditClothesTblColorHeader.Text" xml:space="preserve">
+    <value>Colores de la prenda:</value>
+  </data>
+  <data name="EditClothesTblStyleHeader.Text" xml:space="preserve">
+    <value>Estilos de la prenda:</value>
+  </data>
   <data name="EditUserPageBtnGoBack.Text" xml:space="preserve">
     <value>Volver</value>
   </data>

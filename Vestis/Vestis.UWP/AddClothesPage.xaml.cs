@@ -167,7 +167,7 @@ namespace Vestis.UWP
                     StyleTags = GarmentStyleGrid.SelectedItems.Select(s => (s as StyleWrapper).Style)
                 };
                 user.AddGarment(garment);
-                Frame.GoBack();
+                Frame.Navigate(typeof(WardrobePage), user);
             }
         }
 

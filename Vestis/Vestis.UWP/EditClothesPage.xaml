@@ -5,14 +5,233 @@
     xmlns:local="using:Vestis.UWP"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:c="using:Vestis.UWP.Converters"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <c:StringToBrushConverter x:Key="StringToBrush"/>
+    </Page.Resources>
 
     <Grid Background="#283038">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
+
+        <RelativePanel Grid.Column="0"
+                       Margin="8">
+            <TextBlock FontSize="42"
+                       RelativePanel.AlignTopWithPanel="True"
+                       RelativePanel.AlignHorizontalCenterWithPanel="True"
+                       Name="Header"
+                       x:Uid="EditClothesPageTblHeader"
+                       Text="[EditClothesHeader]"/>
+
+            <Grid RelativePanel.Below="Header"
+                  x:Name="Step1Grid"
+                  RelativePanel.AlignLeftWithPanel="True"
+                  RelativePanel.AlignRightWithPanel="True"
+                  RelativePanel.AlignBottomWithPanel="True"
+                  Visibility="Collapsed">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Orientation="Vertical"
+                                Grid.Column="1">
+                        <TextBlock Foreground="#788088"
+                                   x:Uid="EditClothesPageTblStep1"
+                                   Text="[EditClothesStep1]"/>
+                        <Rectangle Height="4" Fill="{Binding ProfileColor, Converter={StaticResource StringToBrush}}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical"
+                                Grid.Column="2">
+                        <TextBlock Foreground="#788088"
+                                   x:Uid="EditClothesPageTblStep2"
+                                   Text="[EditClothesStep2]"/>
+                    </StackPanel>
+                </Grid>
+
+                <StackPanel  Orientation="Vertical" 
+                             Grid.Row="1"
+                             HorizontalAlignment="Center"
+                             VerticalAlignment="Center"
+                             Margin="4">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock x:Uid="EditClothesPageTblNameHeader"
+                                   Text="[ClothesNameHeader]"
+                                   Margin="4"/>
+                        <TextBox x:Name="NameTextBox"
+                                 Width="256"
+                                 Margin="4"/>
+                    </StackPanel>
+                    <TextBlock Foreground="#788088"
+                               x:Uid="EditClothesPageTblNameInfo"
+                               Text="[ClothesNameInfo]"
+                               Margin="4"/>
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock x:Uid="EditClothesPageTblTypeHeader"
+                                   Text="[ClothesTypeHeader]"
+                                   VerticalAlignment="Center"
+                                   Margin="4"/>
+                        <ComboBox x:Name="TypeComboBox"
+                                  Width="256"
+                                  Margin="4">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="{Binding Icon}"
+                                               Width="64"/>
+                                        <TextBlock Text="{Binding LocalizedName}"
+                                                   Margin="4"
+                                                   VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+                    <TextBlock Foreground="#788088"
+                               x:Uid="EditClothesPageTblTypeInfo"
+                               Text="[ClothesTypeInfo]"
+                               Margin="4"/>
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock x:Uid="EditClothesPageTblDateHeader"
+                                   Text="[ClothesDateHeader]"
+                                   VerticalAlignment="Center"
+                                   Margin="4"/>
+                        <ComboBox x:Name="SeasonComboBox"
+                                  Width="128"
+                                  Margin="4">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBlock Text="{Binding LocalizedName}"/>
+                                        <Grid.Resources>
+                                            <Style TargetType="TextBlock" BasedOn="{StaticResource GlobalTextBlock}"/>
+                                        </Grid.Resources>
+                                    </Grid>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                        <TextBox x:Name="YearTextBox"
+                                 Width="128"
+                                 Margin="4"
+                                 VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <TextBlock Foreground="#788088"
+                               x:Uid="EditClothesPageTbldateInfo"
+                               Text="[ClothesDateInfo]"
+                               Margin="4"/>
+
+                </StackPanel>
+            </Grid>
+
+            <Grid RelativePanel.Below="Header"
+                  x:Name="Step2Grid"
+                  RelativePanel.AlignLeftWithPanel="True"
+                  RelativePanel.AlignRightWithPanel="True"
+                  RelativePanel.AlignBottomWithPanel="True"
+                  Visibility="Visible">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Orientation="Vertical"
+                                Grid.Column="1">
+                        <TextBlock Foreground="#788088"
+                                   x:Uid="EditClothesPageTblStep1"
+                                   Text="[EditClothesStep1]"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical"
+                                Grid.Column="2">
+                        <TextBlock Foreground="#788088"
+                                   x:Uid="EditClothesPageTblStep2"
+                                   Text="[EditClothesStep2]"/>
+                        <Rectangle Height="4" Fill="{Binding ProfileColor, Converter={StaticResource StringToBrush}}"/>
+                    </StackPanel>
+                </Grid>
+
+                <StackPanel Orientation="Vertical" Grid.Row="1"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock x:Uid="EditClothesTblColorHeader"
+                                   Text="[ColorHeader]"/>
+                        <GridView Margin="4"
+                                  SelectionMode="Multiple"
+                                  x:Name="GarmentColorGrid">
+                            <GridView.ItemTemplate>
+                                <DataTemplate>
+                                    <Rectangle Height="64"
+                                           Width="64"
+                                           Fill="{Binding Color, Converter={StaticResource StringToBrush}}" />
+                                </DataTemplate>
+                            </GridView.ItemTemplate>
+                            <GridView.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <ItemsWrapGrid MaximumRowsOrColumns="6"
+                                               Orientation="Horizontal">
+
+                                    </ItemsWrapGrid>
+                                </ItemsPanelTemplate>
+                            </GridView.ItemsPanel>
+                            <GridView.Resources>
+                                <SolidColorBrush x:Key="GridViewItemBackgroundSelected" Color="#F0F5FA"/>
+                                <SolidColorBrush x:Key="GridViewItemBackgroundSelectedPointedOver" Color="#F0F5FA"/>
+                            </GridView.Resources>
+                        </GridView>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock x:Uid="EditClothesTblStyleHeader"
+                                   Text="[StyleHeader]"/>
+                        <GridView Margin="4"
+                                  SelectionMode="Multiple"
+                                  x:Name="GarmentStyleGrid">
+                            <GridView.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding LocalizedName}"
+                                               Width="128"
+                                               Margin="4"/>
+                                </DataTemplate>
+                            </GridView.ItemTemplate>
+                            <GridView.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <ItemsWrapGrid MaximumRowsOrColumns="6"
+                                               Orientation="Horizontal">
+
+                                    </ItemsWrapGrid>
+                                </ItemsPanelTemplate>
+                            </GridView.ItemsPanel>
+                            <GridView.Resources>
+                                <SolidColorBrush x:Key="GridViewItemBackgroundSelected" Color="#F0F5FA"/>
+                                <SolidColorBrush x:Key="GridViewItemBackgroundSelectedPointedOver" Color="#F0F5FA"/>
+                            </GridView.Resources>
+                        </GridView>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </RelativePanel>
 
         <Grid Grid.Column="1" Margin="0">
             <Grid.RowDefinitions>

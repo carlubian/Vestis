@@ -162,7 +162,7 @@ namespace Vestis.Core
             }
         }
 
-        internal static void AddGarment(string user, Garment garment)
+        internal static string AddGarment(string user, Garment garment)
         {
             var path = Path.Combine(DressingRoom.AppDirectory, "Vestis");
             path = Path.Combine(path, "Profiles");
@@ -190,6 +190,8 @@ namespace Vestis.Core
             config.Write($"{id}:ColorTags", garment.ColorTags.Stringify(n => n, " "));
             config.Write($"{id}:StyleTags", garment.StyleTags.Stringify(n => n, " "));
             config.Write($"{id}:UserTags", " "); //TODO
+
+            return id;
         }
 
         internal static void RemoveGarment(string user, string garment)
@@ -204,6 +206,22 @@ namespace Vestis.Core
             config.Write("Clothes", each.Stringify(n => n, " "));
 
             config.DeleteSection(garment);
+        }
+
+        internal static void UpdateGarment(string user, Garment garment)
+        {
+            var path = Path.Combine(DressingRoom.AppDirectory, "Vestis");
+            path = Path.Combine(path, "Profiles");
+            var config = XmlConfig.From(Path.Combine(path, $"{user}.Wardrobe.xml"));
+            var id = garment.ID;
+
+            // Overwrite garment values
+            config.Write($"{id}:Name", garment.Name);
+            config.Write($"{id}:Type", garment.Type.ToString());
+            config.Write($"{id}:PurchaseDate", garment.PurchaseDate.ToString());
+            config.Write($"{id}:ColorTags", garment.ColorTags.Stringify(n => n, " "));
+            config.Write($"{id}:StyleTags", garment.StyleTags.Stringify(n => n, " "));
+            config.Write($"{id}:UserTags", " "); //TODO
         }
     }
 }

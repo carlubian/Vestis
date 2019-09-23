@@ -54,7 +54,8 @@ namespace Vestis.Core
 
         public void AddGarment(Garment garment)
         {
-            Users.AddGarment(Username, garment);
+            var id = Users.AddGarment(Username, garment);
+            garment.ID = id;
             (Garments as IList<Garment>).Add(garment);
         }
 
@@ -62,6 +63,11 @@ namespace Vestis.Core
         {
             Users.RemoveGarment(Username, garment);
             (Garments as IList<Garment>).Remove(Garments.First(g => g.ID.Equals(garment)));
+        }
+
+        public void UpdateGarment(Garment garment)
+        {
+            Users.UpdateGarment(Username, garment);
         }
     }
 }
