@@ -35,62 +35,187 @@ namespace Vestis.Core.Model
         Unknown
     }
 
-    static class ClothingTypeUtil
+    public static class ClothingTypeUtil
     {
         public static ClothingType Parse(string text)
         {
-            switch (text.ToLowerInvariant())
+            return (text.ToLowerInvariant()) switch
             {
-                case "shorttshirt":
-                    return ClothingType.ShortTShirt;
-                case "longtshirt":
-                    return ClothingType.LongTShirt;
-                case "shortshirt":
-                    return ClothingType.ShortShirt;
-                case "longshirt":
-                    return ClothingType.LongShirt;
-                case "shortblouse":
-                    return ClothingType.ShortBlouse;
-                case "longblouse":
-                    return ClothingType.LongBlouse;
-                case "shortpolo":
-                    return ClothingType.ShortPolo;
-                case "longpolo":
-                    return ClothingType.LongPolo;
-                case "sportsweater":
-                    return ClothingType.SportSweater;
-                case "cozysweater":
-                    return ClothingType.CozySweater;
-                case "blazer":
-                    return ClothingType.Blazer;
-                case "shorttrouser":
-                    return ClothingType.ShortTrouser;
-                case "longtrouser":
-                    return ClothingType.LongTrouser;
-                case "shortskirt":
-                    return ClothingType.ShortSkirt;
-                case "longskirt":
-                    return ClothingType.LongSkirt;
-                case "yogapants":
-                    return ClothingType.YogaPants;
-                case "shortdress":
-                    return ClothingType.ShortDress;
-                case "longdress":
-                    return ClothingType.LongDress;
-                case "sandals":
-                    return ClothingType.Sandals;
-                case "trainers":
-                    return ClothingType.Trainers;
-                case "shoes":
-                    return ClothingType.Shoes;
-                case "boots":
-                    return ClothingType.Boots;
-                case "jackets":
-                    return ClothingType.Jackets;
-                case "coats":
-                    return ClothingType.Coats;
-            }
-            return ClothingType.Unknown;
+                "shorttshirt" => ClothingType.ShortTShirt,
+                "longtshirt" => ClothingType.LongTShirt,
+                "shortshirt" => ClothingType.ShortShirt,
+                "longshirt" => ClothingType.LongShirt,
+                "shortblouse" => ClothingType.ShortBlouse,
+                "longblouse" => ClothingType.LongBlouse,
+                "shortpolo" => ClothingType.ShortPolo,
+                "longpolo" => ClothingType.LongPolo,
+                "sportsweater" => ClothingType.SportSweater,
+                "cozysweater" => ClothingType.CozySweater,
+                "blazer" => ClothingType.Blazer,
+                "shorttrouser" => ClothingType.ShortTrouser,
+                "longtrouser" => ClothingType.LongTrouser,
+                "shortskirt" => ClothingType.ShortSkirt,
+                "longskirt" => ClothingType.LongSkirt,
+                "yogapants" => ClothingType.YogaPants,
+                "shortdress" => ClothingType.ShortDress,
+                "longdress" => ClothingType.LongDress,
+                "sandals" => ClothingType.Sandals,
+                "trainers" => ClothingType.Trainers,
+                "shoes" => ClothingType.Shoes,
+                "boots" => ClothingType.Boots,
+                "jackets" => ClothingType.Jackets,
+                "coats" => ClothingType.Coats,
+                _ => ClothingType.Unknown,
+            };
+        }
+
+        public static IEnumerable<string> CompatibleWith(string type)
+        {
+            return type.ToLowerInvariant() switch
+            {
+                "shorttshirt" => new string[] { "LongShirt", "LongPolo", "SportSweater", 
+                                                "CozySweater", "Blazer", "ShortTrouser", 
+                                                "LongTrouser", "ShortSkirt", "LongSkirt",
+                                                "YogaPants", "Sandals", "Trainers",
+                                                "Shoes", "Boots", "Jackets", "Coats" },
+
+                "longtshirt" => new string[] { "LongShirt", "LongPolo", "SportSweater",
+                                                "CozySweater", "Blazer", "ShortTrouser",
+                                                "LongTrouser", "ShortSkirt", "LongSkirt",
+                                                "YogaPants", "Sandals", "Trainers",
+                                                "Shoes", "Boots", "Jackets", "Coats" },
+
+                "shortshirt" => new string[] {  "ShortTrouser", "LongTrouser", "ShortSkirt", 
+                                                "LongSkirt", "YogaPants", "Sandals", 
+                                                "Trainers", "Shoes", "Boots", "Jackets", 
+                                                "Coats" },
+
+                "longshirt" => new string[] {   "ShortTShirt", "LongTShirt", "LongPolo", 
+                                                "Blazer", "ShortTrouser", "LongTrouser", 
+                                                "ShortSkirt", "LongSkirt", "YogaPants", 
+                                                "Trainers", "Shoes", "Boots", 
+                                                "Jackets", "Coats" },
+
+                "shortblouse" => new string[] { "CozySweater", "Blazer", "ShortTrouser",
+                                                "LongTrouser", "ShortSkirt", "LongSkirt",
+                                                "YogaPants", "Sandals", "Trainers",
+                                                "Shoes", "Boots", "Jackets", "Coats" },
+
+                "longblouse" => new string[] {  "ShortTShirt", "CozySweater", "Blazer", 
+                                                "ShortTrouser", "LongTrouser", "ShortSkirt", 
+                                                "LongSkirt","YogaPants", "Sandals", 
+                                                "Trainers", "Shoes", "Boots", 
+                                                "Jackets", "Coats" },
+
+                "shortpolo" => new string[] {   "ShortTrouser", "LongTrouser", "ShortSkirt",
+                                                "LongSkirt", "YogaPants", "Sandals", 
+                                                "Trainers", "Shoes", "Boots", "Jackets", 
+                                                "Coats" },
+
+                "longpolo" => new string[] {    "ShortTShirt", "ShortTrouser", "LongTrouser", 
+                                                "ShortSkirt", "LongSkirt", "Trainers", 
+                                                "Shoes", "Boots", "Jackets", 
+                                                "Coats" },
+
+                "sportsweater" => new string[] { "ShortTShirt", "LongTShirt", "ShortTrouser",
+                                                "LongTrouser", "ShortSkirt", "LongSkirt",
+                                                "YogaPants", "Sandals", "Trainers",
+                                                "Shoes", "Boots", "Coats" },
+
+                "cozysweater" => new string[] { "ShortTShirt", "LongTShirt", "ShortShirt",
+                                                "LongShirt", "ShortTrouser", "LongTrouser", 
+                                                "ShortSkirt", "LongSkirt", "Trainers", 
+                                                "Shoes", "Boots", "Jackets", 
+                                                "Coats" },
+
+                "blazer" => new string[] {      "LongTShirt", "LongShirt", "ShortTrouser",
+                                                "LongTrouser", "ShortSkirt", "LongSkirt",
+                                                "YogaPants", "Trainers", "Shoes", 
+                                                "Boots", "Jackets", "Coats" },
+
+                "shorttrouser" => new string[] { "ShortTShirt", "LongTSHirt", "ShortShirt", 
+                                                "LongShirt", "ShortPolo", "SportSweater",
+                                                "CozySweater", "Blazer", "Sandals", 
+                                                "Trainers", "Shoes", "Boots", 
+                                                "Jackets", "Coats" },
+
+                "longtrouser" => new string[] { "ShortTShirt", "LongTSHirt", "ShortShirt",
+                                                "LongShirt", "ShortPolo", "LongPolo", 
+                                                "SportSweater", "CozySweater", "Blazer", 
+                                                "Trainers",  "Shoes", "Boots", 
+                                                "Jackets",  "Coats" },
+
+                "shortskirt" => new string[] {  "ShortTShirt", "LongTSHirt", "ShortShirt",
+                                                "LongShirt", "ShortPolo", "SportSweater",
+                                                "CozySweater", "Blazer", "Sandals",
+                                                "Trainers", "Shoes", "Boots",
+                                                "Jackets", "Coats" },
+
+                "longskirt" => new string[] {   "ShortTShirt", "LongTSHirt", "ShortShirt",
+                                                "LongShirt", "ShortPolo", "LongPolo", 
+                                                "SportSweater", "CozySweater", "Blazer", 
+                                                "Sandals", "Trainers", "Shoes", 
+                                                "Boots", "Jackets", "Coats" },
+
+                "yogapants" => new string[] {   "ShortTShirt", "LongTSHirt", "ShortShirt",
+                                                "LongShirt", "Sandals", "Trainers", 
+                                                "Shoes", "Boots", "Jackets", 
+                                                "Coats" },
+
+                "shortdress" => new string[] {  "Sandals", "Trainers", "Shoes", 
+                                                "Boots", "Jackets", "Coats" },
+
+                "longdress" => new string[] {   "Sandals", "Trainers", "Shoes",
+                                                "Boots", "Jackets", "Coats" },
+
+                "sandals" => new string[] {     "ShortTShirt", "LongTShirt", "ShortShirt",
+                                                "ShortBlouse", "LongBlouse", "ShortPolo",
+                                                "SportSweater", "ShortTrouser", "ShortSkirt",
+                                                "LongSkirt", "YogaPants", "ShortDress",
+                                                "LongDress", "Jackets", "Coats" },
+
+                "trainers" => new string[] {    "ShortTShirt", "LongTShirt", "ShortShirt",
+                                                "LongShort", "ShortBlouse", "LongBlouse", 
+                                                "ShortPolo", "LongPolo", "SportSweater", 
+                                                "CozySweater", "Blazer", "ShortTrouser", 
+                                                "LongTrouser", "ShortSkirt", "LongSkirt", 
+                                                "YogaPants", "ShortDress", "LongDress", 
+                                                "Jackets", "Coats" },
+
+                "shoes" => new string[] {       "ShortTShirt", "LongTShirt", "ShortShirt",
+                                                "LongShort", "ShortBlouse", "LongBlouse",
+                                                "ShortPolo", "LongPolo", "SportSweater",
+                                                "CozySweater", "Blazer", "ShortTrouser",
+                                                "LongTrouser", "ShortSkirt", "LongSkirt",
+                                                "YogaPants", "ShortDress", "LongDress",
+                                                "Jackets", "Coats" },
+
+                "boots" => new string[] {       "ShortTShirt", "LongTShirt", "ShortShirt",
+                                                "LongShort", "ShortBlouse", "LongBlouse",
+                                                "ShortPolo", "LongPolo", "SportSweater",
+                                                "CozySweater", "Blazer", "ShortTrouser",
+                                                "LongTrouser", "ShortSkirt", "LongSkirt",
+                                                "YogaPants", "ShortDress", "LongDress",
+                                                "Jackets", "Coats" },
+
+                "jackets" => new string[] {     "ShortTShirt", "LongTShirt", "ShortShirt",
+                                                "LongShort", "ShortBlouse", "LongBlouse",
+                                                "CozySweater", "Blazer", "ShortTrouser",
+                                                "LongTrouser", "ShortSkirt", "LongSkirt",
+                                                "YogaPants", "ShortDress", "LongDress",
+                                                "Sandals", "Trainers", "Shoes",
+                                                "Boots" },
+
+                "coats" => new string[] {       "ShortTShirt", "LongTShirt", "ShortShirt",
+                                                "LongShort", "ShortBlouse", "LongBlouse",
+                                                "ShortPolo", "LongPolo", "SportSweater",
+                                                "CozySweater", "Blazer", "LongTrouser", 
+                                                "ShortSkirt", "LongSkirt", "YogaPants", 
+                                                "ShortDress", "LongDress", "Sandals", 
+                                                "Trainers", "Shoes", "Boots" },
+
+                _ => new string[] { "Unknown" }
+            };
         }
     }
 }

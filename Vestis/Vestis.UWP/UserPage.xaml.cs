@@ -92,7 +92,7 @@ namespace Vestis.UWP
 
         private void BtnCombine_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(CombineStartPage), user);
         }
 
         class Stat

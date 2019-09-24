@@ -128,6 +128,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CombineStartPage.xaml.cs">
+      <DependentUpon>CombineStartPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Commands\GarmentEditCommand.cs" />
     <Compile Include="Commands\GarmentDeleteCommand.cs" />
     <Compile Include="Commands\UserDeleteCommand.cs" />
@@ -290,6 +293,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddUserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CombineStartPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
