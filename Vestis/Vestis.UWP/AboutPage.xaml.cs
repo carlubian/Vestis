@@ -64,7 +64,9 @@ namespace Vestis.UWP
                 new KeyValuePair<string, string>("Short blouse icon", "Freepik from www.flaticon.com"),
                 new KeyValuePair<string, string>("Short polo icon", "Freepik from www.flaticon.com"),
                 new KeyValuePair<string, string>("Sport sweater icon", "Freepik from www.flaticon.com"),
-                new KeyValuePair<string, string>("Cozy sweater icon", "Freepik from www.flaticon.com")
+                new KeyValuePair<string, string>("Cozy sweater icon", "Freepik from www.flaticon.com"),
+                new KeyValuePair<string, string>("Verified icon", "Freepik from www.flaticon.com"),
+                new KeyValuePair<string, string>("Reload icon", "Gregor Cresnar from www.flaticon.com")
             };
             ThirdPartyList.ItemsSource = thirdPartyElements;
         }

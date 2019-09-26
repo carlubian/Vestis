@@ -1,0 +1,162 @@
+﻿<Page
+    x:Class="Vestis.UWP.CombineEndPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Vestis.UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:c="using:Vestis.UWP.Converters"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <c:StringToBrushConverter x:Key="StringToBrush"/>
+    </Page.Resources>
+
+    <Grid Background="#283038">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <RelativePanel Grid.Column="0"
+                       Margin="8">
+            <TextBlock FontSize="42"
+                       RelativePanel.AlignTopWithPanel="True"
+                       RelativePanel.AlignHorizontalCenterWithPanel="True"
+                       Name="CombineEndHeader"
+                       x:Uid="CombineEndPageTblHeader"
+                       Text="[CombinationHeader]"/>
+
+            <ScrollViewer RelativePanel.Below="CombineEndHeader"
+                          RelativePanel.AlignLeftWithPanel="True"
+                          RelativePanel.AlignRightWithPanel="True">
+                <ListView x:Name="ClothesList"
+                          SelectionMode="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="2.5*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <RelativePanel Grid.Column="0"
+                                               Margin="4">
+                                    <Image Source="{Binding ClothIcon}"
+                                           RelativePanel.AlignHorizontalCenterWithPanel="True"
+                                           RelativePanel.AlignTopWithPanel="True"
+                                           Name="ClothIcon"
+                                           Width="96"/>
+                                    <TextBlock Text="{Binding ClothType}"
+                                               Foreground="#788088"
+                                               RelativePanel.Below="ClothIcon"
+                                               RelativePanel.AlignHorizontalCenterWithPanel="True"
+                                               FontSize="18"
+                                               Margin="4"/>
+                                </RelativePanel>
+
+                                <RelativePanel Grid.Column="1">
+                                    <TextBlock Text="{Binding Garment.Name}"
+                                               Foreground="{Binding ProfileColor, Converter={StaticResource StringToBrush}}"
+                                               RelativePanel.AlignTopWithPanel="True"
+                                               Name="ClothName"
+                                               Margin="4"/>
+                                    <GridView x:Name="ClothColorGrid"
+                                              RelativePanel.Below="ClothName"
+                                              ItemsSource="{Binding ColorTags}"
+                                              SelectionMode="None">
+                                        <GridView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Rectangle Fill="{Binding Color, Converter={StaticResource StringToBrush}}"
+                                                           Width="24" Height="24"
+                                                           Margin="2"/>
+                                            </DataTemplate>
+                                        </GridView.ItemTemplate>
+                                        <GridView.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <ItemsWrapGrid MaximumRowsOrColumns="6"
+                                                               Orientation="Horizontal">
+
+                                                </ItemsWrapGrid>
+                                            </ItemsPanelTemplate>
+                                        </GridView.ItemsPanel>
+                                    </GridView>
+                                    <TextBlock Text="{Binding StyleTags}"
+                                               Foreground="#788088"
+                                               RelativePanel.Below="ClothColorGrid"
+                                               FontSize="18"
+                                               Margin="4"/>
+                                </RelativePanel>
+
+                                <StackPanel Orientation="Vertical"
+                                            Grid.Column="2"
+                                            VerticalAlignment="Center">
+                                    <Button Name="BtnGoBack" Width="128"
+                                            Command="{Binding GarmentRefreshCommand}" 
+                                            CommandParameter="{Binding InternalType}">
+                                        <StackPanel Orientation="Vertical">
+                                            <Image Source="Assets/Icons/reload.png"
+                                                   Width="64"/>
+                                            <TextBlock Text="[Replace]" x:Uid="CombineEndPageBtnReplace"
+                                                       HorizontalAlignment="Center"/>
+                                        </StackPanel>
+                                    </Button>
+                                </StackPanel>
+
+                                <Grid.Resources>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource GlobalTextBlock}"/>
+                                </Grid.Resources>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                </ListView>
+            </ScrollViewer>
+        </RelativePanel>
+
+        <Grid Grid.Column="1" Margin="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Vertical" Grid.Row="0"
+                    Margin="0, 32, 0, 0">
+                <Button Name="BtnGoBack" Width="128" Click="BtnGoBack_Click">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="Assets/Icons/left-arrow.png"
+                           Width="64"/>
+                        <TextBlock Text="[GoBack]" x:Uid="CombineEndPageBtnGoBack"
+                                   HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button Name="BtnFinish" Width="128" Click="BtnFinish_Click">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="Assets/Icons/verified.png"
+                           Width="64"/>
+                        <TextBlock Text="[Finish]" x:Uid="CombineEndPageBtnFinish"
+                                   HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Row="1"
+                        Margin="0" Visibility="Collapsed">
+                <Button Width="128"
+                        Background="#FF0D88AA">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="Assets/Icons/menu.png"
+                           Width="64"/>
+                        <TextBlock Text="Fast Track"
+                                   HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

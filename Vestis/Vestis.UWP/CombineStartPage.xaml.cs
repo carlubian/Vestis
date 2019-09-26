@@ -115,7 +115,8 @@ namespace Vestis.UWP
 
         private void BtnCombine_Click(object sender, RoutedEventArgs e)
         {
-
+            var types = SelectedList.Items.Cast<TypeWrapper>().Select(t => t.TypeName);
+            Frame.Navigate(typeof(CombineEndPage), (wardrobe, types));
         }
 
         class TypeWrapper

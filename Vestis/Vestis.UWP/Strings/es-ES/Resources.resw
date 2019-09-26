@@ -267,6 +267,18 @@
   <data name="ClothingTypeYogaPants" xml:space="preserve">
     <value>Pantalones elásticos</value>
   </data>
+  <data name="CombineEndPageBtnFinish.Text" xml:space="preserve">
+    <value>Terminar</value>
+  </data>
+  <data name="CombineEndPageBtnGoBack.Text" xml:space="preserve">
+    <value>Volver</value>
+  </data>
+  <data name="CombineEndPageBtnReplace.Text" xml:space="preserve">
+    <value>Cambiar</value>
+  </data>
+  <data name="CombineEndPageTblHeader.Text" xml:space="preserve">
+    <value>Combinación de prendas</value>
+  </data>
   <data name="CombinePageBtnUnselect.Content" xml:space="preserve">
     <value>Quitar</value>
   </data>

@@ -128,6 +128,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CombineEndPage.xaml.cs">
+      <DependentUpon>CombineEndPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CombineStartPage.xaml.cs">
       <DependentUpon>CombineStartPage.xaml</DependentUpon>
     </Compile>
@@ -215,11 +218,13 @@
     <Content Include="Assets\Icons\man.png" />
     <Content Include="Assets\Icons\merge.png" />
     <Content Include="Assets\Icons\plus-symbol.png" />
+    <Content Include="Assets\Icons\reload.png" />
     <Content Include="Assets\Icons\remove.png" />
     <Content Include="Assets\Icons\right-arrow.png" />
     <Content Include="Assets\Icons\settings.png" />
     <Content Include="Assets\Icons\user.png" />
     <Content Include="Assets\Icons\users.png" />
+    <Content Include="Assets\Icons\verified.png" />
     <Content Include="Assets\Icons\wardrobe.png" />
     <Content Include="Assets\Icons\woman.png" />
     <Content Include="Assets\Store\BadgeLogo.scale-100.png" />
@@ -293,6 +298,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddUserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CombineEndPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
