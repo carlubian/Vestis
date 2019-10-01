@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using Vestis.Core;
 using Vestis.UWP.Commands;
-using Vestis.UWP.Dialogs;
 using Windows.ApplicationModel.Core;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.UI.Xaml;
@@ -78,7 +75,7 @@ namespace Vestis.UWP
             var savePicker = new FileSavePicker
             {
                 SuggestedStartLocation = PickerLocationId.DocumentsLibrary,
-                SuggestedFileName = DateTime.Now.ToString("yyyy-MM-dd-HH-mm"),
+                SuggestedFileName = DateTime.Now.ToString("yyyy-MM-dd-HH-mm", CultureInfo.InvariantCulture),
                 //CommitButtonText = "Exportar"
             };
             savePicker.FileTypeChoices.Add(".VESTIS", new List<string>() { ".vestis" });
@@ -91,16 +88,9 @@ namespace Vestis.UWP
             File.Delete(export);
         }
 
-        private async void BtnRestore_Click(object sender, RoutedEventArgs e)
+        private void BtnNewUser_Click(object sender, RoutedEventArgs e)
         {
-            var confirm = new ConfirmRestore();
-            await confirm.ShowAsync();
-
-            if (confirm.Result is true)
-            {
-                DressingRoom.RestoreSettings();
-                await CoreApplication.RequestRestartAsync("");
-            }
+            Frame.Navigate(typeof(AddUserPage));
         }
     }
 }

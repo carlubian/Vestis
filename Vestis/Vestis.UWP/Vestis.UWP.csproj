@@ -171,6 +171,9 @@
     <Compile Include="Dialogs\GarmentNameFormatError.xaml.cs">
       <DependentUpon>GarmentNameFormatError.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\WeatherApiInfo.xaml.cs">
+      <DependentUpon>WeatherApiInfo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\UserNameFormatError.xaml.cs">
       <DependentUpon>UserNameFormatError.xaml</DependentUpon>
     </Compile>
@@ -187,6 +190,9 @@
       <DependentUpon>ManageUsersPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserPage.xaml.cs">
       <DependentUpon>UserPage.xaml</DependentUpon>
     </Compile>
@@ -349,6 +355,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Dialogs\WeatherApiInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Dialogs\UserNameFormatError.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -369,6 +379,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -385,6 +399,11 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AppCenter.Analytics">
       <Version>2.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers">
+      <Version>2.9.4</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.9</Version>

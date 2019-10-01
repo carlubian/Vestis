@@ -15,6 +15,54 @@ namespace Vestis.Core
     /// </summary>
     public static class DressingRoom
     {
+        public static string WeatherApiKey
+        {
+            get
+            {
+                var path = Path.Combine(AppDirectory, "Vestis");
+                path = Path.Combine(path, "GlobalSettings.xml");
+                var config = XmlConfig.From(path);
+                return config.Read("WeatherApiKey");
+            }
+            set
+            {
+                var path = Path.Combine(AppDirectory, "Vestis");
+                path = Path.Combine(path, "GlobalSettings.xml");
+                var config = XmlConfig.From(path);
+                config.Write("WeatherApiKey", value);
+            }
+        }
+        public static string WeatherLocation
+        {
+            get
+            {
+                var path = Path.Combine(AppDirectory, "Vestis");
+                path = Path.Combine(path, "GlobalSettings.xml");
+                var config = XmlConfig.From(path);
+                return config.Read("WeatherLocation");
+            }
+            set
+            {
+                var path = Path.Combine(AppDirectory, "Vestis");
+                path = Path.Combine(path, "GlobalSettings.xml");
+                var config = XmlConfig.From(path);
+                config.Write("WeatherLocation", value);
+            }
+        }
+
+        public static dynamic WeatherData
+        {
+            get
+            {
+                var response = Model.Restquest.Get("api.weatherstack.com/current", $"?access_key={WeatherApiKey}&query={WeatherLocation}".Replace(" ", "%20"));
+                //(response.location.name as Newtonsoft.Json.Linq.JValue).Value
+                //(response.location.country as Newtonsoft.Json.Linq.JValue).Value
+                //(response.current.temperature as Newtonsoft.Json.Linq.JValue).Value
+                //(response.current.weather_code as Newtonsoft.Json.Linq.JValue).Value
+                return response;
+            }
+        }
+
         public static string AppDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
         public static IEnumerable<string> ListAvailable() => Users.AllUsers();

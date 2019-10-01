@@ -99,6 +99,14 @@
                                    HorizontalAlignment="Center"/>
                     </StackPanel>
                 </Button>
+                <Button Name="BtnNewUser" Width="128" Click="BtnNewUser_Click">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="Assets/Icons/plus-symbol.png"
+                           Width="64"/>
+                        <TextBlock Text="[NewUser]" x:Uid="ManageUsersPageBtnNewUser"
+                                   HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
                 <Button Name="BtnImport" Width="128" Click="BtnImport_Click">
                     <StackPanel Orientation="Vertical">
                         <Image Source="Assets/Icons/import.png"
@@ -112,15 +120,6 @@
                         <Image Source="Assets/Icons/export.png"
                            Width="64"/>
                         <TextBlock Text="[Export]" x:Uid="ManageUsersPageBtnExport"
-                                   HorizontalAlignment="Center"/>
-                    </StackPanel>
-                </Button>
-                <Button Name="BtnRestore" Width="128" Click="BtnRestore_Click"
-                        Background="#AA0000">
-                    <StackPanel Orientation="Vertical">
-                        <Image Source="Assets/Icons/remove.png"
-                           Width="64"/>
-                        <TextBlock Text="[Restore]" x:Uid="ManageUsersPageBtnRestore"
                                    HorizontalAlignment="Center"/>
                     </StackPanel>
                 </Button>

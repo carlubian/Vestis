@@ -136,7 +136,7 @@
     <value>Fecha de compra:</value>
   </data>
   <data name="AddClothesPageTbldateInfo.Text" xml:space="preserve">
-    <value>La fecha de compra se usa para sugerirte renovar la prenda cuando tenga bastante tiempo.</value>
+    <value>Invierno: enero a marzo. Primavera: abril a junio. Verano: julio a septiembre. Otoño: octubre a noviembre.</value>
   </data>
   <data name="AddClothesPageTblHeader.Text" xml:space="preserve">
     <value>Añadir una prenda nueva</value>
@@ -330,7 +330,7 @@ Si no has hecho una copia de seguridad, los datos se perderán de forma permanen
     <value>Fecha de compra:</value>
   </data>
   <data name="EditClothesPageTbldateInfo.Text" xml:space="preserve">
-    <value>La fecha de compra se usa para sugerirte renovar la prenda cuando tenga bastante tiempo.</value>
+    <value>Invierno: enero a marzo. Primavera: abril a junio. Verano: julio a septiembre. Otoño: octubre a noviembre.</value>
   </data>
   <data name="EditClothesPageTblHeader.Text" xml:space="preserve">
     <value>Editar una prenda</value>
@@ -416,8 +416,8 @@ Además, solo pueden contener letras, números, espacios y guiones.</value>
   <data name="MainPageBtnManageUsers.Text" xml:space="preserve">
     <value>Gestionar</value>
   </data>
-  <data name="MainPageBtnNewUser.Text" xml:space="preserve">
-    <value>Añadir</value>
+  <data name="MainPageBtnSettings.Text" xml:space="preserve">
+    <value>Ajustes</value>
   </data>
   <data name="MainPageTblUserSelectionHeader.Text" xml:space="preserve">
     <value>Selecciona tu usuario para empezar:</value>
@@ -437,8 +437,8 @@ Además, solo pueden contener letras, números, espacios y guiones.</value>
   <data name="ManageUsersPageBtnImport.Text" xml:space="preserve">
     <value>Importar</value>
   </data>
-  <data name="ManageUsersPageBtnRestore.Text" xml:space="preserve">
-    <value>Restaurar</value>
+  <data name="ManageUsersPageBtnNewUser.Text" xml:space="preserve">
+    <value>Añadir</value>
   </data>
   <data name="ManageUsersPageTblHeader.Text" xml:space="preserve">
     <value>Gestión de usuarios</value>
@@ -500,6 +500,33 @@ Además, la aplicación se reiniciará para aplicar los cambios.
   </data>
   <data name="SeasonWinter" xml:space="preserve">
     <value>Invierno</value>
+  </data>
+  <data name="SettingsPageBtnApiInfo.Content" xml:space="preserve">
+    <value>info</value>
+  </data>
+  <data name="SettingsPageBtnGoBack.Text" xml:space="preserve">
+    <value>Volver</value>
+  </data>
+  <data name="SettingsPageBtnLocationAuto.Content" xml:space="preserve">
+    <value>auto</value>
+  </data>
+  <data name="SettingsPageBtnRestore.Text" xml:space="preserve">
+    <value>Restaurar</value>
+  </data>
+  <data name="SettingsPageBtnSave.Text" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="SettingsPageTblAPIHeader.Text" xml:space="preserve">
+    <value>Clave de API:</value>
+  </data>
+  <data name="SettingsPageTblHeader.Text" xml:space="preserve">
+    <value>Ajustes de la aplicación</value>
+  </data>
+  <data name="SettingsPageTblLocationHeader.Text" xml:space="preserve">
+    <value>Ubicación:</value>
+  </data>
+  <data name="SettingsPageTblWeatherSection.Text" xml:space="preserve">
+    <value>Datos meteorológicos</value>
   </data>
   <data name="TagAbstract" xml:space="preserve">
     <value>Abstracto</value>
@@ -602,6 +629,20 @@ Además, solo pueden contener letras y guiones.</value>
   </data>
   <data name="WardrobePageTblHeader.Text" xml:space="preserve">
     <value>Gestión del armario</value>
+  </data>
+  <data name="WeatherApiDglTblHeader.Text" xml:space="preserve">
+    <value>Información sobre la clave de API</value>
+  </data>
+  <data name="WeatherApiDlgBtnOk.Content" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="WeatherApiDlgTblBody.Text" xml:space="preserve">
+    <value>Vestis puede acceder a la información meteorológica local para sugerirte prendas en
+función de la temperatura o clima actuales. Para activar esta funcionalidad, necesitas
+crear una clave de API en weatherstack.
+
+Este servicio no tiene coste adicional. Puedes registrarte en:
+https://weatherstack.com/signup/free</value>
   </data>
   <data name="WelcomePageBtnImport.Text" xml:space="preserve">
     <value>Importar</value>
