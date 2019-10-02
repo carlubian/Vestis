@@ -1,21 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using Vestis.Core;
 using Windows.ApplicationModel.Core;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -26,18 +16,15 @@ namespace Vestis.UWP
     /// </summary>
     public sealed partial class WelcomePage : Page
     {
-        public WelcomePage()
-        {
-            this.InitializeComponent();
-        }
+        public WelcomePage() => InitializeComponent();
 
-        private void BtnNewUser_Click(object sender, RoutedEventArgs e)
+        private void BtnNewUser_Click(object _1, RoutedEventArgs _2)
         {
             DressingRoom.SeeWelcomePage();
             Frame.Navigate(typeof(AddUserPage));
         }
 
-        private async void BtnImport_Click(object sender, RoutedEventArgs e)
+        private async void BtnImport_Click(object _1, RoutedEventArgs _2)
         {
             var openPicker = new FileOpenPicker
             {

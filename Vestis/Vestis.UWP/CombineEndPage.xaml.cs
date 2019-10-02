@@ -1,22 +1,15 @@
 ﻿using DotNet.Misc.Extensions.Linq;
+using Microsoft.AppCenter.Analytics;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Windows.Input;
 using Vestis.Core;
 using Vestis.Core.Model;
 using Vestis.UWP.Converters;
 using Windows.ApplicationModel.Resources;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
@@ -31,17 +24,15 @@ namespace Vestis.UWP
         private Wardrobe wardrobe;
         private IEnumerable<string> types;
 
-        public CombineEndPage()
-        {
-            this.InitializeComponent();
-        }
+        public CombineEndPage() => InitializeComponent();
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
 
-            (wardrobe, types) = ((Wardrobe, IEnumerable<string>))e.Parameter;
-            ClothesList.ItemsSource = types.Select(t => wardrobe.Garments.Where(g => g.Type.ToString().Equals(t)).Random())
+            (wardrobe, types) = ((Wardrobe, IEnumerable<string>))e?.Parameter;
+            ClothesList.ItemsSource = types.Select(t => wardrobe.Garments
+                    .Where(g => g.Type.ToString().Equals(t, StringComparison.InvariantCulture)).Random())
                 .Select(g => new GarmentWrapper
                 {
                     Garment = g,
@@ -50,26 +41,24 @@ namespace Vestis.UWP
                 });
         }
 
-        private void BtnGoBack_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(CombineStartPage), wardrobe);
-        }
+        private void BtnGoBack_Click(object _1, RoutedEventArgs _2) => Frame.Navigate(typeof(CombineStartPage), wardrobe);
 
-        private void BtnFinish_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(UserPage), wardrobe.Username);
-        }
+        private void BtnFinish_Click(object _1, RoutedEventArgs _2) => Frame.Navigate(typeof(UserPage), wardrobe.Username);
 
         internal void RefreshGarment(string type)
         {
             var current = ClothesList.Items.Cast<GarmentWrapper>().ToList();
-            var indexToReplace = current.IndexOf(current.First(g => g.InternalType.Equals(type)));
+            var indexToReplace = current.IndexOf(current.First(g => g.InternalType.Equals(type, StringComparison.InvariantCulture)));
 
             // The replacement should appear at the same position in the list
             // TODO Make sure the replacement is different from the original?
             var newGarment = wardrobe.Garments
-                .Where(g => g.Type.ToString().Equals(type))
+                .Where(g => g.Type.ToString().Equals(type, StringComparison.InvariantCulture))
                 .Random();
+            Analytics.TrackEvent("Replacing item in combination", new Dictionary<string, string>()
+            {
+                { "ClothingType", newGarment.Type.ToString() }
+            });
 
             current[indexToReplace] = new GarmentWrapper
             {
@@ -83,54 +72,24 @@ namespace Vestis.UWP
 
         class GarmentWrapper
         {
-            private ResourceLoader resources = ResourceLoader.GetForCurrentView();
+            private readonly ResourceLoader resources = ResourceLoader.GetForCurrentView();
 
             public Garment Garment { get; set; }
             public Wardrobe Wardrobe { get; set; }
             public ICommand GarmentRefreshCommand { get; set; }
 
-            public string ClothIcon
-            {
-                get
-                {
-                    return $"Assets/Icons/ClothingType{Garment.Type.ToString()}.png";
-                }
-            }
+            public string ClothIcon => $"Assets/Icons/ClothingType{Garment.Type.ToString()}.png";
 
-            public string ClothType
-            {
-                get
-                {
-                    return resources.GetString($"ClothingType{Garment.Type.ToString()}");
-                }
-            }
+            public string ClothType => resources.GetString($"ClothingType{Garment.Type.ToString()}");
 
-            public string InternalType
-            {
-                get
-                {
-                    return Garment.Type.ToString();
-                }
-            }
+            public string InternalType => Garment.Type.ToString();
 
-            public string ProfileColor
-            {
-                get
-                {
-                    return Wardrobe.ProfileColor;
-                }
-            }
+            public string ProfileColor => Wardrobe.ProfileColor;
 
-            public IEnumerable<ColorWrapper> ColorTags
+            public IEnumerable<ColorWrapper> ColorTags => Garment.ColorTags.Select(c => new ColorWrapper
             {
-                get
-                {
-                    return Garment.ColorTags.Select(c => new ColorWrapper
-                    {
-                        Color = c
-                    });
-                }
-            }
+                Color = c
+            });
 
             public string StyleTags
             {
@@ -141,13 +100,7 @@ namespace Vestis.UWP
                 }
             }
 
-            public string QualifiedName
-            {
-                get
-                {
-                    return $"{Wardrobe.Username}:{Garment.ID}";
-                }
-            }
+            public string QualifiedName => $"{Wardrobe.Username}:{Garment.ID}";
         }
 
         class ColorWrapper
@@ -157,14 +110,13 @@ namespace Vestis.UWP
 
         class GarmentRefreshCommand : ICommand
         {
+#pragma warning disable CS0067
             public event EventHandler CanExecuteChanged;
+#pragma warning restore CS0067
 
-            private CombineEndPage source;
+            private readonly CombineEndPage source;
 
-            public GarmentRefreshCommand(CombineEndPage source)
-            {
-                this.source = source;
-            }
+            public GarmentRefreshCommand(CombineEndPage source) => this.source = source;
 
             public bool CanExecute(object parameter) => true;
             public void Execute(object parameter)

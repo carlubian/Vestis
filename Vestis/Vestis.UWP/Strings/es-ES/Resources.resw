@@ -326,6 +326,12 @@ Si no has hecho una copia de seguridad, los datos se perderán de forma permanen
   <data name="DeleteUserDlgTblHeader.Text" xml:space="preserve">
     <value>Eliminar usuario</value>
   </data>
+  <data name="EditClothesPageBtnContinue.Text" xml:space="preserve">
+    <value>Continuar</value>
+  </data>
+  <data name="EditClothesPageBtnGoBack.Text" xml:space="preserve">
+    <value>Volver</value>
+  </data>
   <data name="EditClothesPageTblDateHeader.Text" xml:space="preserve">
     <value>Fecha de compra:</value>
   </data>
@@ -630,6 +636,18 @@ Además, solo pueden contener letras y guiones.</value>
   <data name="WardrobePageTblHeader.Text" xml:space="preserve">
     <value>Gestión del armario</value>
   </data>
+  <data name="WeatherAdviceChilly" xml:space="preserve">
+    <value>Está fresco, quizá quieras ponerte una chaqueta.</value>
+  </data>
+  <data name="WeatherAdviceCold" xml:space="preserve">
+    <value>Hace frío, deberías ponerte un abrigo.</value>
+  </data>
+  <data name="WeatherAdviceRaining" xml:space="preserve">
+    <value>Será mejor que cojas un paraguas.</value>
+  </data>
+  <data name="WeatherAdviceWarm" xml:space="preserve">
+    <value>Hace calor, puedes ir en manga corta.</value>
+  </data>
   <data name="WeatherApiDglTblHeader.Text" xml:space="preserve">
     <value>Información sobre la clave de API</value>
   </data>
@@ -643,6 +661,81 @@ crear una clave de API en weatherstack.
 
 Este servicio no tiene coste adicional. Puedes registrarte en:
 https://weatherstack.com/signup/free</value>
+  </data>
+  <data name="WeatherBlizzard" xml:space="preserve">
+    <value>Ventisca</value>
+  </data>
+  <data name="WeatherCloudy" xml:space="preserve">
+    <value>Nublado</value>
+  </data>
+  <data name="WeatherFog" xml:space="preserve">
+    <value>Niebla</value>
+  </data>
+  <data name="WeatherFreezingDrizzle" xml:space="preserve">
+    <value>Llovizna helada</value>
+  </data>
+  <data name="WeatherFreezingFog" xml:space="preserve">
+    <value>Niebla helada</value>
+  </data>
+  <data name="WeatherHeavyFreezingDrizzle" xml:space="preserve">
+    <value>Fuerte llovizna helada</value>
+  </data>
+  <data name="WeatherHeavyRain" xml:space="preserve">
+    <value>Fuertes lluvias</value>
+  </data>
+  <data name="WeatherLightDrizzle" xml:space="preserve">
+    <value>Llovizna</value>
+  </data>
+  <data name="WeatherLightFreezingRain" xml:space="preserve">
+    <value>Ligera lluvia helada</value>
+  </data>
+  <data name="WeatherLightRain" xml:space="preserve">
+    <value>Lluvia ligera</value>
+  </data>
+  <data name="WeatherMist" xml:space="preserve">
+    <value>Neblina</value>
+  </data>
+  <data name="WeatherModerateRain" xml:space="preserve">
+    <value>Lluvia moderada</value>
+  </data>
+  <data name="WeatherOvercast" xml:space="preserve">
+    <value>Cielo cubierto</value>
+  </data>
+  <data name="WeatherPartlyCloudy" xml:space="preserve">
+    <value>Parcialmente nublado</value>
+  </data>
+  <data name="WeatherPatchyDrizzle" xml:space="preserve">
+    <value>Llovizna helada a intervalos</value>
+  </data>
+  <data name="WeatherPatchyHeavyRain" xml:space="preserve">
+    <value>Fuertes lluvias a intervalos</value>
+  </data>
+  <data name="WeatherPatchyLightDrizzle" xml:space="preserve">
+    <value>Llovizna a intervalos</value>
+  </data>
+  <data name="WeatherPatchyLightRain" xml:space="preserve">
+    <value>Lluvia ligera a intervalos</value>
+  </data>
+  <data name="WeatherPatchyModerateRain" xml:space="preserve">
+    <value>Lluvia moderada a intervalos</value>
+  </data>
+  <data name="WeatherPatchyRain" xml:space="preserve">
+    <value>Lluvia a intervalos</value>
+  </data>
+  <data name="WeatherPatchySleet" xml:space="preserve">
+    <value>Aguanieve a intervalos</value>
+  </data>
+  <data name="WeatherPatchySnow" xml:space="preserve">
+    <value>Nevada a intervalos</value>
+  </data>
+  <data name="WeatherSnow" xml:space="preserve">
+    <value>Nevada</value>
+  </data>
+  <data name="WeatherSunny" xml:space="preserve">
+    <value>Soleado</value>
+  </data>
+  <data name="WeatherThundery" xml:space="preserve">
+    <value>Cielos tormentosos</value>
   </data>
   <data name="WelcomePageBtnImport.Text" xml:space="preserve">
     <value>Importar</value>

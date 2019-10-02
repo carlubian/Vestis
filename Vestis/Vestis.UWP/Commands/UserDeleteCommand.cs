@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using Vestis.Core;
 using Vestis.UWP.Dialogs;
@@ -15,7 +11,9 @@ namespace Vestis.UWP.Commands
     {
         private static UserDeleteCommand instance;
 
+#pragma warning disable CS0067
         public event EventHandler CanExecuteChanged;
+#pragma warning restore CS0067
 
         public bool CanExecute(object parameter) => true;
         public async void Execute(object parameter)
@@ -29,10 +27,11 @@ namespace Vestis.UWP.Commands
                 DressingRoom.DisposeOf(parameter as string);
                 (Window.Current.Content as Frame).Navigate(typeof(MainPage));
             }
-            
+
         }
 
-        public static UserDeleteCommand Instance {
+        public static UserDeleteCommand Instance
+        {
             get
             {
                 if (instance is null)

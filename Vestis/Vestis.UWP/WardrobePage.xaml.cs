@@ -1,23 +1,14 @@
 ﻿using DotNet.Misc.Extensions.Linq;
-using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Windows.Input;
 using Vestis.Core;
 using Vestis.Core.Model;
 using Vestis.UWP.Commands;
 using Vestis.UWP.Converters;
 using Windows.ApplicationModel.Resources;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
@@ -31,16 +22,13 @@ namespace Vestis.UWP
     {
         private Wardrobe wardrobe;
 
-        public WardrobePage()
-        {
-            this.InitializeComponent();
-        }
+        public WardrobePage() => InitializeComponent();
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
 
-            wardrobe = e.Parameter as Wardrobe;
+            wardrobe = e?.Parameter as Wardrobe;
 
             ClothesList.ItemsSource = wardrobe.Garments.Select(g => new GarmentWrapper
             {
@@ -51,59 +39,29 @@ namespace Vestis.UWP
             });
         }
 
-        private void BtnGoBack_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(UserPage), wardrobe.Username);
-        }
+        private void BtnGoBack_Click(object _1, RoutedEventArgs _2) => Frame.Navigate(typeof(UserPage), wardrobe.Username);
 
-        private void BtnAddClothes_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(AddClothesPage), wardrobe);
-        }
+        private void BtnAddClothes_Click(object _1, RoutedEventArgs _2) => Frame.Navigate(typeof(AddClothesPage), wardrobe);
 
         class GarmentWrapper
         {
-            private ResourceLoader resources = ResourceLoader.GetForCurrentView();
+            private readonly ResourceLoader resources = ResourceLoader.GetForCurrentView();
 
             public Garment Garment { get; set; }
             public Wardrobe Wardrobe { get; set; }
-            public ICommand GarmentDeleteCommand { get; set;  }
+            public ICommand GarmentDeleteCommand { get; set; }
             public ICommand GarmentEditCommand { get; set; }
 
-            public string ClothIcon
-            {
-                get
-                {
-                    return $"Assets/Icons/ClothingType{Garment.Type.ToString()}.png";
-                }
-            }
+            public string ClothIcon => $"Assets/Icons/ClothingType{Garment.Type.ToString()}.png";
 
-            public string ClothType
-            {
-                get
-                {
-                    return resources.GetString($"ClothingType{Garment.Type.ToString()}");
-                }
-            }
+            public string ClothType => resources.GetString($"ClothingType{Garment.Type.ToString()}");
 
-            public string ProfileColor
-            {
-                get
-                {
-                    return Wardrobe.ProfileColor;
-                }
-            }
+            public string ProfileColor => Wardrobe.ProfileColor;
 
-            public IEnumerable<ColorWrapper> ColorTags
+            public IEnumerable<ColorWrapper> ColorTags => Garment.ColorTags.Select(c => new ColorWrapper
             {
-                get
-                {
-                    return Garment.ColorTags.Select(c => new ColorWrapper
-                    {
-                        Color = c
-                    });
-                }
-            }
+                Color = c
+            });
 
             public string StyleTags
             {
@@ -114,13 +72,7 @@ namespace Vestis.UWP
                 }
             }
 
-            public string QualifiedName
-            {
-                get
-                {
-                    return $"{Wardrobe.Username}:{Garment.ID}";
-                }
-            }
+            public string QualifiedName => $"{Wardrobe.Username}:{Garment.ID}";
         }
 
         class ColorWrapper

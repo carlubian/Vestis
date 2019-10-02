@@ -1,21 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
+using System.Globalization;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text.RegularExpressions;
 using Vestis.Core;
 using Vestis.Core.Model;
 using Vestis.UWP.Dialogs;
 using Windows.ApplicationModel.Resources;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
@@ -31,17 +24,14 @@ namespace Vestis.UWP
         private string garment, oldName;
         private int Step;
 
-        public EditClothesPage()
-        {
-            this.InitializeComponent();
-        }
+        public EditClothesPage() => InitializeComponent();
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
 
-            (wardrobe, garment) = ((Wardrobe, string))e.Parameter;
-            var clothing = wardrobe.Garments.First(g => g.ID.Equals(garment));
+            (wardrobe, garment) = ((Wardrobe, string))e?.Parameter;
+            var clothing = wardrobe.Garments.First(g => g.ID.Equals(garment, StringComparison.InvariantCulture));
             oldName = clothing.Name;
 
             Step = 1;
@@ -69,13 +59,13 @@ namespace Vestis.UWP
                 "Spring", "Summer",
                 "Autumn", "Winter"
             };
-            ResourceLoader resources = ResourceLoader.GetForCurrentView();
+            var resources = ResourceLoader.GetForCurrentView();
             SeasonComboBox.ItemsSource = seasons.Select(s => new SeasonWrapper
             {
                 Season = s
             });
             SeasonComboBox.SelectedIndex = seasons.ToList().IndexOf(clothing.PurchaseDate.Season.ToString());
-            YearTextBox.Text = clothing.PurchaseDate.Year.ToString();
+            YearTextBox.Text = clothing.PurchaseDate.Year.ToString(CultureInfo.InvariantCulture);
 
             // Garment colors
             GarmentColorGrid.ItemsSource = ClothingColors.All()
@@ -112,12 +102,9 @@ namespace Vestis.UWP
                 GarmentStyleGrid.SelectRange(new ItemIndexRange(index, 1));
         }
 
-        private void BtnGoBack_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(WardrobePage), wardrobe);
-        }
+        private void BtnGoBack_Click(object _1, RoutedEventArgs _2) => Frame.Navigate(typeof(WardrobePage), wardrobe);
 
-        private async void BtnContinue_Click(object sender, RoutedEventArgs e)
+        private async void BtnContinue_Click(object _1, RoutedEventArgs _2)
         {
             if (Step is 1)
             {
@@ -130,14 +117,14 @@ namespace Vestis.UWP
                     return;
                 }
                 // Validation: Name must only contain letters, numbers, spaces and dashes
-                var regex = new Regex("^[a-z0-9áéíóúàèìòùäëïöüâêîôûçñ \\-]+$");
-                if (!regex.IsMatch(name.ToLowerInvariant()))
+                var regex = new Regex("^[A-Z0-9ÁÉÍÓÚÀÈÌÒÙÄËÏÖÜÂÊÎÔÛÇÑ \\-]+$");
+                if (!regex.IsMatch(name.ToUpperInvariant()))
                 {
                     await new GarmentNameFormatError().ShowAsync();
                     return;
                 }
                 // Validation: Name must not exist already
-                if (wardrobe.Garments.Any(g => g.Name.ToLowerInvariant().Equals(name.ToLowerInvariant())) && name != oldName)
+                if (wardrobe.Garments.Any(g => g.Name.ToUpperInvariant().Equals(name.ToUpperInvariant(), StringComparison.InvariantCulture)) && name != oldName)
                 {
                     await new GarmentNameExistingError().ShowAsync();
                     return;
@@ -187,7 +174,7 @@ namespace Vestis.UWP
                     return;
                 }
 
-                var clothing = wardrobe.Garments.First(g => g.ID.Equals(garment));
+                var clothing = wardrobe.Garments.First(g => g.ID.Equals(garment, StringComparison.InvariantCulture));
                 clothing.Name = NameTextBox.Text;
                 clothing.Type = (ClothingType)Enum.Parse(typeof(ClothingType), (TypeComboBox.SelectedItem as TypeWrapper).Type);
                 clothing.PurchaseDate = new PurchaseDate($"{(SeasonComboBox.SelectedItem as SeasonWrapper).Season} {YearTextBox.Text}");
@@ -206,7 +193,7 @@ namespace Vestis.UWP
             {
                 get
                 {
-                    ResourceLoader resources = ResourceLoader.GetForCurrentView();
+                    var resources = ResourceLoader.GetForCurrentView();
                     return resources.GetString($"ClothingType{Type}");
                 }
             }
@@ -214,7 +201,7 @@ namespace Vestis.UWP
             {
                 get
                 {
-                    ResourceLoader resources = ResourceLoader.GetForCurrentView();
+                    var resources = ResourceLoader.GetForCurrentView();
                     return $"Assets/Icons/ClothingType{Type}.png";
                 }
             }
@@ -232,7 +219,7 @@ namespace Vestis.UWP
             {
                 get
                 {
-                    ResourceLoader resources = ResourceLoader.GetForCurrentView();
+                    var resources = ResourceLoader.GetForCurrentView();
                     return resources.GetString($"Tag{Style}");
                 }
             }
@@ -245,7 +232,7 @@ namespace Vestis.UWP
             {
                 get
                 {
-                    ResourceLoader resources = ResourceLoader.GetForCurrentView();
+                    var resources = ResourceLoader.GetForCurrentView();
                     return resources.GetString($"Season{Season}");
                 }
             }

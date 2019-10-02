@@ -139,6 +139,8 @@
     <Compile Include="Commands\UserDeleteCommand.cs" />
     <Compile Include="Commands\UserEditCommand.cs" />
     <Compile Include="Commands\UserClickCommand.cs" />
+    <Compile Include="Converters\CodeToLocalizedWeatherAdviceConverter.cs" />
+    <Compile Include="Converters\CodeToLocalizedWeatherConverter.cs" />
     <Compile Include="Converters\StringToBrushConverter.cs" />
     <Compile Include="Converters\TagToLocalizedStringConverter.cs" />
     <Compile Include="Dialogs\ConfirmDeleteGarment.xaml.cs">
@@ -232,6 +234,10 @@
     <Content Include="Assets\Icons\users.png" />
     <Content Include="Assets\Icons\verified.png" />
     <Content Include="Assets\Icons\wardrobe.png" />
+    <Content Include="Assets\Icons\WeatherCloudy.png" />
+    <Content Include="Assets\Icons\WeatherOvercast.png" />
+    <Content Include="Assets\Icons\WeatherPartlyCloudy.png" />
+    <Content Include="Assets\Icons\WeatherSunny.png" />
     <Content Include="Assets\Icons\woman.png" />
     <Content Include="Assets\Store\BadgeLogo.scale-100.png" />
     <Content Include="Assets\Store\BadgeLogo.scale-125.png" />

@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+﻿using System.Collections.Generic;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -24,7 +13,7 @@ namespace Vestis.UWP
     {
         public AboutPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
 
             var versionElements = new List<KeyValuePair<string, string>>()
             {
@@ -51,6 +40,7 @@ namespace Vestis.UWP
                 new KeyValuePair<string, string>("User icon", "Smashicons from www.flaticon.com"),
                 new KeyValuePair<string, string>("Users icon", "Smashicons from www.flaticon.com"),
                 new KeyValuePair<string, string>("Merge icon", "Smashicons from www.flaticon.com"),
+                new KeyValuePair<string, string>("Cloud icon", "Smashicons from www.flaticon.com"),
                 new KeyValuePair<string, string>("Plus sign icon", "Lyolya from www.flaticon.com"),
                 new KeyValuePair<string, string>("Import icon", "Anatoly from www.flaticon.com"),
                 new KeyValuePair<string, string>("Export icon", "Anatoly from www.flaticon.com"),
@@ -66,14 +56,13 @@ namespace Vestis.UWP
                 new KeyValuePair<string, string>("Sport sweater icon", "Freepik from www.flaticon.com"),
                 new KeyValuePair<string, string>("Cozy sweater icon", "Freepik from www.flaticon.com"),
                 new KeyValuePair<string, string>("Verified icon", "Freepik from www.flaticon.com"),
-                new KeyValuePair<string, string>("Reload icon", "Gregor Cresnar from www.flaticon.com")
+                new KeyValuePair<string, string>("Sun icon", "Freepik from www.flaticon.com"),
+                new KeyValuePair<string, string>("Reload icon", "Gregor Cresnar from www.flaticon.com"),
+                new KeyValuePair<string, string>("Sun and cloud icon", "Good Ware from www.flaticon.com")
             };
             ThirdPartyList.ItemsSource = thirdPartyElements;
         }
 
-        private void BtnGoBack_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(MainPage));
-        }
+        private void BtnGoBack_Click(object _1, RoutedEventArgs _2) => Frame.Navigate(typeof(MainPage));
     }
 }

@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
+﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 // La plantilla de elemento del cuadro de diálogo de contenido está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -19,23 +7,22 @@ namespace Vestis.UWP.Dialogs
 {
     public sealed partial class ConfirmDeleteGarment : ContentDialog
     {
+#pragma warning disable CA1051
         public bool? Result = null;
+#pragma warning restore CS1051
 
-        public ConfirmDeleteGarment()
-        {
-            this.InitializeComponent();
-        }
+        public ConfirmDeleteGarment() => InitializeComponent();
 
-        private void RestoreDlgBtnYes_Click(object sender, RoutedEventArgs e)
+        private void RestoreDlgBtnYes_Click(object _1, RoutedEventArgs _2)
         {
             Result = true;
-            this.Hide();
+            Hide();
         }
 
-        private void RestoreDlgBtnNo_Click(object sender, RoutedEventArgs e)
+        private void RestoreDlgBtnNo_Click(object _1, RoutedEventArgs _2)
         {
             Result = false;
-            this.Hide();
+            Hide();
         }
     }
 }

@@ -7,7 +7,7 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using Vestis.Core.Failures;
 
-[assembly:InternalsVisibleTo("Vestis.Test")]
+[assembly: InternalsVisibleTo("Vestis.Test")]
 namespace Vestis.Core
 {
     /// <summary>
@@ -15,6 +15,7 @@ namespace Vestis.Core
     /// </summary>
     public static class DressingRoom
     {
+        private static DateTime LastWeatherUpdate = DateTime.MinValue;
         public static string WeatherApiKey
         {
             get
@@ -43,6 +44,9 @@ namespace Vestis.Core
             }
             set
             {
+                // A change in location invalidates the cache
+                if (WeatherLocation != value)
+                    LastWeatherUpdate = DateTime.MinValue;
                 var path = Path.Combine(AppDirectory, "Vestis");
                 path = Path.Combine(path, "GlobalSettings.xml");
                 var config = XmlConfig.From(path);
@@ -50,16 +54,28 @@ namespace Vestis.Core
             }
         }
 
+        private static dynamic _WeatherData;
         public static dynamic WeatherData
         {
             get
             {
-                var response = Model.Restquest.Get("api.weatherstack.com/current", $"?access_key={WeatherApiKey}&query={WeatherLocation}".Replace(" ", "%20"));
+                if (DateTime.Now - LastWeatherUpdate > TimeSpan.FromMinutes(30))
+                {
+                    try
+                    {
+                        _WeatherData = Model.Restquest.Get("api.weatherstack.com/current", $"?access_key={WeatherApiKey}&query={WeatherLocation}".Replace(" ", "%20"));
+                        LastWeatherUpdate = DateTime.Now;
+                    }
+                    catch
+                    {
+                        _WeatherData = null;
+                    }
+                }
                 //(response.location.name as Newtonsoft.Json.Linq.JValue).Value
                 //(response.location.country as Newtonsoft.Json.Linq.JValue).Value
                 //(response.current.temperature as Newtonsoft.Json.Linq.JValue).Value
                 //(response.current.weather_code as Newtonsoft.Json.Linq.JValue).Value
-                return response;
+                return _WeatherData;
             }
         }
 
@@ -163,9 +179,6 @@ namespace Vestis.Core
         /// to a legal storage directory.
         /// </summary>
         /// <param name="directory"></param>
-        public static void SetAppDirectory(string directory)
-        {
-            AppDirectory = directory;
-        }
+        public static void SetAppDirectory(string directory) => AppDirectory = directory;
     }
 }

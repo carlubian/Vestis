@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Vestis.Core.Model
 {
@@ -14,16 +12,10 @@ namespace Vestis.Core.Model
         /// since the garment was purchased. Current season
         /// will return 0; Same season last year will return 4.
         /// </summary>
-        public int AgeInSeasons
-        {
-            get
-            {
-                return ((DateTime.Today.Year - 1) * 12 + DateTime.Today.Month
+        public int AgeInSeasons => ((DateTime.Today.Year - 1) * 12 + DateTime.Today.Month
                         -
                         ((Year - 1) * 12 + 3 * (int)Season)
                     ) / 3;
-            }
-        }
 
         /// <summary>
         /// Returns the number of years since the garment was
@@ -32,13 +24,7 @@ namespace Vestis.Core.Model
         /// result will be 0. Otherwise, an integer number measuring
         /// the full years of ownership.
         /// </summary>
-        public int AgeInYears
-        {
-            get
-            {
-                return AgeInSeasons / 4;
-            }
-        }
+        public int AgeInYears => AgeInSeasons / 4;
 
         public PurchaseDate(string text)
         {
@@ -60,20 +46,13 @@ namespace Vestis.Core.Model
 
     internal class SeasonsUtil
     {
-        public static Seasons Parse(string text)
+        public static Seasons Parse(string text) => (text.ToLowerInvariant()) switch
         {
-            switch (text.ToLowerInvariant())
-            {
-                case "winter":
-                    return Seasons.Winter;
-                case "spring":
-                    return Seasons.Spring;
-                case "summer":
-                    return Seasons.Summer;
-                case "autumn":
-                    return Seasons.Autumn;
-            }
-            return Seasons.Winter;
-        }
+            "winter" => Seasons.Winter,
+            "spring" => Seasons.Spring,
+            "summer" => Seasons.Summer,
+            "autumn" => Seasons.Autumn,
+            _ => Seasons.Winter,
+        };
     }
 }

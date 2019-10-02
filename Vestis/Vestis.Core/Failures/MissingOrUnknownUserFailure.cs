@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Vestis.Core.Failures
+﻿namespace Vestis.Core.Failures
 {
     public class MissingOrUnknownUserFailure : IFailure
     {
@@ -12,9 +8,6 @@ namespace Vestis.Core.Failures
 
         private readonly string _user;
 
-        internal MissingOrUnknownUserFailure(string user)
-        {
-            _user = user;
-        }
+        internal MissingOrUnknownUserFailure(string user) => _user = user;
     }
 }

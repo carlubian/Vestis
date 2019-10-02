@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Vestis.Core.Failures
+﻿namespace Vestis.Core.Failures
 {
     /// <summary>
     /// Represents a failed operation (of

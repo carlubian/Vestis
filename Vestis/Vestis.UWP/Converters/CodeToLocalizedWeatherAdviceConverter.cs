@@ -2,10 +2,10 @@
 
 namespace Vestis.UWP.Converters
 {
-    internal class TagToLocalizedStringConverter
+    internal class CodeToLocalizedWeatherAdviceConverter
     {
         private readonly ResourceLoader resources = ResourceLoader.GetForCurrentView();
 
-        internal string Convert(string tag) => resources.GetString($"Tag{tag}");
+        internal string Convert(string code) => resources.GetString(code);
     }
 }

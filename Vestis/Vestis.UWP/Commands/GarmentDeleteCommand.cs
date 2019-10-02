@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using Vestis.Core;
 using Vestis.UWP.Dialogs;
@@ -15,12 +11,14 @@ namespace Vestis.UWP.Commands
     {
         private static GarmentDeleteCommand instance;
 
+#pragma warning disable CS0067
         public event EventHandler CanExecuteChanged;
+#pragma warning restore CS0067
 
         public bool CanExecute(object parameter) => true;
         public async void Execute(object parameter)
         {
-            var split = (parameter as string).Split(':');
+            var split = (parameter as string)?.Split(':');
             var (user, garment) = (split[0], split[1]);
             var confirm = new ConfirmDeleteGarment();
 
@@ -28,7 +26,8 @@ namespace Vestis.UWP.Commands
 
             if (confirm.Result is true)
             {
-                DressingRoom.ForUser(user).Match(wardrobe => {
+                DressingRoom.ForUser(user).Match(wardrobe =>
+                    {
                         wardrobe.RemoveGarment(garment);
                         return 0;
                     },
@@ -39,10 +38,11 @@ namespace Vestis.UWP.Commands
                 );
                 (Window.Current.Content as Frame).Navigate(typeof(WardrobePage), DressingRoom.ForUser(user).AsT0);
             }
-            
+
         }
 
-        public static GarmentDeleteCommand Instance {
+        public static GarmentDeleteCommand Instance
+        {
             get
             {
                 if (instance is null)

@@ -1,20 +1,12 @@
 ﻿using Microsoft.AppCenter.Analytics;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text.RegularExpressions;
 using Vestis.Core;
 using Vestis.UWP.Dialogs;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
@@ -28,17 +20,14 @@ namespace Vestis.UWP
     {
         private string OldUsername;
 
-        public EditUserPage()
-        {
-            this.InitializeComponent();
-        }
+        public EditUserPage() => InitializeComponent();
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
 
             // Username
-            OldUsername = e.Parameter as string;
+            OldUsername = e?.Parameter as string;
             UserNameTextBox.Text = OldUsername;
 
             // Profile colors
@@ -53,7 +42,7 @@ namespace Vestis.UWP
                 Color = c
             });
             var color = (UserColorGrid.ItemsSource as IEnumerable<ColorWrapper>)
-                .First(c => c.Color.Equals(userColor));
+                .First(c => c.Color.Equals(userColor, StringComparison.InvariantCulture));
             UserColorGrid.SelectedIndex = colors.IndexOf(color.Color);
 
             // Profile icons
@@ -71,16 +60,13 @@ namespace Vestis.UWP
                 Icon = i
             });
             var icon = (UserIconGrid.ItemsSource as IEnumerable<IconWrapper>)
-                .First(i => i.Icon.Equals(userIcon));
+                .First(i => i.Icon.Equals(userIcon, StringComparison.InvariantCulture));
             UserIconGrid.SelectedIndex = icons.IndexOf(icon.Icon);
         }
 
-        private void BtnGoBack_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(UserPage), OldUsername);
-        }
+        private void BtnGoBack_Click(object _1, RoutedEventArgs _2) => Frame.Navigate(typeof(UserPage), OldUsername);
 
-        private async void BtnSave_Click(object sender, RoutedEventArgs e)
+        private async void BtnSave_Click(object _1, RoutedEventArgs _2)
         {
             var username = UserNameTextBox.Text;
 
@@ -91,14 +77,14 @@ namespace Vestis.UWP
                 return;
             }
             // Validation: User name can only contain letters and dashes
-            var regex = new Regex("^[a-z\\-]+$");
-            if (!regex.IsMatch(username.ToLowerInvariant()))
+            var regex = new Regex("^[A-Z\\-]+$");
+            if (!regex.IsMatch(username.ToUpperInvariant()))
             {
                 await new UserNameFormatError().ShowAsync();
                 return;
             }
             // Validation: User name must not exist already (except for maintaining it)
-            if (DressingRoom.ListAvailable().Contains(username) && !username.Equals(OldUsername))
+            if (DressingRoom.ListAvailable().Contains(username) && !username.Equals(OldUsername, StringComparison.InvariantCulture))
             {
                 await new UserNameExistingError().ShowAsync();
                 return;

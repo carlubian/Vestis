@@ -10,11 +10,6 @@ using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -27,7 +22,7 @@ namespace Vestis.UWP
     {
         public ManageUsersPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
 
             // Bind users to list
             var users = DressingRoom.ListAvailable();
@@ -41,12 +36,9 @@ namespace Vestis.UWP
             });
         }
 
-        private void BtnGoBack_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(MainPage));
-        }
+        private void BtnGoBack_Click(object _1, RoutedEventArgs _2) => Frame.Navigate(typeof(MainPage));
 
-        private async void BtnImport_Click(object sender, RoutedEventArgs e)
+        private async void BtnImport_Click(object _1, RoutedEventArgs _2)
         {
             var openPicker = new FileOpenPicker
             {
@@ -70,7 +62,7 @@ namespace Vestis.UWP
             await CoreApplication.RequestRestartAsync("");
         }
 
-        private async void BtnExport_Click(object sender, RoutedEventArgs e)
+        private async void BtnExport_Click(object _1, RoutedEventArgs _2)
         {
             var savePicker = new FileSavePicker
             {
@@ -88,9 +80,6 @@ namespace Vestis.UWP
             File.Delete(export);
         }
 
-        private void BtnNewUser_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(AddUserPage));
-        }
+        private void BtnNewUser_Click(object _1, RoutedEventArgs _2) => Frame.Navigate(typeof(AddUserPage));
     }
 }

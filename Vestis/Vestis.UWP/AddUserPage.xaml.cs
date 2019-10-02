@@ -1,21 +1,12 @@
 ﻿using Microsoft.AppCenter.Analytics;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text.RegularExpressions;
 using Vestis.Core;
 using Vestis.UWP.Dialogs;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -28,7 +19,7 @@ namespace Vestis.UWP
     {
         public AddUserPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
 
             var colors = new string[] { "218:47:47", "233:127:13", "220:163:0",
                                       "101:163:3", "32:128:32", "13:152:186",
@@ -50,12 +41,9 @@ namespace Vestis.UWP
             });
         }
 
-        private void BtnGoBack_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(MainPage));
-        }
+        private void BtnGoBack_Click(object _1, RoutedEventArgs _2) => Frame.Navigate(typeof(MainPage));
 
-        private async void BtnSaveUser_Click(object sender, RoutedEventArgs e)
+        private async void BtnSaveUser_Click(object _1, RoutedEventArgs _2)
         {
             var username = UserNameTextBox.Text;
 
@@ -66,8 +54,8 @@ namespace Vestis.UWP
                 return;
             }
             // Validation: User name can only contain letters and dashes
-            var regex = new Regex("^[a-z\\-]+$");
-            if (!regex.IsMatch(username.ToLowerInvariant()))
+            var regex = new Regex("^[A-Z\\-]+$");
+            if (!regex.IsMatch(username.ToUpperInvariant()))
             {
                 await new UserNameFormatError().ShowAsync();
                 return;

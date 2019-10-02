@@ -1,21 +1,14 @@
-﻿using System;
+﻿using Microsoft.AppCenter.Analytics;
+using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text.RegularExpressions;
 using Vestis.Core;
 using Vestis.Core.Model;
 using Vestis.UWP.Dialogs;
 using Windows.ApplicationModel.Resources;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
@@ -30,16 +23,13 @@ namespace Vestis.UWP
         private Wardrobe user;
         private int Step;
 
-        public AddClothesPage()
-        {
-            this.InitializeComponent();
-        }
+        public AddClothesPage() => InitializeComponent();
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
 
-            user = e.Parameter as Wardrobe;
+            user = e?.Parameter as Wardrobe;
             Step = 1;
             Step1Grid.Visibility = Visibility.Visible;
             Step2Grid.Visibility = Visibility.Collapsed;
@@ -62,7 +52,7 @@ namespace Vestis.UWP
                 "Spring", "Summer",
                 "Autumn", "Winter"
             };
-            ResourceLoader resources = ResourceLoader.GetForCurrentView();
+            var resources = ResourceLoader.GetForCurrentView();
             SeasonComboBox.ItemsSource = seasons.Select(s => new SeasonWrapper
             {
                 Season = s
@@ -83,12 +73,9 @@ namespace Vestis.UWP
                 });
         }
 
-        private void BtnGoBack_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(WardrobePage), user);
-        }
+        private void BtnGoBack_Click(object _1, RoutedEventArgs _2) => Frame.Navigate(typeof(WardrobePage), user);
 
-        private async void BtnContinue_Click(object sender, RoutedEventArgs e)
+        private async void BtnContinue_Click(object _1, RoutedEventArgs _2)
         {
             if (Step is 1)
             {
@@ -101,14 +88,14 @@ namespace Vestis.UWP
                     return;
                 }
                 // Validation: Name must only contain letters, numbers, spaces and dashes
-                var regex = new Regex("^[a-z0-9áéíóúàèìòùäëïöüâêîôûçñ \\-]+$");
-                if (!regex.IsMatch(name.ToLowerInvariant()))
+                var regex = new Regex("^[A-Z0-9ÁÉÍÓÚÀÈÌÒÙÄËÏÖÜÂÊÎÔÛÇÑ \\-]+$");
+                if (!regex.IsMatch(name.ToUpperInvariant()))
                 {
                     await new GarmentNameFormatError().ShowAsync();
                     return;
                 }
                 // Validation: Name must not exist already
-                if (user.Garments.Any(g => g.Name.ToLowerInvariant().Equals(name.ToLowerInvariant())))
+                if (user.Garments.Any(g => g.Name.ToUpperInvariant().Equals(name.ToUpperInvariant(), StringComparison.InvariantCulture)))
                 {
                     await new GarmentNameExistingError().ShowAsync();
                     return;
@@ -167,6 +154,10 @@ namespace Vestis.UWP
                     StyleTags = GarmentStyleGrid.SelectedItems.Select(s => (s as StyleWrapper).Style)
                 };
                 user.AddGarment(garment);
+                Analytics.TrackEvent("Added new garment", new Dictionary<string, string>()
+                {
+                    { "ClothingType", garment.Type.ToString() }
+                });
                 Frame.Navigate(typeof(WardrobePage), user);
             }
         }
@@ -174,20 +165,15 @@ namespace Vestis.UWP
         class TypeWrapper
         {
             public string Type { get; set; }
-            public string LocalizedName { get
-                {
-                    ResourceLoader resources = ResourceLoader.GetForCurrentView();
-                    return resources.GetString($"ClothingType{Type}");
-                }
-            }
-            public string Icon
+            public string LocalizedName
             {
                 get
                 {
-                    ResourceLoader resources = ResourceLoader.GetForCurrentView();
-                    return $"Assets/Icons/ClothingType{Type}.png";
+                    var resources = ResourceLoader.GetForCurrentView();
+                    return resources.GetString($"ClothingType{Type}");
                 }
             }
+            public string Icon => $"Assets/Icons/ClothingType{Type}.png";
         }
 
         class ColorWrapper
@@ -202,7 +188,7 @@ namespace Vestis.UWP
             {
                 get
                 {
-                    ResourceLoader resources = ResourceLoader.GetForCurrentView();
+                    var resources = ResourceLoader.GetForCurrentView();
                     return resources.GetString($"Tag{Style}");
                 }
             }
@@ -215,7 +201,7 @@ namespace Vestis.UWP
             {
                 get
                 {
-                    ResourceLoader resources = ResourceLoader.GetForCurrentView();
+                    var resources = ResourceLoader.GetForCurrentView();
                     return resources.GetString($"Season{Season}");
                 }
             }
