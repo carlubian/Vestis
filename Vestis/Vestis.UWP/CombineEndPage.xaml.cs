@@ -1,5 +1,4 @@
 ﻿using DotNet.Misc.Extensions.Linq;
-using Microsoft.AppCenter.Analytics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,10 +54,6 @@ namespace Vestis.UWP
             var newGarment = wardrobe.Garments
                 .Where(g => g.Type.ToString().Equals(type, StringComparison.InvariantCulture))
                 .Random();
-            Analytics.TrackEvent("Replacing item in combination", new Dictionary<string, string>()
-            {
-                { "ClothingType", newGarment.Type.ToString() }
-            });
 
             current[indexToReplace] = new GarmentWrapper
             {

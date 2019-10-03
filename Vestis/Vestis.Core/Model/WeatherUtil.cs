@@ -41,9 +41,16 @@ namespace Vestis.Core.Model
             if (weatherData is null)
                 yield break;
 
-            var temperature = (weatherData.current.temperature as Newtonsoft.Json.Linq.JValue).Value as long?;
-            var code = (weatherData.current.weather_code as Newtonsoft.Json.Linq.JValue).Value as long?;
-
+            long? temperature, code;
+            try
+            {
+                temperature = (weatherData.current.temperature as Newtonsoft.Json.Linq.JValue).Value as long?;
+                code = (weatherData.current.weather_code as Newtonsoft.Json.Linq.JValue).Value as long?;
+            }
+            catch
+            {
+                yield break;
+            }
             // Is it raining (in any of its multiple variants)?
             if ((code >= 176 && code <= 230)
                 || (code >= 263 && code <= 311))

@@ -31,6 +31,7 @@ namespace Vestis.UWP
                 new KeyValuePair<string, string>("OneOf library", "Copyright (c) 2016 Harry McIntyre. Licensed under MIT license."),
                 new KeyValuePair<string, string>("FluentAssertions library", "Copyright (c) Dennis Doomen, Jonas Nyrup. Licensed under Apache 2.0 license."),
                 new KeyValuePair<string, string>("DotNetZip library", "Copyright (c) Dino Chiesa and Microsoft Corporation. Licensed under Microsoft Public License."),
+                new KeyValuePair<string, string>("Weatherstack API", "Interactions are governed by their own privacy policy, available on: https://weatherstack.com/privacy"),
                 new KeyValuePair<string, string>("Cloth hanger icon", "Nikita Golubev from www.flaticon.com"),
                 new KeyValuePair<string, string>("Artificial Intelligence icon", "photo3idea_studio from www.flaticon.com"),
                 new KeyValuePair<string, string>("Left arrow icon", "Lucy G from www.flaticon.com"),
@@ -49,16 +50,23 @@ namespace Vestis.UWP
                 new KeyValuePair<string, string>("Baby girl icon", "Iconnice from www.flaticon.com"),
                 new KeyValuePair<string, string>("Remove icon", "itim2101 from www.flaticon.com"),
                 new KeyValuePair<string, string>("Long blouse icon", "itim2101 from www.flaticon.com"),
+                new KeyValuePair<string, string>("Long polo icon", "itim201 from www.flaticon.com"),
                 new KeyValuePair<string, string>("Wardrobe icon", "xnimrodx from www.flaticon.com"),
                 new KeyValuePair<string, string>("Short t-shirt icon", "Good-Ware from www.flaticon.com"),
                 new KeyValuePair<string, string>("Short blouse icon", "Freepik from www.flaticon.com"),
                 new KeyValuePair<string, string>("Short polo icon", "Freepik from www.flaticon.com"),
                 new KeyValuePair<string, string>("Sport sweater icon", "Freepik from www.flaticon.com"),
                 new KeyValuePair<string, string>("Cozy sweater icon", "Freepik from www.flaticon.com"),
+                new KeyValuePair<string, string>("Coat icon", "Freepik from www.flaticon.com"),
+                new KeyValuePair<string, string>("Boot icon", "Freepik from www.flaticon.com"),
+                new KeyValuePair<string, string>("Jacket icon", "Freepik from www.flaticon.com"),
+                new KeyValuePair<string, string>("Long dress icon", "Freepik from www.flaticon.com"),
                 new KeyValuePair<string, string>("Verified icon", "Freepik from www.flaticon.com"),
                 new KeyValuePair<string, string>("Sun icon", "Freepik from www.flaticon.com"),
                 new KeyValuePair<string, string>("Reload icon", "Gregor Cresnar from www.flaticon.com"),
-                new KeyValuePair<string, string>("Sun and cloud icon", "Good Ware from www.flaticon.com")
+                new KeyValuePair<string, string>("Sun and cloud icon", "Good Ware from www.flaticon.com"),
+                new KeyValuePair<string, string>("Short skirt icon", "iconixar from www.flaticon.com"),
+                new KeyValuePair<string, string>("Long skirt icon", "iconixar from www.flaticon.com")
             };
             ThirdPartyList.ItemsSource = thirdPartyElements;
         }

@@ -1,5 +1,4 @@
-﻿using Microsoft.AppCenter.Analytics;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -41,7 +40,7 @@ namespace Vestis.UWP
             });
         }
 
-        private void BtnGoBack_Click(object _1, RoutedEventArgs _2) => Frame.Navigate(typeof(MainPage));
+        private void BtnGoBack_Click(object _1, RoutedEventArgs _2) => Frame.Navigate(typeof(ManageUsersPage));
 
         private async void BtnSaveUser_Click(object _1, RoutedEventArgs _2)
         {
@@ -84,10 +83,6 @@ namespace Vestis.UWP
             var icon = (UserIconGrid.SelectedItem as IconWrapper).Icon;
 
             DressingRoom.CreateNew(username, color, icon);
-            Analytics.TrackEvent("User profile created", new Dictionary<string, string> {
-                { "Color", color },
-                { "Icon", icon }
-            });
 
             Frame.Navigate(typeof(MainPage));
         }

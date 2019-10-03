@@ -17,7 +17,17 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
-    <AppxPackageSigningEnabled>false</AppxPackageSigningEnabled>
+    <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
+    <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
+    <PackageCertificateKeyFile>F:\GitHub\Vestis\Vestis\Vestis.UWP\Vestis.UWP_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>147FA5588164CE034139DD2837CA797739C640BB</PackageCertificateThumbprint>
+    <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
+    <GenerateTestArtifacts>True</GenerateTestArtifacts>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
+    <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -173,6 +183,9 @@
     <Compile Include="Dialogs\GarmentNameFormatError.xaml.cs">
       <DependentUpon>GarmentNameFormatError.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\WeatherLocationInfo.xaml.cs">
+      <DependentUpon>WeatherLocationInfo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\WeatherApiInfo.xaml.cs">
       <DependentUpon>WeatherApiInfo.xaml</DependentUpon>
     </Compile>
@@ -212,10 +225,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Icons\baby-girl.png" />
+    <Content Include="Assets\Icons\ClothingTypeBoots.png" />
+    <Content Include="Assets\Icons\ClothingTypeCoats.png" />
     <Content Include="Assets\Icons\ClothingTypeCozySweater.png" />
+    <Content Include="Assets\Icons\ClothingTypeJackets.png" />
     <Content Include="Assets\Icons\ClothingTypeLongBlouse.png" />
+    <Content Include="Assets\Icons\ClothingTypeLongDress.png" />
+    <Content Include="Assets\Icons\ClothingTypeLongPolo.png" />
+    <Content Include="Assets\Icons\ClothingTypeLongSkirt.png" />
     <Content Include="Assets\Icons\ClothingTypeShortBlouse.png" />
     <Content Include="Assets\Icons\ClothingTypeShortPolo.png" />
+    <Content Include="Assets\Icons\ClothingTypeShortSkirt.png" />
     <Content Include="Assets\Icons\ClothingTypeShortTShirt.png" />
     <Content Include="Assets\Icons\ClothingTypeSportSweater.png" />
     <Content Include="Assets\Icons\export.png" />
@@ -361,6 +381,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Dialogs\WeatherLocationInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Dialogs\WeatherApiInfo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -403,11 +427,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.AppCenter.Analytics">
-      <Version>2.1.1</Version>
-    </PackageReference>
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers">
-      <Version>2.9.4</Version>
+      <Version>2.9.5</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
@@ -429,6 +450,9 @@
   </ItemGroup>
   <ItemGroup>
     <PRIResource Include="Strings\es-ES\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Vestis.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

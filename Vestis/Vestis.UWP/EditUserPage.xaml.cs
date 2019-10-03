@@ -1,5 +1,4 @@
-﻿using Microsoft.AppCenter.Analytics;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -64,7 +63,7 @@ namespace Vestis.UWP
             UserIconGrid.SelectedIndex = icons.IndexOf(icon.Icon);
         }
 
-        private void BtnGoBack_Click(object _1, RoutedEventArgs _2) => Frame.Navigate(typeof(UserPage), OldUsername);
+        private void BtnGoBack_Click(object _1, RoutedEventArgs _2) => Frame.Navigate(typeof(ManageUsersPage));
 
         private async void BtnSave_Click(object _1, RoutedEventArgs _2)
         {
@@ -107,10 +106,6 @@ namespace Vestis.UWP
             var icon = (UserIconGrid.SelectedItem as IconWrapper).Icon;
 
             DressingRoom.Update(OldUsername, username, color, icon);
-            Analytics.TrackEvent("User profile updated", new Dictionary<string, string> {
-                { "Color", color },
-                { "Icon", icon }
-            });
 
             Frame.Navigate(typeof(MainPage));
         }

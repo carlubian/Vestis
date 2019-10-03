@@ -22,7 +22,7 @@ namespace Vestis.UWP
             LocationTextBox.Text = DressingRoom.WeatherLocation ?? "";
         }
 
-        private async void BtnRestore_Click(object _1, RoutedEventArgs e_2)
+        private async void BtnRestore_Click(object _1, RoutedEventArgs _2)
         {
             var confirm = new ConfirmRestore();
             await confirm.ShowAsync();
@@ -45,6 +45,6 @@ namespace Vestis.UWP
 
         private async void BtnApiInfo_Click(object _1, RoutedEventArgs _2) => await new WeatherApiInfo().ShowAsync();
 
-        private void BtnLocationAuto_Click(object _1, RoutedEventArgs _2) => LocationTextBox.Text = "";
+        private async void BtnLocationAuto_Click(object _1, RoutedEventArgs _2) => await new WeatherLocationInfo().ShowAsync();
     }
 }

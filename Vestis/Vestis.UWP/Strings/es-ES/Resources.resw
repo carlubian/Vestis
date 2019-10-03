@@ -514,7 +514,7 @@ Además, la aplicación se reiniciará para aplicar los cambios.
     <value>Volver</value>
   </data>
   <data name="SettingsPageBtnLocationAuto.Content" xml:space="preserve">
-    <value>auto</value>
+    <value>info</value>
   </data>
   <data name="SettingsPageBtnRestore.Text" xml:space="preserve">
     <value>Restaurar</value>
@@ -657,10 +657,13 @@ Además, solo pueden contener letras y guiones.</value>
   <data name="WeatherApiDlgTblBody.Text" xml:space="preserve">
     <value>Vestis puede acceder a la información meteorológica local para sugerirte prendas en
 función de la temperatura o clima actuales. Para activar esta funcionalidad, necesitas
-crear una clave de API en weatherstack.
+registrarte en weatherstack para obtener una clave de API.
 
 Este servicio no tiene coste adicional. Puedes registrarte en:
-https://weatherstack.com/signup/free</value>
+https://weatherstack.com/signup/free
+
+Nota: Las interacciones con weatherstack están gobernadas por su propia
+política de privacidad, disponible en https://weatherstack.com/privacy.</value>
   </data>
   <data name="WeatherBlizzard" xml:space="preserve">
     <value>Ventisca</value>
@@ -691,6 +694,20 @@ https://weatherstack.com/signup/free</value>
   </data>
   <data name="WeatherLightRain" xml:space="preserve">
     <value>Lluvia ligera</value>
+  </data>
+  <data name="WeatherLocationDglTblHeader.Text" xml:space="preserve">
+    <value>Información sobre la ubicación</value>
+  </data>
+  <data name="WeatherLocationDlgBtnOk.Content" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="WeatherLocationDlgTblBody.Text" xml:space="preserve">
+    <value>La ubicación debería indicar de forma inequívoca un lugar.
+Vestis usará esta ubicación para ofrecer la información meteorológica más
+adecuada, por lo que escribir un lugar cercano mejorará tu experiencia.
+
+El formato recomendado es 'Ciudad, País', en inglés a ser posible. Por ejemplo:
+Madrid, Spain; London, United Kingdom o Seattle, Washington.</value>
   </data>
   <data name="WeatherMist" xml:space="preserve">
     <value>Neblina</value>

@@ -8,7 +8,7 @@
 
   <Identity
     Name="2e37d6ef-ddd1-4e0b-82bd-ebf57db0999e"
-    Publisher="CN=portflat"
+    Publisher="CN=carlubian"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="2e37d6ef-ddd1-4e0b-82bd-ebf57db0999e" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>

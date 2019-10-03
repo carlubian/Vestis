@@ -1,5 +1,4 @@
 ﻿using DotNet.Misc.Extensions.Linq;
-using Microsoft.AppCenter.Analytics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -114,10 +113,6 @@ namespace Vestis.UWP
         private void BtnCombine_Click(object _1, RoutedEventArgs _2)
         {
             var types = SelectedList.Items.Cast<TypeWrapper>().Select(t => t.TypeName);
-            Analytics.TrackEvent("Creating combination", new Dictionary<string, string>()
-            {
-                { "Types", types.Stringify(n => n, " ") }
-            });
             Frame.Navigate(typeof(CombineEndPage), (wardrobe, types));
         }
 
@@ -179,22 +174,61 @@ namespace Vestis.UWP
             {
                 get
                 {
-                    var code = WeatherData is null ? "" : DressingRoom.WeatherData?.current?.weather_code;
-                    var type = WeatherUtil.ParseWeatherCode(code.Value);
-                    return WeatherData is null ? "" : $"Assets/Icons/Weather{type}.png";
+                    try
+                    {
+                        var code = WeatherData is null ? "" : DressingRoom.WeatherData.current.weather_code;
+                        var type = WeatherUtil.ParseWeatherCode(code.Value);
+                        return WeatherData is null ? "" : $"Assets/Icons/Weather{type}.png";
+                    }
+                    catch
+                    {
+                        return "";
+                    }
                 }
             }
             public string WeatherType
             {
                 get
                 {
-                    var code = WeatherData is null ? "" : DressingRoom.WeatherData?.current?.weather_code;
-                    var type = WeatherUtil.ParseWeatherCode(code.Value);
-                    return new CodeToLocalizedWeatherConverter().Convert(type);
+                    try { 
+                        var code = WeatherData is null ? "" : DressingRoom.WeatherData.current.weather_code;
+                        var type = WeatherUtil.ParseWeatherCode(code.Value);
+                        return new CodeToLocalizedWeatherConverter().Convert(type);
+                    }
+                    catch
+                    {
+                        return "";
+                    }
                 }
             }
-            public string WeatherTemp => WeatherData is null ? "" : $"{DressingRoom.WeatherData?.current?.temperature} \u00B0C";
-            public string WeatherLocation => WeatherData is null ? "" : $"{DressingRoom.WeatherData?.location?.name}, {DressingRoom.WeatherData?.location?.country}";
+            public string WeatherTemp
+            {
+                get
+                {
+                    try { 
+                        return WeatherData is null ? "" : $"{DressingRoom.WeatherData.current.temperature} \u00B0C";
+                    }
+                    catch
+                    {
+                        return "";
+                    }
+                }
+            }
+
+            public string WeatherLocation
+            {
+                get
+                {
+                    try { 
+                        return WeatherData is null ? "" : 
+                            $"{DressingRoom.WeatherData.location.name}, {DressingRoom.WeatherData.location.country}";
+                    }
+                    catch
+                    {
+                        return "";
+                    }
+                }
+            }
         }
 
         class WeatherAdviceWrapper

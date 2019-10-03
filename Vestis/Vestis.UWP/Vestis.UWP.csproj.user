@@ -10,5 +10,9 @@
     <SplashScreenSource>C:\Users\carlu\Downloads\MainLogo.png</SplashScreenSource>
     <BadgeLogoSource>C:\Users\carlu\Downloads\MainLogo.png</BadgeLogoSource>
     <PackageLogoSource>C:\Users\carlu\Downloads\MainLogo.png</PackageLogoSource>
+    <UapAppxPackageBuildMode>SideloadOnly</UapAppxPackageBuildMode>
+    <AppxShowAllApps>False</AppxShowAllApps>
+    <AppxBuildConfigurationSelection>x86|x64</AppxBuildConfigurationSelection>
+    <PackageOptionalProjectsInIdeBuilds>False</PackageOptionalProjectsInIdeBuilds>
   </PropertyGroup>
 </Project>

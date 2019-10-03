@@ -1,5 +1,4 @@
-﻿using Microsoft.AppCenter.Analytics;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -41,8 +40,6 @@ namespace Vestis.UWP
             FillStatistics();
             FillNotifications();
 
-            Analytics.TrackEvent("User profile accesed");
-
             // Preload weather information to avoid lag spike
             // when accessing combination page. Weather information
             // is cached for the next 30 minutes.
@@ -65,17 +62,17 @@ namespace Vestis.UWP
 
         private void FillNotifications() => NotificationList.ItemsSource = new List<Noti>
             {
-                new Noti
-                {
-                    Title = "Notificación de prueba",
-                    Content = "Recuerda beber agua a menudo; La hidratación es importante.",
-                    ProfileColor = user.ProfileColor
-                }
+                //new Noti
+                //{
+                //    Title = "Notificación de prueba",
+                //    Content = "Recuerda beber agua a menudo; La hidratación es importante.",
+                //    ProfileColor = user.ProfileColor
+                //}
             };
 
         private void BtnGoBack_Click(object _1, RoutedEventArgs _2) => Frame.Navigate(typeof(MainPage));
 
-        private void BtnManageClothes_Click(object _1, RoutedEventArgs _2e) => Frame.Navigate(typeof(WardrobePage), user);
+        private void BtnManageClothes_Click(object _1, RoutedEventArgs _2) => Frame.Navigate(typeof(WardrobePage), user);
 
         private void BtnCombine_Click(object _1, RoutedEventArgs _2) => Frame.Navigate(typeof(CombineStartPage), user);
 

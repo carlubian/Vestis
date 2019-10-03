@@ -1,6 +1,4 @@
-﻿using Microsoft.AppCenter;
-using Microsoft.AppCenter.Analytics;
-using System;
+﻿using System;
 using Vestis.Core;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
@@ -26,7 +24,6 @@ namespace Vestis.UWP
         {
             InitializeComponent();
             this.Suspending += OnSuspending;
-            AppCenter.Start("7e231a4a-ecc8-4690-aba4-a96dba7471f4", typeof(Analytics));
         }
 
         /// <summary>
@@ -48,7 +45,7 @@ namespace Vestis.UWP
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
-                if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
+                if (e?.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
                     //TODO: Cargar el estado de la aplicación suspendida previamente
                 }
@@ -57,7 +54,7 @@ namespace Vestis.UWP
                 Window.Current.Content = rootFrame;
             }
 
-            if (e.PrelaunchActivated == false)
+            if (e?.PrelaunchActivated == false)
             {
                 if (rootFrame.Content == null)
                 {

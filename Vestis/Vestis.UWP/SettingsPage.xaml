@@ -53,21 +53,23 @@
 
                     <TextBox Grid.Row="1" Grid.Column="1"
                              Name="ApiTextBox"
-                             Width="192"/>
+                             Width="256"/>
                     <TextBox Grid.Row="2" Grid.Column="1"
-                             Width="192"
+                             Width="256"
                              Name="LocationTextBox"/>
 
-                    <Button Grid.Row="1" Grid.Column="2"
+                    <HyperlinkButton Grid.Row="1" Grid.Column="2"
                             x:Uid="SettingsPageBtnApiInfo"
                             Content="[BtnInfo]"
                             Name="BtnApiInfo"
-                            Click="BtnApiInfo_Click"/>
-                    <Button Grid.Row="2" Grid.Column="2"
+                            Click="BtnApiInfo_Click"
+                            Margin="4"/>
+                    <HyperlinkButton Grid.Row="2" Grid.Column="2"
                             x:Uid="SettingsPageBtnLocationAuto"
                             Content="[BtnAuto]"
                             Name="BtnLocationAuto"
-                            Click="BtnLocationAuto_Click"/>
+                            Click="BtnLocationAuto_Click"
+                            Margin="4"/>
                 </Grid>
             </RelativePanel>
             

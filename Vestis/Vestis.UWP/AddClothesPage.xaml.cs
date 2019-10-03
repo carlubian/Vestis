@@ -1,5 +1,4 @@
-﻿using Microsoft.AppCenter.Analytics;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -154,10 +153,6 @@ namespace Vestis.UWP
                     StyleTags = GarmentStyleGrid.SelectedItems.Select(s => (s as StyleWrapper).Style)
                 };
                 user.AddGarment(garment);
-                Analytics.TrackEvent("Added new garment", new Dictionary<string, string>()
-                {
-                    { "ClothingType", garment.Type.ToString() }
-                });
                 Frame.Navigate(typeof(WardrobePage), user);
             }
         }
