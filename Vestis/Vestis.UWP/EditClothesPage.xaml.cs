@@ -56,8 +56,8 @@ namespace Vestis.UWP
             // Purchase date
             var seasons = new string[]
             {
-                "Spring", "Summer",
-                "Autumn", "Winter"
+                "Winter", "Spring",
+                "Summer", "Autumn",
             };
             var resources = ResourceLoader.GetForCurrentView();
             SeasonComboBox.ItemsSource = seasons.Select(s => new SeasonWrapper

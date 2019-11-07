@@ -445,13 +445,12 @@
   <ItemGroup>
     <Content Include="Assets\Fonts\selawksl.ttf" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Strings\en-US\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <PRIResource Include="Strings\es-ES\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
+    <PRIResource Include="Strings\en-US\Resources.resw" />
     <None Include="Vestis.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
