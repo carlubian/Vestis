@@ -1,0 +1,777 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutPageBtnGoBack.Text" xml:space="preserve">
+    <value>Go back</value>
+  </data>
+  <data name="AboutPageTblThirdPartyInformation.Text" xml:space="preserve">
+    <value>Third-party items and other licenses:</value>
+  </data>
+  <data name="AboutPageTblVersionInformation.Text" xml:space="preserve">
+    <value>Installed versions:</value>
+  </data>
+  <data name="AddClothesPageBtnContinue.Text" xml:space="preserve">
+    <value>Continue</value>
+  </data>
+  <data name="AddClothesPageBtnGoBack.Text" xml:space="preserve">
+    <value>Go back</value>
+  </data>
+  <data name="AddClothesPageTblDateHeader.Text" xml:space="preserve">
+    <value>Purchase date:</value>
+  </data>
+  <data name="AddClothesPageTbldateInfo.Text" xml:space="preserve">
+    <value>Invierno: enero a marzo. Primavera: abril a junio. Verano: julio a septiembre. Otoño: octubre a noviembre.</value>
+  </data>
+  <data name="AddClothesPageTblHeader.Text" xml:space="preserve">
+    <value>Add a new garment</value>
+  </data>
+  <data name="AddClothesPageTblNameHeader.Text" xml:space="preserve">
+    <value>Garment name:</value>
+  </data>
+  <data name="AddClothesPageTblNameInfo.Text" xml:space="preserve">
+    <value>Este nombre se usará para que puedas identificar la prenda que estás añadiendo.</value>
+  </data>
+  <data name="AddClothesPageTblStep1.Text" xml:space="preserve">
+    <value>Datos básicos</value>
+  </data>
+  <data name="AddClothesPageTblStep2.Text" xml:space="preserve">
+    <value>Clasificación</value>
+  </data>
+  <data name="AddClothesPageTblTypeHeader.Text" xml:space="preserve">
+    <value>Tipo de la prenda:</value>
+  </data>
+  <data name="AddClothesPageTblTypeInfo.Text" xml:space="preserve">
+    <value>El tipo de prenda determina con qué otras prendas es compatible, además de sus posibles estilos.</value>
+  </data>
+  <data name="AddClothesTblColorHeader.Text" xml:space="preserve">
+    <value>Colores de la prenda:</value>
+  </data>
+  <data name="AddClothesTblStyleHeader.Text" xml:space="preserve">
+    <value>Estilos de la prenda:</value>
+  </data>
+  <data name="AddUserPageBtnGoBack.Text" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="AddUserPageBtnSaveUser.Text" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="AddUserPageTblColorHeader.Text" xml:space="preserve">
+    <value>Color de perfil:</value>
+  </data>
+  <data name="AddUserPageTblHeader.Text" xml:space="preserve">
+    <value>Añadir un usuario nuevo</value>
+  </data>
+  <data name="AddUserPageTblIconHeader.Text" xml:space="preserve">
+    <value>Icono de perfil:</value>
+  </data>
+  <data name="AddUserPageTblNameHeader.Text" xml:space="preserve">
+    <value>Nombre de usuario:</value>
+  </data>
+  <data name="AddUserPageTblNameInfo.Text" xml:space="preserve">
+    <value>Puede contener entre 1 y 24 letras, sin números o espacios.</value>
+  </data>
+  <data name="AppDescription" xml:space="preserve">
+    <value>Gestión de vestuario, prendas de ropa y atuendos.</value>
+  </data>
+  <data name="AppDisplayName" xml:space="preserve">
+    <value>Vestis</value>
+  </data>
+  <data name="ClothingTypeBlazer" xml:space="preserve">
+    <value>Chaleco</value>
+  </data>
+  <data name="ClothingTypeBoots" xml:space="preserve">
+    <value>Botas</value>
+  </data>
+  <data name="ClothingTypeCoats" xml:space="preserve">
+    <value>Abrigo</value>
+  </data>
+  <data name="ClothingTypeCozySweater" xml:space="preserve">
+    <value>Jersey</value>
+  </data>
+  <data name="ClothingTypeJackets" xml:space="preserve">
+    <value>Chaqueta</value>
+  </data>
+  <data name="ClothingTypeLongBlouse" xml:space="preserve">
+    <value>Blusa larga</value>
+  </data>
+  <data name="ClothingTypeLongDress" xml:space="preserve">
+    <value>Vestido largo</value>
+  </data>
+  <data name="ClothingTypeLongPolo" xml:space="preserve">
+    <value>Polo largo</value>
+  </data>
+  <data name="ClothingTypeLongShirt" xml:space="preserve">
+    <value>Camisa larga</value>
+  </data>
+  <data name="ClothingTypeLongSkirt" xml:space="preserve">
+    <value>Falda larga</value>
+  </data>
+  <data name="ClothingTypeLongTrouser" xml:space="preserve">
+    <value>Pantalón largo</value>
+  </data>
+  <data name="ClothingTypeLongTShirt" xml:space="preserve">
+    <value>Camiseta larga</value>
+  </data>
+  <data name="ClothingTypeSandals" xml:space="preserve">
+    <value>Sandalias</value>
+  </data>
+  <data name="ClothingTypeShoes" xml:space="preserve">
+    <value>Zapatos</value>
+  </data>
+  <data name="ClothingTypeShortBlouse" xml:space="preserve">
+    <value>Blusa corta</value>
+  </data>
+  <data name="ClothingTypeShortDress" xml:space="preserve">
+    <value>Vestido corto</value>
+  </data>
+  <data name="ClothingTypeShortPolo" xml:space="preserve">
+    <value>Polo corto</value>
+  </data>
+  <data name="ClothingTypeShortShirt" xml:space="preserve">
+    <value>Camisa corta</value>
+  </data>
+  <data name="ClothingTypeShortSkirt" xml:space="preserve">
+    <value>Falda corta</value>
+  </data>
+  <data name="ClothingTypeShortTrouser" xml:space="preserve">
+    <value>Pantalón corto</value>
+  </data>
+  <data name="ClothingTypeShortTShirt" xml:space="preserve">
+    <value>Camiseta corta</value>
+  </data>
+  <data name="ClothingTypeSportSweater" xml:space="preserve">
+    <value>Sudadera</value>
+  </data>
+  <data name="ClothingTypeTrainers" xml:space="preserve">
+    <value>Playeros</value>
+  </data>
+  <data name="ClothingTypeUnknown" xml:space="preserve">
+    <value>Desconocido</value>
+  </data>
+  <data name="ClothingTypeYogaPants" xml:space="preserve">
+    <value>Pantalones elásticos</value>
+  </data>
+  <data name="CombineEndPageBtnFinish.Text" xml:space="preserve">
+    <value>Terminar</value>
+  </data>
+  <data name="CombineEndPageBtnGoBack.Text" xml:space="preserve">
+    <value>Volver</value>
+  </data>
+  <data name="CombineEndPageBtnReplace.Text" xml:space="preserve">
+    <value>Cambiar</value>
+  </data>
+  <data name="CombineEndPageTblHeader.Text" xml:space="preserve">
+    <value>Combinación de prendas</value>
+  </data>
+  <data name="CombinePageBtnUnselect.Content" xml:space="preserve">
+    <value>Quitar</value>
+  </data>
+  <data name="CombinePagePageBtnSelect.Content" xml:space="preserve">
+    <value>Añadir</value>
+  </data>
+  <data name="CombinePageTblSelectedHeader.Text" xml:space="preserve">
+    <value>Tipos seleccionados</value>
+  </data>
+  <data name="CombinePageTblUnselectedHeader.Text" xml:space="preserve">
+    <value>Tipos disponibles</value>
+  </data>
+  <data name="CombineStartPageBtnAddClothes.Text" xml:space="preserve">
+    <value>Combinar</value>
+  </data>
+  <data name="CombineStartPageBtnGoBack.Text" xml:space="preserve">
+    <value>Volver</value>
+  </data>
+  <data name="DeleteGarmentDlgBtnNo.Content" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="DeleteGarmentDlgBtnYes.Content" xml:space="preserve">
+    <value>Continuar</value>
+  </data>
+  <data name="DeleteGarmentDlgTblBody.Text" xml:space="preserve">
+    <value>Esta acción eliminará la prenda de forma permanente.
+
+¿Deseas continuar?</value>
+  </data>
+  <data name="DeleteGarmentDlgTblHeader.Text" xml:space="preserve">
+    <value>Eliminar prenda</value>
+  </data>
+  <data name="DeleteUserDlgBtnNo.Content" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="DeleteUserDlgBtnYes.Content" xml:space="preserve">
+    <value>Continuar</value>
+  </data>
+  <data name="DeleteUserDlgTblBody.Text" xml:space="preserve">
+    <value>Esta acción eliminará al usuario y todas sus prendas almacenadas.
+Si no has hecho una copia de seguridad, los datos se perderán de forma permanente.
+
+¿Quieres continuar?</value>
+  </data>
+  <data name="DeleteUserDlgTblHeader.Text" xml:space="preserve">
+    <value>Eliminar usuario</value>
+  </data>
+  <data name="EditClothesPageBtnContinue.Text" xml:space="preserve">
+    <value>Continuar</value>
+  </data>
+  <data name="EditClothesPageBtnGoBack.Text" xml:space="preserve">
+    <value>Volver</value>
+  </data>
+  <data name="EditClothesPageTblDateHeader.Text" xml:space="preserve">
+    <value>Fecha de compra:</value>
+  </data>
+  <data name="EditClothesPageTbldateInfo.Text" xml:space="preserve">
+    <value>Invierno: enero a marzo. Primavera: abril a junio. Verano: julio a septiembre. Otoño: octubre a noviembre.</value>
+  </data>
+  <data name="EditClothesPageTblHeader.Text" xml:space="preserve">
+    <value>Editar una prenda</value>
+  </data>
+  <data name="EditClothesPageTblNameHeader.Text" xml:space="preserve">
+    <value>Nombre de la prenda:</value>
+  </data>
+  <data name="EditClothesPageTblNameInfo.Text" xml:space="preserve">
+    <value>Este nombre se usará para que puedas identificar la prenda que estás modificando.</value>
+  </data>
+  <data name="EditClothesPageTblStep1.Text" xml:space="preserve">
+    <value>Datos básicos</value>
+  </data>
+  <data name="EditClothesPageTblStep2.Text" xml:space="preserve">
+    <value>Clasificación</value>
+  </data>
+  <data name="EditClothesPageTblTypeHeader.Text" xml:space="preserve">
+    <value>Tipo de la prenda:</value>
+  </data>
+  <data name="EditClothesPageTblTypeInfo.Text" xml:space="preserve">
+    <value>El tipo de prenda determina con qué otras prendas es compatible, además de sus posibles estilos.</value>
+  </data>
+  <data name="EditClothesTblColorHeader.Text" xml:space="preserve">
+    <value>Colores de la prenda:</value>
+  </data>
+  <data name="EditClothesTblStyleHeader.Text" xml:space="preserve">
+    <value>Estilos de la prenda:</value>
+  </data>
+  <data name="EditUserPageBtnGoBack.Text" xml:space="preserve">
+    <value>Volver</value>
+  </data>
+  <data name="EditUserPageBtnSave.Text" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="EditUserPageTblColorHeader.Text" xml:space="preserve">
+    <value>Color de perfil:</value>
+  </data>
+  <data name="EditUserPageTblHeader.Text" xml:space="preserve">
+    <value>Editar un usuario</value>
+  </data>
+  <data name="EditUserPageTblIconHeader.Text" xml:space="preserve">
+    <value>Icono de perfil:</value>
+  </data>
+  <data name="EditUserPageTblNameHeader.Text" xml:space="preserve">
+    <value>Nombre de usuario:</value>
+  </data>
+  <data name="EditUserPageTblNameInfo.Text" xml:space="preserve">
+    <value>Puede contener entre 1 y 24 letras, sin números o espacios.</value>
+  </data>
+  <data name="GarmentNameExistingDglTblHeader.Text" xml:space="preserve">
+    <value>Nombre de prenda ya existente</value>
+  </data>
+  <data name="GarmentNameExistingDlgBtnOk.Content" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="GarmentNameExistingDlgTblBody.Text" xml:space="preserve">
+    <value>Debes elegir un nombre de prenda que no esté repetido.
+Si quieres modificar una prenda existente, puedes hacerlo desde la página
+de gestión de prendas.</value>
+  </data>
+  <data name="GarmentNameFormatDglTblHeader.Text" xml:space="preserve">
+    <value>Nombre de prenda incorrecto</value>
+  </data>
+  <data name="GarmentNameFormatDlgBtnOk.Content" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="GarmentNameFormatDlgTblBody.Text" xml:space="preserve">
+    <value>Los nombres de prenda deben contener entre 1 y 64 caracteres.
+Además, solo pueden contener letras, números, espacios y guiones.</value>
+  </data>
+  <data name="GarmentYearFormatDglTblHeader.Text" xml:space="preserve">
+    <value>Año de compra incorrecto</value>
+  </data>
+  <data name="GarmentYearFormatDlgBtnOk.Content" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="GarmentYearFormatDlgTblBody.Text" xml:space="preserve">
+    <value>El año de compra debe ser un número entre 1900 y el año actual.</value>
+  </data>
+  <data name="MainPageBtnAbout.Text" xml:space="preserve">
+    <value>Acerca de</value>
+  </data>
+  <data name="MainPageBtnManageUsers.Text" xml:space="preserve">
+    <value>Gestionar</value>
+  </data>
+  <data name="MainPageBtnSettings.Text" xml:space="preserve">
+    <value>Ajustes</value>
+  </data>
+  <data name="MainPageTblUserSelectionHeader.Text" xml:space="preserve">
+    <value>Selecciona tu usuario para empezar:</value>
+  </data>
+  <data name="ManageUsersPageBtnDelete.Content" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="ManageUsersPageBtnEdit.Content" xml:space="preserve">
+    <value>Modificar</value>
+  </data>
+  <data name="ManageUsersPageBtnExport.Text" xml:space="preserve">
+    <value>Exportar</value>
+  </data>
+  <data name="ManageUsersPageBtnGoBack.Text" xml:space="preserve">
+    <value>Volver</value>
+  </data>
+  <data name="ManageUsersPageBtnImport.Text" xml:space="preserve">
+    <value>Importar</value>
+  </data>
+  <data name="ManageUsersPageBtnNewUser.Text" xml:space="preserve">
+    <value>Añadir</value>
+  </data>
+  <data name="ManageUsersPageTblHeader.Text" xml:space="preserve">
+    <value>Gestión de usuarios</value>
+  </data>
+  <data name="MissingGarmentDataDglTblHeader.Text" xml:space="preserve">
+    <value>Faltan datos de la prenda</value>
+  </data>
+  <data name="MissingGarmentDataDlgBtnOk.Content" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="MissingGarmentDataDlgTblBody.Text" xml:space="preserve">
+    <value>Debes elegir tanto un tipo de prenda como una fecha de compra.
+Puedes hacerlo desde los campos habilitados para ello.</value>
+  </data>
+  <data name="MissingGarmentTagsDglTblHeader.Text" xml:space="preserve">
+    <value>Faltan atributos de la prenda</value>
+  </data>
+  <data name="MissingGarmentTagsDlgBtnOk.Content" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="MissingGarmentTagsDlgTblBody.Text" xml:space="preserve">
+    <value>Debes elegir al menos un color y un estilo para cada prenda.</value>
+  </data>
+  <data name="MissingProfileDataDglTblHeader.Text" xml:space="preserve">
+    <value>Faltan datos del perfil</value>
+  </data>
+  <data name="MissingProfileDataDlgBtnOk.Content" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="MissingProfileDataDlgTblBody.Text" xml:space="preserve">
+    <value>Debes elegir tanto un color de perfil como un icono de perfil.
+Puedes hacerlo pulsando sobre la opción que prefieras en cada caso.</value>
+  </data>
+  <data name="RestoreDlgBtnNo.Content" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="RestoreDlgBtnYes.Content" xml:space="preserve">
+    <value>Continuar</value>
+  </data>
+  <data name="RestoreDlgTblBody.Text" xml:space="preserve">
+    <value>Esta acción eliminará todos los datos y dejará la aplicación lista para empezar desde cero. 
+Si no has hecho una copia de seguridad, los datos se perderán de forma permanente.
+
+Además, la aplicación se reiniciará para aplicar los cambios.
+
+¿Quieres continuar?</value>
+  </data>
+  <data name="RestoreDlgTblHeader.Text" xml:space="preserve">
+    <value>Restaurar aplicación</value>
+  </data>
+  <data name="SeasonAutumn" xml:space="preserve">
+    <value>Otoño</value>
+  </data>
+  <data name="SeasonSpring" xml:space="preserve">
+    <value>Primavera</value>
+  </data>
+  <data name="SeasonSummer" xml:space="preserve">
+    <value>Verano</value>
+  </data>
+  <data name="SeasonWinter" xml:space="preserve">
+    <value>Invierno</value>
+  </data>
+  <data name="SettingsPageBtnApiInfo.Content" xml:space="preserve">
+    <value>info</value>
+  </data>
+  <data name="SettingsPageBtnGoBack.Text" xml:space="preserve">
+    <value>Volver</value>
+  </data>
+  <data name="SettingsPageBtnLocationAuto.Content" xml:space="preserve">
+    <value>info</value>
+  </data>
+  <data name="SettingsPageBtnRestore.Text" xml:space="preserve">
+    <value>Restaurar</value>
+  </data>
+  <data name="SettingsPageBtnSave.Text" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="SettingsPageTblAPIHeader.Text" xml:space="preserve">
+    <value>Clave de API:</value>
+  </data>
+  <data name="SettingsPageTblHeader.Text" xml:space="preserve">
+    <value>Ajustes de la aplicación</value>
+  </data>
+  <data name="SettingsPageTblLocationHeader.Text" xml:space="preserve">
+    <value>Ubicación:</value>
+  </data>
+  <data name="SettingsPageTblWeatherSection.Text" xml:space="preserve">
+    <value>Datos meteorológicos</value>
+  </data>
+  <data name="TagAbstract" xml:space="preserve">
+    <value>Abstracto</value>
+  </data>
+  <data name="TagBelt" xml:space="preserve">
+    <value>Cinturón</value>
+  </data>
+  <data name="TagButtons" xml:space="preserve">
+    <value>Botones</value>
+  </data>
+  <data name="TagDeepPockets" xml:space="preserve">
+    <value>Bolsillos grandes</value>
+  </data>
+  <data name="TagDots" xml:space="preserve">
+    <value>Teselado</value>
+  </data>
+  <data name="TagElastic" xml:space="preserve">
+    <value>Elástico</value>
+  </data>
+  <data name="TagFakePockets" xml:space="preserve">
+    <value>Bolsillos falsos</value>
+  </data>
+  <data name="TagLogo" xml:space="preserve">
+    <value>Emblema</value>
+  </data>
+  <data name="TagPlain" xml:space="preserve">
+    <value>Liso</value>
+  </data>
+  <data name="TagShallowPockets" xml:space="preserve">
+    <value>Bolsillos pequeños</value>
+  </data>
+  <data name="TagSquares" xml:space="preserve">
+    <value>Cuadros</value>
+  </data>
+  <data name="TagStripes" xml:space="preserve">
+    <value>Rayas</value>
+  </data>
+  <data name="TagTie" xml:space="preserve">
+    <value>Anudado</value>
+  </data>
+  <data name="TagVelcro" xml:space="preserve">
+    <value>Velcro</value>
+  </data>
+  <data name="TagZip" xml:space="preserve">
+    <value>Cremallera</value>
+  </data>
+  <data name="UserNameExistingDglTblHeader.Text" xml:space="preserve">
+    <value>Nombre de usuario ya existente</value>
+  </data>
+  <data name="UserNameExistingDlgBtnOk.Content" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="UserNameExistingDlgTblBody.Text" xml:space="preserve">
+    <value>Debes elegir un nombre de usuario que no esté repetido.
+Si quieres modificar un usuario existente, puedes hacerlo desde la página
+de gestión de usuarios.</value>
+  </data>
+  <data name="UserNameFormatDglTblHeader.Text" xml:space="preserve">
+    <value>Nombre de usuario incorrecto</value>
+  </data>
+  <data name="UserNameFormatDlgBtnOk.Content" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="UserNameFormatDlgTblBody.Text" xml:space="preserve">
+    <value>Los nombres de usuario deben tener entre 1 y 24 caracteres.
+Además, solo pueden contener letras y guiones.</value>
+  </data>
+  <data name="UserPageBtnCombine.Text" xml:space="preserve">
+    <value>Combinar</value>
+  </data>
+  <data name="UserPageBtnGoBack.Text" xml:space="preserve">
+    <value>Volver</value>
+  </data>
+  <data name="UserPageBtnManageClothes.Text" xml:space="preserve">
+    <value>Armario</value>
+  </data>
+  <data name="UserPageStatTotalClothesPrefix" xml:space="preserve">
+    <value>En este momento tienes</value>
+  </data>
+  <data name="UserPageStatTotalClothesSuffix" xml:space="preserve">
+    <value>prendas registradas.</value>
+  </data>
+  <data name="UserPageTblHeaderPrefix.Text" xml:space="preserve">
+    <value>¡Hola de nuevo,</value>
+  </data>
+  <data name="UserPageTblHeaderSuffix.Text" xml:space="preserve">
+    <value>!</value>
+  </data>
+  <data name="WardrobePageBtnAddClothes.Text" xml:space="preserve">
+    <value>Añadir</value>
+  </data>
+  <data name="WardrobePageBtnDelete.Content" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="WardrobePageBtnEdit.Content" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="WardrobePageBtnGoBack.Text" xml:space="preserve">
+    <value>Volver</value>
+  </data>
+  <data name="WardrobePageTblHeader.Text" xml:space="preserve">
+    <value>Gestión del armario</value>
+  </data>
+  <data name="WeatherAdviceChilly" xml:space="preserve">
+    <value>Está fresco, quizá quieras ponerte una chaqueta.</value>
+  </data>
+  <data name="WeatherAdviceCold" xml:space="preserve">
+    <value>Hace frío, deberías ponerte un abrigo.</value>
+  </data>
+  <data name="WeatherAdviceRaining" xml:space="preserve">
+    <value>Será mejor que cojas un paraguas.</value>
+  </data>
+  <data name="WeatherAdviceWarm" xml:space="preserve">
+    <value>Hace calor, puedes ir en manga corta.</value>
+  </data>
+  <data name="WeatherApiDglTblHeader.Text" xml:space="preserve">
+    <value>Información sobre la clave de API</value>
+  </data>
+  <data name="WeatherApiDlgBtnOk.Content" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="WeatherApiDlgTblBody.Text" xml:space="preserve">
+    <value>Vestis puede acceder a la información meteorológica local para sugerirte prendas en
+función de la temperatura o clima actuales. Para activar esta funcionalidad, necesitas
+registrarte en weatherstack para obtener una clave de API.
+
+Este servicio no tiene coste adicional. Puedes registrarte en:
+https://weatherstack.com/signup/free
+
+Nota: Las interacciones con weatherstack están gobernadas por su propia
+política de privacidad, disponible en https://weatherstack.com/privacy.</value>
+  </data>
+  <data name="WeatherBlizzard" xml:space="preserve">
+    <value>Ventisca</value>
+  </data>
+  <data name="WeatherCloudy" xml:space="preserve">
+    <value>Nublado</value>
+  </data>
+  <data name="WeatherFog" xml:space="preserve">
+    <value>Niebla</value>
+  </data>
+  <data name="WeatherFreezingDrizzle" xml:space="preserve">
+    <value>Llovizna helada</value>
+  </data>
+  <data name="WeatherFreezingFog" xml:space="preserve">
+    <value>Niebla helada</value>
+  </data>
+  <data name="WeatherHeavyFreezingDrizzle" xml:space="preserve">
+    <value>Fuerte llovizna helada</value>
+  </data>
+  <data name="WeatherHeavyRain" xml:space="preserve">
+    <value>Fuertes lluvias</value>
+  </data>
+  <data name="WeatherLightDrizzle" xml:space="preserve">
+    <value>Llovizna</value>
+  </data>
+  <data name="WeatherLightFreezingRain" xml:space="preserve">
+    <value>Ligera lluvia helada</value>
+  </data>
+  <data name="WeatherLightRain" xml:space="preserve">
+    <value>Lluvia ligera</value>
+  </data>
+  <data name="WeatherLocationDglTblHeader.Text" xml:space="preserve">
+    <value>Información sobre la ubicación</value>
+  </data>
+  <data name="WeatherLocationDlgBtnOk.Content" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="WeatherLocationDlgTblBody.Text" xml:space="preserve">
+    <value>La ubicación debería indicar de forma inequívoca un lugar.
+Vestis usará esta ubicación para ofrecer la información meteorológica más
+adecuada, por lo que escribir un lugar cercano mejorará tu experiencia.
+
+El formato recomendado es 'Ciudad, País', en inglés a ser posible. Por ejemplo:
+Madrid, Spain; London, United Kingdom o Seattle, Washington.</value>
+  </data>
+  <data name="WeatherMist" xml:space="preserve">
+    <value>Neblina</value>
+  </data>
+  <data name="WeatherModerateRain" xml:space="preserve">
+    <value>Lluvia moderada</value>
+  </data>
+  <data name="WeatherOvercast" xml:space="preserve">
+    <value>Cielo cubierto</value>
+  </data>
+  <data name="WeatherPartlyCloudy" xml:space="preserve">
+    <value>Parcialmente nublado</value>
+  </data>
+  <data name="WeatherPatchyDrizzle" xml:space="preserve">
+    <value>Llovizna helada a intervalos</value>
+  </data>
+  <data name="WeatherPatchyHeavyRain" xml:space="preserve">
+    <value>Fuertes lluvias a intervalos</value>
+  </data>
+  <data name="WeatherPatchyLightDrizzle" xml:space="preserve">
+    <value>Llovizna a intervalos</value>
+  </data>
+  <data name="WeatherPatchyLightRain" xml:space="preserve">
+    <value>Lluvia ligera a intervalos</value>
+  </data>
+  <data name="WeatherPatchyModerateRain" xml:space="preserve">
+    <value>Lluvia moderada a intervalos</value>
+  </data>
+  <data name="WeatherPatchyRain" xml:space="preserve">
+    <value>Lluvia a intervalos</value>
+  </data>
+  <data name="WeatherPatchySleet" xml:space="preserve">
+    <value>Aguanieve a intervalos</value>
+  </data>
+  <data name="WeatherPatchySnow" xml:space="preserve">
+    <value>Nevada a intervalos</value>
+  </data>
+  <data name="WeatherSnow" xml:space="preserve">
+    <value>Nevada</value>
+  </data>
+  <data name="WeatherSunny" xml:space="preserve">
+    <value>Soleado</value>
+  </data>
+  <data name="WeatherThundery" xml:space="preserve">
+    <value>Cielos tormentosos</value>
+  </data>
+  <data name="WelcomePageBtnImport.Text" xml:space="preserve">
+    <value>Importar</value>
+  </data>
+  <data name="WelcomePageBtnNewUser.Text" xml:space="preserve">
+    <value>Añadir</value>
+  </data>
+  <data name="WelcomePageTblBody.Text" xml:space="preserve">
+    <value>Parece que es la primera vez que usas esta aplicación. Si es así, puedes empezar por añadir un usuario.
+
+Si tienes un archivo de copia de seguridad que quieras restaurar, también puedes hacerlo desde aquí.</value>
+  </data>
+  <data name="WelcomePageTblHeaderContent.Text" xml:space="preserve">
+    <value>Vestis</value>
+  </data>
+  <data name="WelcomePageTblHeaderPrefix.Text" xml:space="preserve">
+    <value>Bienvenido a</value>
+  </data>
+  <data name="WelcomePageTblHeaderSuffix.Text" xml:space="preserve">
+    <value>!</value>
+  </data>
+</root>

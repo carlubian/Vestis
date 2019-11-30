@@ -48,8 +48,8 @@ namespace Vestis.UWP
             // Fill purchase date fields
             var seasons = new string[]
             {
-                "Spring", "Summer",
-                "Autumn", "Winter"
+                "Winter", "Spring",
+                "Summer", "Autumn"
             };
             var resources = ResourceLoader.GetForCurrentView();
             SeasonComboBox.ItemsSource = seasons.Select(s => new SeasonWrapper

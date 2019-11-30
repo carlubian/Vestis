@@ -254,10 +254,31 @@
     <Content Include="Assets\Icons\users.png" />
     <Content Include="Assets\Icons\verified.png" />
     <Content Include="Assets\Icons\wardrobe.png" />
+    <Content Include="Assets\Icons\WeatherBlizzard.png" />
     <Content Include="Assets\Icons\WeatherCloudy.png" />
+    <Content Include="Assets\Icons\WeatherFog.png" />
+    <Content Include="Assets\Icons\WeatherFreezingDrizzle.png" />
+    <Content Include="Assets\Icons\WeatherFrezzingFog.png" />
+    <Content Include="Assets\Icons\WeatherHeavyFreezingDrizzle.png" />
+    <Content Include="Assets\Icons\WeatherHeavyRain.png" />
+    <Content Include="Assets\Icons\WeatherLightDrizzle.png" />
+    <Content Include="Assets\Icons\WeatherLightFreezingRain.png" />
+    <Content Include="Assets\Icons\WeatherLightRain.png" />
+    <Content Include="Assets\Icons\WeatherMist.png" />
+    <Content Include="Assets\Icons\WeatherModerateRain.png" />
     <Content Include="Assets\Icons\WeatherOvercast.png" />
     <Content Include="Assets\Icons\WeatherPartlyCloudy.png" />
+    <Content Include="Assets\Icons\WeatherPatchyDrizzle.png" />
+    <Content Include="Assets\Icons\WeatherPatchyHeavyRain.png" />
+    <Content Include="Assets\Icons\WeatherPatchyLightDrizzle.png" />
+    <Content Include="Assets\Icons\WeatherPatchyLightRain.png" />
+    <Content Include="Assets\Icons\WeatherPatchyModerateRain.png" />
+    <Content Include="Assets\Icons\WeatherPatchyRain.png" />
+    <Content Include="Assets\Icons\WeatherPatchySleet.png" />
+    <Content Include="Assets\Icons\WeatherPatchySnow.png" />
+    <Content Include="Assets\Icons\WeatherSnow.png" />
     <Content Include="Assets\Icons\WeatherSunny.png" />
+    <Content Include="Assets\Icons\WeatherThundery.png" />
     <Content Include="Assets\Icons\woman.png" />
     <Content Include="Assets\Store\BadgeLogo.scale-100.png" />
     <Content Include="Assets\Store\BadgeLogo.scale-125.png" />
@@ -445,13 +466,12 @@
   <ItemGroup>
     <Content Include="Assets\Fonts\selawksl.ttf" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Strings\en-US\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <PRIResource Include="Strings\es-ES\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
+    <PRIResource Include="Strings\en-US\Resources.resw" />
     <None Include="Vestis.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
