@@ -42,6 +42,9 @@ namespace Vestis.UWP
                 new KeyValuePair<string, string>("Users icon", "Smashicons from www.flaticon.com"),
                 new KeyValuePair<string, string>("Merge icon", "Smashicons from www.flaticon.com"),
                 new KeyValuePair<string, string>("Cloud icon", "Smashicons from www.flaticon.com"),
+                new KeyValuePair<string, string>("Short shirt icon", "Smashicons from www.flaticon.com"),
+                new KeyValuePair<string, string>("Blazer icon", "Smashicons from www.flaticon.com"),
+                new KeyValuePair<string, string>("Shoes icon", "Smashicons from www.flaticon.com"),
                 new KeyValuePair<string, string>("Plus sign icon", "Lyolya from www.flaticon.com"),
                 new KeyValuePair<string, string>("Import icon", "Anatoly from www.flaticon.com"),
                 new KeyValuePair<string, string>("Export icon", "Anatoly from www.flaticon.com"),
@@ -53,6 +56,7 @@ namespace Vestis.UWP
                 new KeyValuePair<string, string>("Long polo icon", "itim201 from www.flaticon.com"),
                 new KeyValuePair<string, string>("Wardrobe icon", "xnimrodx from www.flaticon.com"),
                 new KeyValuePair<string, string>("Short t-shirt icon", "Good-Ware from www.flaticon.com"),
+                new KeyValuePair<string, string>("Sandals icon", "Good-Ware from www.flaticon.com"),
                 new KeyValuePair<string, string>("Short blouse icon", "Freepik from www.flaticon.com"),
                 new KeyValuePair<string, string>("Short polo icon", "Freepik from www.flaticon.com"),
                 new KeyValuePair<string, string>("Sport sweater icon", "Freepik from www.flaticon.com"),
@@ -66,12 +70,19 @@ namespace Vestis.UWP
                 new KeyValuePair<string, string>("Thunderstorm icon", "Freepik from www.flaticon.com"),
                 new KeyValuePair<string, string>("Snowstorm icon", "Freepik from www.flaticon.com"),
                 new KeyValuePair<string, string>("Mist icon", "Freepik from www.flaticon.com"),
+                new KeyValuePair<string, string>("Short trouser icon", "Freepik from www.flaticon.com"),
+                new KeyValuePair<string, string>("Short dress icon", "Freepik from www.flaticon.com"),
                 new KeyValuePair<string, string>("Reload icon", "Gregor Cresnar from www.flaticon.com"),
                 new KeyValuePair<string, string>("Sun and cloud icon", "Good Ware from www.flaticon.com"),
+                new KeyValuePair<string, string>("Long trouser icon", "Good Ware from www.flaticon.com"),
                 new KeyValuePair<string, string>("Short skirt icon", "iconixar from www.flaticon.com"),
                 new KeyValuePair<string, string>("Long skirt icon", "iconixar from www.flaticon.com"),
                 new KeyValuePair<string, string>("Rain icon", "smalllikeart from www.flaticon.com"),
-                new KeyValuePair<string, string>("Snow icon", "Eucalyp from www.flaticon.com")
+                new KeyValuePair<string, string>("Snow icon", "Eucalyp from www.flaticon.com"),
+                new KeyValuePair<string, string>("Yoga pants icon", "Eucalyp from www.flaticon.com"),
+                new KeyValuePair<string, string>("Long shirt icon", "Pixelmeetup from www.flaticon.com"),
+                new KeyValuePair<string, string>("Long t-shirt icon", "Vitaly Gorbachev from www.flaticon.com"),
+                new KeyValuePair<string, string>("Trainers icon", "photo3idea_studio from www.flaticon.com")
             };
             ThirdPartyList.ItemsSource = thirdPartyElements;
         }

@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="2e37d6ef-ddd1-4e0b-82bd-ebf57db0999e"
-    Publisher="CN=carlubian"
+    Name="35119CarlosLubin.Vestis"
+    Publisher="CN=6B4FB010-DD6C-4E0D-9904-85A0E742D694"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="2e37d6ef-ddd1-4e0b-82bd-ebf57db0999e" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="4fb1060e-138f-4658-9114-412bed561b1b" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>Vestis.UWP</DisplayName>
-    <PublisherDisplayName>portflat</PublisherDisplayName>
+    <DisplayName>Vestis</DisplayName>
+    <PublisherDisplayName>Carlos Lubián</PublisherDisplayName>
     <Logo>Assets\Store\StoreLogo.png</Logo>
   </Properties>
 

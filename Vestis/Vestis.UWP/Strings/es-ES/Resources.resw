@@ -609,6 +609,36 @@ Además, solo pueden contener letras y guiones.</value>
   <data name="UserPageBtnManageClothes.Text" xml:space="preserve">
     <value>Armario</value>
   </data>
+  <data name="UserPageNotiOldGarmentText" xml:space="preserve">
+    <value>¿Has pensado en renovar tu armario?</value>
+  </data>
+  <data name="UserPageNotiOldGarmentTitle" xml:space="preserve">
+    <value>tiene al menos tres años</value>
+  </data>
+  <data name="UserPageStatLeastCommonTypePrefix" xml:space="preserve">
+    <value>El tipo de prenda menos común es </value>
+  </data>
+  <data name="UserPageStatLeastCommonTypeSuffix" xml:space="preserve">
+    <value>.</value>
+  </data>
+  <data name="UserPageStatMostCommonTypePrefix" xml:space="preserve">
+    <value>El tipo de prenda más común es </value>
+  </data>
+  <data name="UserPageStatMostCommonTypeSuffix" xml:space="preserve">
+    <value>.</value>
+  </data>
+  <data name="UserPageStatNewestGarmentPrefix" xml:space="preserve">
+    <value>La prenda más reciente es</value>
+  </data>
+  <data name="UserPageStatNewestGarmentSuffix" xml:space="preserve">
+    <value>.</value>
+  </data>
+  <data name="UserPageStatOldestGarmentPrefix" xml:space="preserve">
+    <value>La prenda más antigua es</value>
+  </data>
+  <data name="UserPageStatOldestGarmentSuffix" xml:space="preserve">
+    <value>.</value>
+  </data>
   <data name="UserPageStatTotalClothesPrefix" xml:space="preserve">
     <value>En este momento tienes</value>
   </data>

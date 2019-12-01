@@ -37,8 +37,11 @@ namespace Vestis.UWP
             // Paint elements with user profile color
             DataContext = user;
 
-            FillStatistics();
-            FillNotifications();
+            if (user.Garments.Any())
+            {
+                FillStatistics();
+                FillNotifications();
+            }
 
             // Preload weather information to avoid lag spike
             // when accessing combination page. Weather information
@@ -57,18 +60,57 @@ namespace Vestis.UWP
                     Value = user.Garments.Count().ToString(CultureInfo.InvariantCulture),
                     Suffix = resources.GetString("UserPageStatTotalClothesSuffix"),
                     ProfileColor = user.ProfileColor
-                }
+                },
+                new Stat
+                {
+                    Prefix = resources.GetString("UserPageStatMostCommonTypePrefix"),
+                    Value = resources.GetString($@"ClothingType{user.Garments.GroupBy(g => g.Type).Select(n => new {
+                        ClothingType = n.Key,
+                        Amount = n.Count()
+                    }).OrderByDescending(n => n.Amount).First().ClothingType.ToString() }"),
+                    Suffix = resources.GetString("UserPageStatMostCommonTypeSuffix"),
+                    ProfileColor = user.ProfileColor
+                },
+                new Stat
+                {
+                    Prefix = resources.GetString("UserPageStatLeastCommonTypePrefix"),
+                    Value = resources.GetString($@"ClothingType{user.Garments.GroupBy(g => g.Type).Select(n => new {
+                        ClothingType = n.Key,
+                        Amount = n.Count()
+                    }).OrderBy(n => n.Amount).First().ClothingType.ToString() }"),
+                    Suffix = resources.GetString("UserPageStatLeastCommonTypeSuffix"),
+                    ProfileColor = user.ProfileColor
+                },
+                new Stat
+                {
+                    Prefix = resources.GetString("UserPageStatOldestGarmentPrefix"),
+                    Value = user.Garments.OrderBy(g => g.PurchaseDate.AgeInSeasons).First().Name,
+                    Suffix = resources.GetString("UserPageStatOldestGarmentSuffix"),
+                    ProfileColor = user.ProfileColor
+                },
+                new Stat
+                {
+                    Prefix = resources.GetString("UserPageStatNewestGarmentPrefix"),
+                    Value = user.Garments.OrderByDescending(g => g.PurchaseDate.AgeInSeasons).First().Name,
+                    Suffix = resources.GetString("UserPageStatNewestGarmentSuffix"),
+                    ProfileColor = user.ProfileColor
+                },
             };
 
-        private void FillNotifications() => NotificationList.ItemsSource = new List<Noti>
+        private void FillNotifications()
+        {
+            IEnumerable<Noti> Notis()
             {
-                //new Noti
-                //{
-                //    Title = "Notificación de prueba",
-                //    Content = "Recuerda beber agua a menudo; La hidratación es importante.",
-                //    ProfileColor = user.ProfileColor
-                //}
-            };
+                foreach (var prenda in user.Garments.Where(g => g.PurchaseDate.AgeInYears >= 3))
+                    yield return new Noti
+                    {
+                        Title = $"{prenda.Name} {resources.GetString("UserPageNotiOldGarmentTitle")}",
+                        Content = resources.GetString("UserPageNotiOldGarmentText"),
+                        ProfileColor = user.ProfileColor
+                    };
+            }
+            NotificationList.ItemsSource = Notis();
+        }
 
         private void BtnGoBack_Click(object _1, RoutedEventArgs _2) => Frame.Navigate(typeof(MainPage));
 

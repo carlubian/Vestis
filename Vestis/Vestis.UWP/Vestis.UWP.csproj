@@ -19,14 +19,15 @@
     <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
-    <PackageCertificateKeyFile>F:\GitHub\Vestis\Vestis\Vestis.UWP\Vestis.UWP_TemporaryKey.pfx</PackageCertificateKeyFile>
-    <PackageCertificateThumbprint>147FA5588164CE034139DD2837CA797739C640BB</PackageCertificateThumbprint>
+    <PackageCertificateKeyFile>
+    </PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>02023529CD1F4909E7A41D128F0944C02F9237E0</PackageCertificateThumbprint>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
-    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
     <AppxBundle>Always</AppxBundle>
-    <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
+    <AppxBundlePlatforms>x86|x64|arm|arm64</AppxBundlePlatforms>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
@@ -225,6 +226,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Icons\baby-girl.png" />
+    <Content Include="Assets\Icons\ClothingTypeBlazer.png" />
     <Content Include="Assets\Icons\ClothingTypeBoots.png" />
     <Content Include="Assets\Icons\ClothingTypeCoats.png" />
     <Content Include="Assets\Icons\ClothingTypeCozySweater.png" />
@@ -232,17 +234,27 @@
     <Content Include="Assets\Icons\ClothingTypeLongBlouse.png" />
     <Content Include="Assets\Icons\ClothingTypeLongDress.png" />
     <Content Include="Assets\Icons\ClothingTypeLongPolo.png" />
+    <Content Include="Assets\Icons\ClothingTypeLongShirt.png" />
     <Content Include="Assets\Icons\ClothingTypeLongSkirt.png" />
+    <Content Include="Assets\Icons\ClothingTypeLongTrouser.png" />
+    <Content Include="Assets\Icons\ClothingTypeLongTShirt.png" />
+    <Content Include="Assets\Icons\ClothingTypeSandals.png" />
+    <Content Include="Assets\Icons\ClothingTypeShoes.png" />
     <Content Include="Assets\Icons\ClothingTypeShortBlouse.png" />
+    <Content Include="Assets\Icons\ClothingTypeShortDress.png" />
     <Content Include="Assets\Icons\ClothingTypeShortPolo.png" />
+    <Content Include="Assets\Icons\ClothingTypeShortShirt.png" />
     <Content Include="Assets\Icons\ClothingTypeShortSkirt.png" />
+    <Content Include="Assets\Icons\ClothingTypeShortTrouser.png" />
     <Content Include="Assets\Icons\ClothingTypeShortTShirt.png" />
     <Content Include="Assets\Icons\ClothingTypeSportSweater.png" />
+    <Content Include="Assets\Icons\ClothingTypeTrainers.png" />
     <Content Include="Assets\Icons\export.png" />
     <Content Include="Assets\Icons\import.png" />
     <Content Include="Assets\Icons\ClothingTypeUnknown.png" />
     <Content Include="Assets\Icons\info.png" />
     <Content Include="Assets\Icons\left-arrow.png" />
+    <Content Include="Assets\Icons\ClothingTypeYogaPants.png" />
     <Content Include="Assets\Icons\man.png" />
     <Content Include="Assets\Icons\merge.png" />
     <Content Include="Assets\Icons\plus-symbol.png" />
@@ -335,6 +347,7 @@
     <Content Include="Assets\Store\Wide310x150Logo.scale-150.png" />
     <Content Include="Assets\Store\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Store\Wide310x150Logo.scale-400.png" />
+    <None Include="Package.StoreAssociation.xml" />
     <Content Include="Properties\Default.rd.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -449,7 +462,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers">
-      <Version>2.9.5</Version>
+      <Version>2.9.8</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
