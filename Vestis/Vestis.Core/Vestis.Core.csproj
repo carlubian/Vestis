@@ -10,7 +10,7 @@
     <PackageReference Include="DotNetZip" Version="1.15.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="OneOf" Version="3.0.178" />
+    <PackageReference Include="OneOf" Version="3.0.186" />
   </ItemGroup>
 
   <ItemGroup>
